@@ -1,18 +1,17 @@
-import pandas as pd
-from urllib.request import urlopen
-import plotly.express as px
-import json
-import plotly.graph_objects as go
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+import pandas as pd
+import plotly.graph_objects as go
+from dash.dependencies import Input, Output, State
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+# Create main process and supress callback errors because some callbacks are for elements that will be dynamically added
+app = dash.Dash(__name__,
+                external_stylesheets=external_stylesheets,
+                suppress_callback_exceptions=True)
 
-with open("/Users/valentinkolb/Git/freiefreiburgdaten/assets/.mapbox_accesstoken") as access_token:
+with open("assets/.mapbox_accesstoken") as access_token:
     mapbox_access_token = access_token.read()
 
 
@@ -50,9 +49,9 @@ def generate_table(dataframe: pd.DataFrame, max_rows: int = 26) -> html.Table:
 # DATA
 ##
 
-df_number_students = pd.read_csv("/Users/valentinkolb/Git/freiefreiburgdaten/data/number_students.csv")
-df_number_doctorate = pd.read_csv("/Users/valentinkolb/Git/freiefreiburgdaten/data/number_doctorate.csv")
-df_number_graduate = pd.read_csv("/Users/valentinkolb/Git/freiefreiburgdaten/data/number_graduates.csv")
+df_number_students = pd.read_csv("data/number_students.csv")
+df_number_doctorate = pd.read_csv("data/number_doctorate.csv")
+df_number_graduate = pd.read_csv("data/number_graduates.csv")
 
 df = pd.DataFrame()
 
@@ -61,12 +60,22 @@ df = pd.DataFrame()
 ##
 
 scatter = go.Scattermapbox(
-    lat=['47.9943809094517', '47.99352971943071'],
-    lon=['7.844843887429616', '7.846003242830979'],
+    lat=['47.9943809094517',
+         '47.99352971943071',
+         '47.99174883981209',
+         "47.99318857964879",
+         "47.99325023507606",
+         "47.99187465720203"],
+    lon=['7.844843887429616',
+         '7.846003242830979',
+         '7.841905848590454',
+         "7.847299041037555",
+         "7.845625025481935",
+         "7.848542708879176"],
     mode='markers',
     fillcolor="grey",
-    marker={'size': 20, 'symbol': ["library", "college"]},
-    text=["Universitätsbibliothek", "Universität"],
+    marker={'size': 20, 'symbol': ["library", "college", "swimming", "car", "theatre", "bus"]},
+    text=["Universitätsbibliothek", "Universität", "Faulerbad", "Parkhaus", "Mensa-Brunnen", "Tram"],
 )
 
 fig = go.Figure(scatter)
@@ -79,7 +88,7 @@ fig.update_layout(
         bearing=0,
         center=dict(
             lat=47.99352971943071,
-            lon=7.846003242830979
+            lon=7.84600324283098
         ),
         pitch=3,
         zoom=15
@@ -98,7 +107,7 @@ app.layout = html.Div([
             html.Img(src=app.get_asset_url('logo_freiburg.png'),
                      style={'display': 'table-cell', 'width': '80%', 'vertical-align': 'middle'}
                      ),
-            html.H1("Open-Data Freiburg ... and more",
+            html.H1("freiefreiburgdaten",
                     style={'display': 'table-cell', 'vertical-align': 'middle', 'width': '95%'}
                     )
         ], style={"display": "table", 'padding': '10px 60px'}
@@ -107,12 +116,12 @@ app.layout = html.Div([
     dcc.Graph(id='freiburg_map', figure=fig),
 
     # DATA
-    html.Div(id="data_area", children=[], style={'padding': '10px 60px'})
+    html.Div(id="data_area", children=[html.H2("Klicke auf einen Ort auf der Karte")], style={'padding': '10px 60px'})
 
 ])
 
 ##
-# UNIVERSITY DATA
+# UNIVERSITY DATA LAYOUT
 ##
 
 university_layout = [
@@ -169,22 +178,41 @@ university_layout = [
 # INTERACTIVITY
 ##
 
-
 @app.callback(
     Output('data_area', 'children'),
-    Input('freiburg_map', 'clickData')
+    Input('freiburg_map', 'clickData'),
+    State('data_area', 'children')
 )
-def get_click_from_map(clickData):
+def get_click_from_map(clickData, state):
+    """
+    the main callback: this reacts to the clicks on the map
+
+    Parameters
+    ----------
+    clickData :
+        the location of the map
+    state :
+        the current state (the thing that is currently desplayed in the data area)
+
+    Returns
+    -------
+    state:
+        the new state
+    """
     if clickData:
         location = clickData['points'][0]['text']
 
-        if location == 'Universitätsbibliothek':
-            print("click on Universitätsbibliothek")
-        elif location == 'Universität':
-            print('click on Universität')
+        if location == 'Universität':
             return university_layout
-
-    return []
+        else:
+            mock_img = f"data_mock_{hash(location) % 4}.png"
+            return [
+                html.H2("Mock Data Layout"),
+                html.Img(src=app.get_asset_url(mock_img),
+                         style={'width': '80%', 'vertical-align': 'middle'})
+            ]
+    else:
+        return state
 
 
 @app.callback(
@@ -233,5 +261,9 @@ def update_table(selected):
 # START PROGRAM
 ##
 
-if __name__ == '__main__':
+def main():
     app.run_server(debug=True)
+
+
+if __name__ == '__main__':
+    main()

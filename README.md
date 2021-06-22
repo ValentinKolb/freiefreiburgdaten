@@ -39,6 +39,14 @@ Da die Orte von einader sehr unterschiedlich sind, ist es nicht vorrangig die Da
 miteinander zu vergleichen. Aus diesem Grund wird der Platz auf der Seite genutzt die jeweiligen Orte
 individuell vielseitiger vorzustellen. 
 
+Mögliche Orte sind:
+* Universität
+* Bibliothek
+* Einkaufszentrum
+* Badesee
+* Ämter
+* ...
+
 So kann die Visualisierung auch genau an den Ort und den jeweilgen Datensatz angepasst werden und 
 es muss kein gemeinsammer Nenner gefunden werden, der es verunmöglicht ins Detail zu gehen.
 
