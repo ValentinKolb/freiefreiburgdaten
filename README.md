@@ -42,4 +42,4 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
 
 ## Mindmap
 
-![mindmap](assets/mindmap.svg)
+[<img src="assets/mindmap.png">](assents/mindmap.html)
