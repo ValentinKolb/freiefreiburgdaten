@@ -42,8 +42,8 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
 
 ## Mindmap
 
-![mindmap](assents/mindmap.png)
+![mindmap](assets/mindmap.png)
 
 ## Moodboard
 
-![moodboard](assents/Moodboard.png)
+![moodboard](assets/Moodboard.png)
