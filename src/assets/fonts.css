@@ -1,0 +1,17 @@
+/*
+THIS FILE IS USED TO IMPORT ALL FONTS
+*/
+
+/*
+Noto Sans KR:
+
+Thin    -> font-weight: 100;
+Light   -> font-weight: 300;
+Regular -> font-weight: 400;
+Medium  -> font-weight: 500;
+Bold    -> font-weight: 700;
+Black   -> font-weight: 900;
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
