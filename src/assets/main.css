@@ -1,21 +1,41 @@
 html, body {
     height: 100%;
     margin: 0;
+    color: var(--custom_color_text_color_blue);
+    font-family: 'Noto Sans KR', sans-serif !important;
 }
+
+.modebar {
+    display: none !important;
+}
+
 
 h1 {
     z-index: 10;
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 10px;
-    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
     font-size: 30px;
+    margin: 0;
 }
 
 #header {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    position: absolute;
     font-size: 40px;
     font-weight: 500;
+    text-shadow: 0 0 30px white;
+
+    /*
+     BOX
+     */
+
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    border: none;
+    border-spacing: 0;
+    border-collapse: separate;
 }
 
 /*
@@ -33,16 +53,24 @@ h1 {
  CONTENT AREA STYLING
  */
 
+#content {
+    position: relative;
+    padding: 10px;
+}
+
 #content_area {
     position: absolute;
     background-color: rgba(240, 240, 240, 0.61);
     backdrop-filter: blur(5px);
     z-index: 10;
     width: 33%;
-    right: 0px;
+    right: 10px;
     top: 10px;
     bottom: 10px;
-
+    border-radius: 4px;
+    border: none;
+    border-spacing: 0;
+    border-collapse: separate;
 }
 
 /*
@@ -53,22 +81,59 @@ h1 {
     position: absolute;
     z-index: 10;
     width: 20%;
-    height: 100%;
-    right: 34%;
-    margin: 10px;
+    right: calc(33% + 20px);
+    top: 10px;
 }
 
 .Select-control {
     background-color: rgba(240, 240, 240, 0.61);
     backdrop-filter: blur(5px);
-    color: red;
+    border: none;
+}
+
+.Select-menu-outer {
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border: none;
 }
 
 .Select--multi .Select-value {
-    color: red;
+    color: var(--custom_color_text_color_blue);
+    border: none;
 }
+
 
 #filter_dropdown {
 
     font-family: 'Noto Sans KR', sans-serif;
 }
+
+/*
+ SLIDER STYLING
+ */
+
+#time_slider {
+    position: absolute;
+    z-index: 10;
+    width: 50%;
+    right: calc(33% + 20px);
+    bottom: 10px;
+
+    align-items: center;
+
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    border: none;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+.rc-slider {
+    position: relative;
+}
+
+.rc-slider-handle {
+    background: var(--custom_color_text_color_blue);
+}
+

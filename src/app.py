@@ -61,6 +61,21 @@ filter_dropdown = dcc.Dropdown(
 )
 
 ##
+# SLIDER
+##
+
+sample_years = {year: {'label': str(year)} for year in range(1900, 2021, 10)}
+
+time_axis = dcc.Slider(
+    id='time_axis',
+    min=1900,
+    max=2020,
+    value=2000,
+    marks=sample_years,
+    included=False
+)
+
+##
 # MAIN APP LAYOUT
 ##
 
@@ -72,8 +87,16 @@ app.layout = html.Div([
 
     html.Div(id="dropdown_area", children=[filter_dropdown]),
 
+    html.Div(id="time_slider", children=[time_axis]),
+
     html.Div(id="content_area", children=[
-        html.H1("Daten")
+
+        html.Div(id="content", children=[
+            html.H1("Daten"),
+            html.Div(id='filter_output'),
+            html.Div(id='slider_output')
+        ]),
+
     ])
 ])
 
@@ -81,6 +104,20 @@ app.layout = html.Div([
 ##
 # INTERACTIVITY
 ##
+
+@app.callback(
+    Output("filter_output", "children"),
+    Input('filter_dropdown', 'value'))
+def update_filter(value):
+    return 'You have selected the following filters: "{}"'.format(value)
+
+
+@app.callback(
+    Output('slider_output', 'children'),
+    Input('time_axis', 'value'))
+def update_slider(value):
+    return 'You have selected the year "{}"'.format(value)
+
 
 @app.callback(
     Output('data_area', 'children'),
