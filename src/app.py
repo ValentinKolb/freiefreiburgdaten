@@ -47,6 +47,20 @@ map.update_mapboxes(
 )
 
 ##
+# DROPDOWN
+##
+
+sample_options = [{"label": f'Option{i}', "value": f'Option{i}'} for i in range(10)]
+
+filter_dropdown = dcc.Dropdown(
+    id="filter_dropdown",
+    options=sample_options,
+    value=[],
+    multi=True,
+    placeholder="Select a Filter ..."
+)
+
+##
 # MAIN APP LAYOUT
 ##
 
@@ -55,6 +69,8 @@ app.layout = html.Div([
     html.H1("Freiburg", id="header"),
 
     dcc.Graph(id='freiburg_map', figure=map),
+
+    html.Div(id="dropdown_area", children=[filter_dropdown]),
 
     html.Div(id="content_area", children=[
         html.H1("Daten")
