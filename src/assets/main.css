@@ -18,12 +18,20 @@ h1 {
     font-weight: 500;
 }
 
+/*
+ MAP STYLING
+ */
+
 #freiburg_map {
     position: absolute;
     margin: 0;
     width: 100%;
     height: 100%;
 }
+
+/*
+ CONTENT AREA STYLING
+ */
 
 #content_area {
     position: absolute;
@@ -35,4 +43,32 @@ h1 {
     right: 0;
     margin: 10px;
 
+}
+
+/*
+ DROPDOWN STYLING
+ */
+
+#dropdown_area {
+    position: absolute;
+    z-index: 10;
+    width: 20%;
+    height: 100%;
+    right: 34%;
+    margin: 10px;
+}
+
+.Select-control {
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    color: red;
+}
+
+.Select--multi .Select-value {
+    color: red;
+}
+
+#filter_dropdown {
+
+    font-family: 'Noto Sans KR', sans-serif;
 }
