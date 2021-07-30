@@ -79,5 +79,5 @@ def pprint_dict(dct: dict) -> None:
 if __name__ == '__main__':
     d = load_data(file="data/test_meta.json")
     filtered = filter_by_year(d, 2006)
-    #pprint_dict(d)
+    # pprint_dict(d)
     pprint_dict(filtered)
