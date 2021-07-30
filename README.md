@@ -13,7 +13,6 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
   * Theater
     * [Wallgrabentheater seit 1976](https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater)
     * [Theater im Marienbad seit 1992](https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Theater_Marienbad)
-    * [Theater am Martinstor seit 1992](https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Theater_Martinstor)
     * Eigenbetrieb Theater
       * [Eigenbetrieb Theater Freiburg - Besucher seit 1976](https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_EB_Theater_Besucher)
       * [Eigenbetrieb Theater Freiburg - Vorstellungen seit 1976](https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_EB_Theater_Vorst)
