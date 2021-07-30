@@ -23,10 +23,14 @@
           "dataSheet": "/path",
           "separator": "...",
           "source": "human readable source",
-          "sourceLink": "..."
+          "sourceLink": "...",
+          "graph": {
+            "type": "..."
+          }
         }
       ]
     },
+
     {
       "name": "Wallgrabentheater",
       "description": {
@@ -50,7 +54,10 @@
           "dataSheet": "data/datasheets/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
           "separator": ";",
           "source": "Wallgrabentheater Freiburg",
-          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater"
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater",
+          "graph" : {
+            "type": "line"
+          }
         }
       ]
     }
