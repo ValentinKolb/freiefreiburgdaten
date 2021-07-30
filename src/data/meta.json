@@ -2,17 +2,57 @@
   "places": [
     {
       "name": "...",
-      "shortDescription": "...",
-      "description": "...",
+      "description": {
+        "shortDescription": "...",
+        "description": "...",
+        "source": "..."
+      },
+      "category": [
+        "...",
+        "..."
+      ],
       "location": {
         "long": "...",
         "lat": "..."
       },
-      "data": {
-        "startYear": "XYZ",
-        "endYear": "XYZ",
-        "dataSheet": "/path"
-      }
+      "data": [
+        {
+          "identifier": "...",
+          "startYear": 2000,
+          "endYear": 2020,
+          "dataSheet": "/path",
+          "separator": "...",
+          "source": "human readable source",
+          "sourceLink": "..."
+        }
+      ]
+    },
+    {
+      "name": "Wallgrabentheater",
+      "description": {
+        "shortDescription": "Ein von Studenten gegründetes Theater im Zentrum von Freiburg",
+        "description": "Das Wallgraben Theater in der Rathausgasse im Zentrum von Freiburg im Breisgau wurde in einem ehemaligen Wein- und Luftschutzkeller im Hinterhof der Wallstraße als kleines Kellertheater (Kleines Theater am Wallgraben) von einer Gruppe theaterbegeisterter Studenten gegründet.\n\nBei der ersten Vorstellung am 16. Juni 1953 wurde Ein Schlaf Gefangner von Christopher Fry gespielt. 1973 zog es um in den Keller des Neuen Rathauses in der Rathausgasse. Es wurde weiterhin geleitet von Ingeborg Steiert († 1997) und dem Schauspieler Heinz Meier († 2013), der insbesondere durch seine Mitwirkung in Loriots Sketchen bekannt wurde. Das Theater hat rund 100 Sitzplätze und war 1975 das erste Theater, welches Loriot-Sketche auf die Bühne brachte. 2003 übernahm Meiers Nichte Regine Effinger die Leitung. Seit 2008 ist der Schauspieler Hans Poeschl Mitinhaber und leitet das Theater gemeinsam mit seiner Frau Regine Effinger. Im Jahr 2007 besuchten 32.577 Zuschauer die 311 Aufführungen; im Jahr 2010 waren es 27.661 Zuschauer bei 258 Vorstellungen, 2015 besuchten insgesamt 24.038 Besucher die 229 Vorstellungen.[1] Seit 2004 gibt es während der Sommermonate jeweils eine Inszenierung unter freiem Himmel im Innenhof des Neuen Rathauses (250 Plätze).\n\nSeit 21. Oktober 2020 bis Juli 2021 hat das Wallgrabentheater die Möglichkeitfür die Aufführungen das leerstehenden Autohaus Südwest auf der Haid zu nutzen, weil dort die Abstandsregeln aufgrund der Covid-19-Pandemie besser umzusetzen sind.",
+        "source": "https://de.wikipedia.org/wiki/Wallgraben-Theater"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "long": 47.996308724917064,
+        "lat": 7.848783522369943
+      },
+      "data": [
+        {
+          "identifier": "Aufführungen und Besucher im Wallgrabentheater Freiburg",
+          "startYear": 1976,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
+          "separator": ";",
+          "source": "Wallgrabentheater Freiburg",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater"
+        }
+      ]
     }
   ]
 }

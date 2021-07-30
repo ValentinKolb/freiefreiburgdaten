@@ -11,11 +11,35 @@
             "name": {
               "type": "string"
             },
-            "shortDescription": {
-              "type": "string"
-            },
             "description": {
-              "type": "string"
+              "type": "object",
+              "properties": {
+                "shortDescription": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "shortDescription",
+                "description",
+                "source"
+              ]
+            },
+            "category": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
             "location": {
               "type": "object",
@@ -33,29 +57,50 @@
               ]
             },
             "data": {
-              "type": "object",
-              "properties": {
-                "startYear": {
-                  "type": "integer"
-                },
-                "endYear": {
-                  "type": "integert"
-                },
-                "dataSheet": {
-                  "type": "string"
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "startYear": {
+                      "type": "integer"
+                    },
+                    "endYear": {
+                      "type": "integer"
+                    },
+                    "dataSheet": {
+                      "type": "string"
+                    },
+                    "separator": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "sourceLink": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "identifier",
+                    "startYear",
+                    "endYear",
+                    "dataSheet",
+                    "separator",
+                    "source",
+                    "sourceLink"
+                  ]
                 }
-              },
-              "required": [
-                "startYear",
-                "endYear",
-                "dataSheet"
               ]
             }
           },
           "required": [
             "name",
-            "shortDescription",
             "description",
+            "category",
             "location",
             "data"
           ]
