@@ -51,7 +51,7 @@
           "identifier": "Aufführungen und Besucher im Wallgrabentheater Freiburg",
           "startYear": 1976,
           "endYear": 2020,
-          "dataSheet": "data/datasheets/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
+          "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
           "separator": ";",
           "source": "Wallgrabentheater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater",
@@ -65,7 +65,7 @@
     {
       "name": "Theather im Marienbad",
       "description": {
-        "shortDescription": "Das Theater im Marienbad (kurz TiM) ist eine programmatisch vielseitig genutzte Theaterspielstätte im ehemaligen Freiburger Stadtbad Marienbad. ",
+        "shortDescription": "Das Theater im Marienbad (kurz TiM) ist eine programmatisch vielseitig genutzte Theaterspielstätte im ehemaligen Freiburger Stadtbad Marienbad",
         "description": "Der Freiburger Kinder- und Jugendtheater e.V. ist ein eigenständig arbeitendes Ensembletheater mit aktuell fünf fest angestellten Schauspielern und insgesamt 15 fest angestellten Personen. Ergänzung erfährt das Team durch Gastdarsteller, -regisseure und -ausstatte. Neben dem Spielplan, der sowohl zu morgendlichen Schul- als auch zu Abendvorstellungen gespielt wird, liegt der Schwerpunkt des Hauses auf der Theaterpädagogik. Zielgruppen der hauseigenen Inszenierungen, die vom intimen Erzähltheater bis zu großen Ensemblestücken reicht, sind neben Kindern und Jugendlichen auch Erwachsene. In der Theaterpädagogik werden sowohl die Stücke und Lesungen mit Schülern und Vorschülern vor- und nachbereitet als auch Weiterbildungen für (angehende) Lehrer im Bereich Theater und Schule angeboten. Das eigene Programm des Hauses wird regelmäßig durch Kooperationen mit regionalen und überregionalen Institutionen erweitert. Lesungen und Gastspiele nationaler und internationaler Gäste ergänzen den Spielplan thematisch und setzen inhaltliche Kommentare. Das Freiburger Kinder- und Jugendtheater ist Mitveranstalter des alle zwei Jahre stattfindenden Freiburger Festival.",
         "source": "https://de.wikipedia.org/wiki/Theater_im_Marienbad"
       },
@@ -82,9 +82,9 @@
           "identifier": "Aufführungen und Besucher im Theather im Marienbad",
           "startYear": 1976,
           "endYear": 2020,
-          "dataSheet": "data/datasheets/Aufführungen und Besucher im Theather im Marienbad.csv",
+          "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Theather im Marienbad.csv",
           "separator": ";",
-          "source": "Theather im Marienbad Freiburg",
+          "source": "Theather im Marienbad",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Theater_Marienbad",
           "graph" : {
             "type": "line"
@@ -92,36 +92,68 @@
         }
       ]
     },
-    
+
     {
-      "name": "Theather im Marienbad",
+      "name": "Theater Freiburg",
       "description": {
-        "shortDescription": "Das Theater im Marienbad (kurz TiM) ist eine programmatisch vielseitig genutzte Theaterspielstätte im ehemaligen Freiburger Stadtbad Marienbad. ",
-        "description": "Der Freiburger Kinder- und Jugendtheater e.V. ist ein eigenständig arbeitendes Ensembletheater mit aktuell fünf fest angestellten Schauspielern und insgesamt 15 fest angestellten Personen. Ergänzung erfährt das Team durch Gastdarsteller, -regisseure und -ausstatte. Neben dem Spielplan, der sowohl zu morgendlichen Schul- als auch zu Abendvorstellungen gespielt wird, liegt der Schwerpunkt des Hauses auf der Theaterpädagogik. Zielgruppen der hauseigenen Inszenierungen, die vom intimen Erzähltheater bis zu großen Ensemblestücken reicht, sind neben Kindern und Jugendlichen auch Erwachsene. In der Theaterpädagogik werden sowohl die Stücke und Lesungen mit Schülern und Vorschülern vor- und nachbereitet als auch Weiterbildungen für (angehende) Lehrer im Bereich Theater und Schule angeboten. Das eigene Programm des Hauses wird regelmäßig durch Kooperationen mit regionalen und überregionalen Institutionen erweitert. Lesungen und Gastspiele nationaler und internationaler Gäste ergänzen den Spielplan thematisch und setzen inhaltliche Kommentare. Das Freiburger Kinder- und Jugendtheater ist Mitveranstalter des alle zwei Jahre stattfindenden Freiburger Festival.",
-        "source": "https://de.wikipedia.org/wiki/Theater_im_Marienbad"
+        "shortDescription": "Das Theater Freiburg (teilweise auch Stadttheater Freiburg, ehemals Städtische Bühnen Freiburg) ist das älteste und größte Theater in der Stadt Freiburg im Breisgau",
+        "description": "Das Theater Freiburg befindet sich am Rande der Freiburger Altstadt an der Ecke Bertoldstraße und Platz der Alten Synagoge. Das Gebäude vereint vier Spielstätten unter einem Dach: das Große Haus, das Kleine Haus, die Kammerbühne und den Werkraum. Im Winterer-Foyer finden zusätzlich Autorenlesungen wie die Litera-Tour, aktuelle Vortragsabende wie die Reihe Schule träumen sowie Kammerkonzerte statt. Das Theater wird seit September 2005 als Eigenbetrieb geführt. Der Jahresetat wird weit überwiegend von der Stadt und dem Land Baden-Württemberg finanziert und umfasst rund 32 Mio. Euro (Stand 2019). Die Besucherzahlen liegen bei etwa 190.000 je Spielzeit.",
+        "source": "https://de.wikipedia.org/wiki/Theater_Freiburg"
       },
       "category": [
         "Theater",
         "Kultur"
       ],
       "location": {
-        "long": 47.99094320805587,
-        "lat": 7.851796129832025
+        "long": 47.99548131807861,
+        "lat": 7.844901611044823
       },
       "data": [
         {
-          "identifier": "Aufführungen und Besucher im Theather im Marienbad",
+          "identifier": "Aufführungen und Besucher im Eigenbetrieb Theater Freiburg",
           "startYear": 1976,
           "endYear": 2020,
-          "dataSheet": "data/datasheets/Aufführungen und Besucher im Theather im Marienbad.csv",
+          "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Eigenbetrieb Theater Freiburg.csv",
           "separator": ";",
-          "source": "Theather im Marienbad Freiburg",
-          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Theater_Marienbad",
+          "source": "Eigenbetrieb Theater Freiburg",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Eigenbetrieb%20Theater",
+          "graph" : {
+            "type": "line"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Cala Theater",
+      "description": {
+        "shortDescription": "Ein Theater, das ein abwechslungsreiches Programm für Jung und Alt anbietet ist zweifellos das Cala Theater in der Haslacherstraße",
+        "description": "Das Cala Theater ist eine Institution in Freiburg. Mit seinen Theaterstücken im Genre der Comedy und des Varieté für Erwachsene sowie den lebendig und interaktiv inszenierten Stücken für Kinder und Jugendliche begeistert es seit 30 Jahren sein Publikum. Wortreich, schräg und humorvoll: eine verzaubernde komödiantische Welt für Jung und Alt!",
+        "source": "https://visit.freiburg.de/attraktionen/cala-theater"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "long": 47.9920852613478,
+        "lat": 7.834980472388919
+      },
+      "data": [
+        {
+          "identifier": "Aufführungen und Besucher im Cala Theater Freiburg",
+          "startYear": 1976,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
+          "separator": ";",
+          "source": "Cala Theater Freiburg",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_CALA_THEATER",
           "graph" : {
             "type": "line"
           }
         }
       ]
     }
+   
   ]
 }
