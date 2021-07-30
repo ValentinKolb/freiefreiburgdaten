@@ -30,7 +30,6 @@
         }
       ]
     },
-
     {
       "name": "Wallgrabentheater",
       "description": {
@@ -55,13 +54,12 @@
           "separator": ";",
           "source": "Wallgrabentheater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater",
-          "graph" : {
+          "graph": {
             "type": "line"
           }
         }
       ]
     },
-
     {
       "name": "Theather im Marienbad",
       "description": {
@@ -86,13 +84,12 @@
           "separator": ";",
           "source": "Theather im Marienbad",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Theater_Marienbad",
-          "graph" : {
+          "graph": {
             "type": "line"
           }
         }
       ]
     },
-
     {
       "name": "Theater Freiburg",
       "description": {
@@ -117,13 +114,12 @@
           "separator": ";",
           "source": "Eigenbetrieb Theater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Eigenbetrieb%20Theater",
-          "graph" : {
+          "graph": {
             "type": "line"
           }
         }
       ]
     },
-
     {
       "name": "Cala Theater",
       "description": {
@@ -148,12 +144,11 @@
           "separator": ";",
           "source": "Cala Theater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_CALA_THEATER",
-          "graph" : {
+          "graph": {
             "type": "line"
           }
         }
       ]
     }
-   
   ]
 }

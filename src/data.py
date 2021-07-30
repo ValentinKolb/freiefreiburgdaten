@@ -1,5 +1,6 @@
 import json
-import pandas as pd
+from typing import Callable, Iterable
+
 from jsonschema import validate
 
 
@@ -47,6 +48,10 @@ def filter_by_year(data: dict, year: int) -> dict:
     -------
     dict :
         a new dict only containing the filtered data
+
+    See Also
+    --------
+    filter_by_category : filter the data by category
     """
     filtered_data = data | {"places": []}
 
@@ -65,6 +70,39 @@ def filter_by_year(data: dict, year: int) -> dict:
     return filtered_data
 
 
+def filter_by_category(data: dict, *category: str, match_category: Callable[[Iterable], bool] = any) -> dict:
+    """
+    this function takes the meta data as input and only returns the locations that matches a a given category.
+
+    Parameters
+    ----------
+    data : dict
+        the data in the format specified in meta.schema.json. this wont be modified
+    category : str
+        the data will be filtered by this. multiple categories can be specified
+    match_category : {any, all}, optional, default=any
+        this controls how multiple specified categories are handled. if this is 'any' the location will be included
+        in the filtered data as long one of the specified categories matches the location. if it is 'all', all the
+        specified categories must match the location
+
+    Returns
+    -------
+    dict :
+        a new dict only containing the filtered data
+
+    See Also
+    --------
+    filter_by_year : filters the data by year
+    """
+    filtered_data = data | {"places": []}
+
+    for place in data["places"]:
+        if match_category(cat in place["category"] for cat in category):
+            filtered_data["places"].append(place)
+
+    return filtered_data
+
+
 def pprint_dict(dct: dict) -> None:
     """
     prints a dict nicely formatted to the console
@@ -79,6 +117,5 @@ def pprint_dict(dct: dict) -> None:
 
 if __name__ == '__main__':
     d = load_data(file="data/test_meta.json")
-    filtered = filter_by_year(d, 2006)
-    # pprint_dict(d)
+    filtered = filter_by_category(d, "test", "test1")
     pprint_dict(filtered)
