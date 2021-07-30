@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 jsonschema = "*"
+dash = "*"
+pandas = "*"
 
 [dev-packages]
 
