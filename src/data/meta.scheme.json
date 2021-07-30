@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "places": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "shortDescription": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "location": {
+              "type": "object",
+              "properties": {
+                "long": {
+                  "type": "string"
+                },
+                "lat": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "long",
+                "lat"
+              ]
+            },
+            "data": {
+              "type": "object",
+              "properties": {
+                "startYear": {
+                  "type": "integer"
+                },
+                "endYear": {
+                  "type": "integert"
+                },
+                "dataSheet": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "startYear",
+                "endYear",
+                "dataSheet"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "shortDescription",
+            "description",
+            "location",
+            "data"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "places"
+  ]
+}
+

@@ -64,12 +64,12 @@ filter_dropdown = dcc.Dropdown(
 # SLIDER
 ##
 
-sample_years = {year: {'label': str(year)} for year in range(1900, 2021, 10)}
+sample_years = {year: {'label': str(year)} for year in range(1900, 2022, 10)}
 
 time_axis = dcc.Slider(
     id='time_axis',
     min=1900,
-    max=2020,
+    max=2021,
     value=2000,
     marks=sample_years,
     included=False

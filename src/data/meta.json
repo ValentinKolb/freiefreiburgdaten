@@ -1,0 +1,18 @@
+{
+  "places": [
+    {
+      "name": "...",
+      "shortDescription": "...",
+      "description": "...",
+      "location": {
+        "long": "...",
+        "lat": "..."
+      },
+      "data": {
+        "startYear": "XYZ",
+        "endYear": "XYZ",
+        "dataSheet": "/path"
+      }
+    }
+  ]
+}
