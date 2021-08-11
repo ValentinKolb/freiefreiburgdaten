@@ -1,50 +1,78 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import pandas as pd
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
 
 # Create main process and supress callback errors because some callbacks are for elements that will be dynamically added
+from data import load_data, filter_by_year, filter_by_category, pprint_dict
+from styles import *
+
 app = dash.Dash(__name__,
                 suppress_callback_exceptions=True)
 
-mapbox_access_token = "pk.eyJ1IjoidmFsZW50aW5rb2xiIiwiYSI6ImNrcTJjN3c1MzA3dDYyd3Q0cXJkMHM2Z20ifQ.MQhwjbSVbpiufV9iL54rCw"
+mapbox = {
+    "style": "mapbox://styles/valentinkolb/cks7oj9h71aue18qne1ayk62t",
+    "token": "pk.eyJ1IjoidmFsZW50aW5rb2xiIiwiYSI6ImNrczdtb3ZvNzFlbHQycHBobDFzN2RjMXAifQ.yp1dgX8hJcZM1r9Tq7eW2A"
+}
+
+##
+# DEFAULT VALUES
+##
+
+DEFAULT_YEAR = 2010
+
+##
+# LOAD DATA
+##
+
+data = load_data()
+filtered_data = filter_by_year(data, DEFAULT_YEAR)
 
 ##
 # MAP
 ##
 
-# in here we draw the pins for the locations
+
 scatter = go.Scattermapbox(
     lat=[],
     lon=[],
-    mode='markers',
-    fillcolor="grey",
-    marker={'size': 20, 'symbol': []},
+    mode='markers+text',
+    textposition='middle center',
+    textfont=dict(size=14, color=custom_color_text_color_blue),
+    marker=go.scattermapbox.Marker(
+        size=50,
+        color=custom_color_yellow,
+        symbol="circle",
+        opacity=0.5
+    ),
     text=[],
+    hoverinfo="none",  # or "text" ?
+    hovertext=[],
+    hoverlabel=go.scattermapbox.Hoverlabel(
+        bgcolor=custom_color_yellow,
+        bordercolor=custom_color_yellow,
+        font={"family": "Noto Sans KR", "color": custom_color_text_color_blue}
+    )
 )
 
-map = go.Figure(scatter)
-map.update_layout(
+map = go.Figure(scatter, layout=go.Layout(
+    uirevision=True,
     autosize=True,
     hovermode='closest',
     mapbox=dict(
-        accesstoken=mapbox_access_token,
-        bearing=0,
+        accesstoken=mapbox["token"],
+        bearing=-5,
         center=dict(
-            lat=47.99352971943071,
-            lon=7.84600324283098
+            lat=47.99597060066705,
+            lon=7.856035275762166
         ),
-        pitch=3,
-        zoom=15
+        pitch=80,
+        zoom=15,
+        style=mapbox["style"]
     ),
     margin={"r": 0, "t": 0, "l": 0, "b": 0}  # this maxes the map full screen
-)
-map.update_mapboxes(
-    style="mapbox://styles/valentinkolb/ckr6bhndj0ocj18mxic5onwuk",
-
-)
+))
 
 ##
 # DROPDOWN
@@ -70,7 +98,7 @@ time_axis = dcc.Slider(
     id='time_axis',
     min=1900,
     max=2021,
-    value=2000,
+    value=DEFAULT_YEAR,
     marks=sample_years,
     included=False
 )
@@ -113,10 +141,25 @@ def update_filter(value):
 
 
 @app.callback(
-    Output('slider_output', 'children'),
+    [Output('slider_output', 'children'), Output('freiburg_map', 'figure')],
     Input('time_axis', 'value'))
 def update_slider(value):
-    return 'You have selected the year "{}"'.format(value)
+    global filtered_data
+
+    filtered_data = filter_by_year(filtered_data, int(value))
+
+    lat = []
+    long = []
+    text = []
+    for place in filtered_data["places"]:
+        lat.append(str(place["location"]["lat"]))
+        long.append(str(place["location"]["long"]))
+        text.append(place["name"])
+
+    map.update_traces({"lat": lat, "lon": long, "text": text, "hovertext": text})
+    map.update_traces(uirevision="some-constant")
+
+    return 'You have selected the year "{}"'.format(value), map
 
 
 @app.callback(

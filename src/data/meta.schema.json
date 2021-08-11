@@ -44,11 +44,11 @@
             "location": {
               "type": "object",
               "properties": {
-                "long": {
-                  "type": "string"
-                },
                 "lat": {
-                  "type": "string"
+                  "type": "number"
+                },
+                "long": {
+                  "type": "number"
                 }
               },
               "required": [

@@ -1,36 +1,6 @@
 {
   "places": [
     {
-      "name": "...",
-      "description": {
-        "shortDescription": "...",
-        "description": "...",
-        "source": "..."
-      },
-      "category": [
-        "...",
-        "..."
-      ],
-      "location": {
-        "long": "...",
-        "lat": "..."
-      },
-      "data": [
-        {
-          "identifier": "...",
-          "startYear": 2000,
-          "endYear": 2020,
-          "dataSheet": "/path",
-          "separator": "...",
-          "source": "human readable source",
-          "sourceLink": "...",
-          "graph": {
-            "type": "..."
-          }
-        }
-      ]
-    },
-    {
       "name": "Wallgrabentheater",
       "description": {
         "shortDescription": "Ein von Studenten gegründetes Theater im Zentrum von Freiburg",
@@ -42,8 +12,8 @@
         "Kultur"
       ],
       "location": {
-        "long": 47.996308724917064,
-        "lat": 7.848783522369943
+        "lat": 47.996308724917064,
+        "long": 7.848783522369943
       },
       "data": [
         {
@@ -72,8 +42,8 @@
         "Kultur"
       ],
       "location": {
-        "long": 47.99094320805587,
-        "lat": 7.851796129832025
+        "lat": 47.99094320805587,
+        "long": 7.851796129832025
       },
       "data": [
         {
@@ -102,8 +72,8 @@
         "Kultur"
       ],
       "location": {
-        "long": 47.99548131807861,
-        "lat": 7.844901611044823
+        "lat": 47.99548131807861,
+        "long": 7.844901611044823
       },
       "data": [
         {
@@ -132,8 +102,8 @@
         "Kultur"
       ],
       "location": {
-        "long": 47.9920852613478,
-        "lat": 7.834980472388919
+        "lat": 47.9920852613478,
+        "long": 7.834980472388919
       },
       "data": [
         {
