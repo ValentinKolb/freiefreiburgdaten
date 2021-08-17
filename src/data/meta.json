@@ -119,6 +119,160 @@
           }
         }
       ]
+    },
+
+    {
+      "name": "Kunstausstellung seit 1981",
+      "description": {
+        "shortDescription": "Der Kunstverein Freiburg ist ein 1827 in Freiburg im Breisgau gegründeter Kunstverein",
+        "description": "Der Verein hat seine Ausstellungs- und Geschäftsräume im Marienbad, einem ehemaligen Schwimmbad in der Freiburger Altstadt.",
+        "source": "https://www.kunstvereinfreiburg.de/kunstverein_freiburg_2006-2016/htmldocs/programm_archiv2011.htm"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "lat": 47.99061739282373,
+        "long": 7.851526079895517
+      },
+      "data": [
+        {
+          "identifier": "Kunstausstellung seit 1981",
+          "startYear": 1981,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Kultur/Kunstausstellung seit 1981.csv",
+          "separator": ";",
+          "source": "Kunstausstellung seit 1981",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Kunstausstellungen",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Städtische Museen ab 1981",
+      "description": {
+        "shortDescription": "Die Städtischen Museen Freiburg sind ein Verbund aus fünf Häusern mit einer Leitenden Direktion",
+        "description": "Sie decken unterschiedliche Themen ab: Das Augustinermuseum präsentiert seine renommierte Sammlung der Kunst vom Mittelalter bis zum Barock und Malerei des 19. Jahrhunderts. Meisterwerke von der Klassischen Moderne bis zur Gegenwart sind im Museum für Neue Kunst zu sehen. Das Museum für Stadtgeschichte nimmt die vergangenen 900 Jahre in den Blick, während das Archäologische Museum Colombischlössle zu einer Reise durch die Jahrtausende einlädt. Das Museum Natur und Mensch widmet sich Vielfalt und Einzigartigkeit natürlicher und kultureller Lebenswelten.",
+        "source": "https://www.freiburg.de/pb/,Lde/548757.html"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "lat": 47.99405834555012,
+        "long": 7.852493195322074
+      },
+      "data": [
+        {
+          "identifier": "Städtische Museen ab 1981",
+          "startYear": 1981,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Kultur/Städtische Museen ab 1981.csv",
+          "separator": ";",
+          "source": "Städtische Museen ab 1981",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Museen",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Planetarium seit 1982",
+      "description": {
+        "shortDescription": "Das Planetarium Freiburg ist der Nachfolgebau des am 14. März 1975 eröffneten und von Richard Fehrenbach initiierten Planetariums in der Richard-Fehrenbach-Gewerbeschule",
+        "description": "Das heutige Planetarium befindet sich seit Dezember 2002 am Nordende des Hauptbahnhofs Freiburg, im ehemaligen Ufa-Palast, und wurde 2013 für rund 770.000 Euro renoviert und um eine weitere Fulldome-Videoprojektion ergänzt. Es ist das größte Planetarium in Südbaden.Die Kuppel des Freiburger Planetariums weist einen Durchmesser von 13 Metern auf. In ihrem Mittelpunkt steht der Planetariumsprojektor Starmaster des Unternehmens Carl Zeiss. Eine Fulldome-Videoanlage der Firma Sky-Skan ermöglicht eine kuppelfüllende Videoprojektion über zwei JVC Laserprojektoren. Die Darbietungen erfolgen auf einer 265 Quadratmetern umfassenden Leinwand, die als 360-Grad-Kuppel realisiert wurde.[1] Auf 140 Sitzplätzen mit verstellbarer Rückenlehne können die Gäste Platz nehmen. ",
+        "source": "https://de.wikipedia.org/wiki/Planetarium_Freiburg"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "lat": 47.999078566035394,
+        "long": 7.843196213685019
+      },
+      "data": [
+        {
+          "identifier": "Planetarium seit 19821",
+          "startYear": 1981,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Kultur/Planetarium seit 1982.csv",
+          "separator": ";",
+          "source": "Planetarium seit 1982",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Planetarium",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Alemannische Bühne seit 1981",
+      "description": {
+        "shortDescription": "Die Alemannische Bühne Freiburg wurde 1924 unter dem Namen Elsässische Theater im Breisgau von in Freiburg im Breisgau lebenden Elsaß-Lothringern gegründet",
+        "description": "Als Mundarttheater wurde mit Laienschauspielern bis in die Kriegsjahre gespielt. 1950 wurde dann die „Alemannische Heimatbühne Freiburg i. Br.“, die zunächst als reines Tourneetheater in ganz Südbaden gastierte, gegründet. Unter dem Namen „Alemannische Bühne Freiburg e. V.“ hat sich das Theater im Kulturleben der Stadt sowie in der Umgebung einen Namen gemacht. ",
+        "source": "https://de.wikipedia.org/wiki/Alemannische_B%C3%BChne_Freiburg"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "lat": 47.99330623860438,
+        "long": 7.853046798341933
+      },
+      "data": [
+        {
+          "identifier": "Alemannische Bühne seit 1981",
+          "startYear": 1981,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Kultur/Alemannische Bühne seit 1981.csv",
+          "separator": ";",
+          "source": "Alemannische Bühne seit 1981",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Alemannische_Buehne",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Konzerthaus Freiburg - Besucher",
+      "description": {
+        "shortDescription": "Das Konzerthaus Freiburg ist ein 1996 eröffnetes Gebäude in Freiburg im Breisgau",
+        "description": "Gebaut nach einem Entwurf des Architekten Dietrich Bangert, wird es für Konzert- und Kulturveranstaltungen sowie für Kongresse und Tagungen genutzt. Unter dem Arbeitstitel „Kultur- und Tagungsstätte“ (KTS) war es bis zu seiner Eröffnung eines der am heftigsten umstrittenen Bauvorhaben in Freiburg seit Kriegsende. Bis 2016 war es Hauptsitz des SWR Sinfonieorchester Baden-Baden und Freiburg. Es ist mit seinem variabel einsetzbaren großen Saal Austragungsstätte für zahlreiche weitere Veranstaltungen.",
+        "source": "https://de.wikipedia.org/wiki/Konzerthaus_Freiburg"
+      },
+      "category": [
+        "Theater",
+        "Kultur"
+      ],
+      "location": {
+        "lat": 47.995936331741625,
+        "long": 7.842371711834721
+      },
+      "data": [
+        {
+          "identifier": "Konzerthaus Freiburg - Besucher",
+          "startYear": 1996,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv",
+          "separator": ";",
+          "source": "Konzerthaus Freiburg - Besucher",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Konzerthaus_Besucher",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
     }
+    
   ]
 }
