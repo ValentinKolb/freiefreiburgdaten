@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     color: var(--custom_color_text_color_blue);
     font-family: 'Noto Sans KR', sans-serif !important;
+    overflow: hidden;
 }
 
 .modebar {
@@ -71,6 +72,8 @@ h1 {
     border: none;
     border-spacing: 0;
     border-collapse: separate;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /*

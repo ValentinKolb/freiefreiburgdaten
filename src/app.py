@@ -1,18 +1,18 @@
+import json
+from typing import TypeVar
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-
-# Create main process and supress callback errors because some callbacks are for elements that will be dynamically added
-from data import load_data, filter_by_year, filter_by_category, pprint_dict
+from data_tools import load_data, filter_by_year, filter_by_category, pprint_dict, get_categories
 from styles import *
 
-app = dash.Dash(__name__,
-                suppress_callback_exceptions=True)
+# Create main process
+app = dash.Dash(__name__)
 
 mapbox = {
-    "style": "mapbox://styles/valentinkolb/cks7oj9h71aue18qne1ayk62t",
+    "style": "mapbox://styles/valentinkolb/cksjew54g1s4t18s063qaku5k",
     "token": "pk.eyJ1IjoidmFsZW50aW5rb2xiIiwiYSI6ImNrczdtb3ZvNzFlbHQycHBobDFzN2RjMXAifQ.yp1dgX8hJcZM1r9Tq7eW2A"
 }
 
@@ -21,13 +21,13 @@ mapbox = {
 ##
 
 DEFAULT_YEAR = 2010
+DEFAULT_MAP_ZOOM = 15.5
 
 ##
 # LOAD DATA
 ##
 
-data = load_data()
-filtered_data = filter_by_year(data, DEFAULT_YEAR)
+unfiltered_data = load_data()
 
 ##
 # MAP
@@ -39,50 +39,54 @@ scatter = go.Scattermapbox(
     lon=[],
     mode='markers+text',
     textposition='middle center',
-    textfont=dict(size=14, color=custom_color_text_color_blue),
+    textfont={"size": 15, "color": custom_color_text_color_blue},
     marker=go.scattermapbox.Marker(
-        size=50,
-        color=custom_color_yellow,
+        size=10,
+        color=custom_color_text_color_blue,
         symbol="circle",
-        opacity=0.5
+        opacity=.9
     ),
     text=[],
-    hoverinfo="none",  # or "text" ?
+    hoverinfo="text",  # or "text" ?
     hovertext=[],
     hoverlabel=go.scattermapbox.Hoverlabel(
         bgcolor=custom_color_yellow,
         bordercolor=custom_color_yellow,
-        font={"family": "Noto Sans KR", "color": custom_color_text_color_blue}
+        font={"family": "Noto Sans KR",
+              "color": custom_color_text_color_blue,
+              "size": 15}
     )
 )
 
-map = go.Figure(scatter, layout=go.Layout(
-    uirevision=True,
-    autosize=True,
-    hovermode='closest',
-    mapbox=dict(
-        accesstoken=mapbox["token"],
-        bearing=-5,
-        center=dict(
-            lat=47.99597060066705,
-            lon=7.856035275762166
+map = go.Figure(
+    data=scatter,
+    layout=go.Layout(
+        clickmode='event',
+        uirevision=True,
+        autosize=True,
+        hovermode='closest',
+        mapbox=dict(
+            accesstoken=mapbox["token"],
+            bearing=-5,
+            center=dict(
+                lat=47.99461758304593,
+                lon=7.8538004648156825
+            ),
+            pitch=80,
+            zoom=DEFAULT_MAP_ZOOM,
+            style=mapbox["style"]
         ),
-        pitch=80,
-        zoom=15,
-        style=mapbox["style"]
-    ),
-    margin={"r": 0, "t": 0, "l": 0, "b": 0}  # this maxes the map full screen
-))
+        margin={"r": 0, "t": 0, "l": 0, "b": 0}  # this maxes the map full screen
+    ))
 
 ##
 # DROPDOWN
 ##
 
-sample_options = [{"label": f'Option{i}', "value": f'Option{i}'} for i in range(10)]
 
 filter_dropdown = dcc.Dropdown(
     id="filter_dropdown",
-    options=sample_options,
+    options=[],
     value=[],
     multi=True,
     placeholder="Select a Filter ..."
@@ -109,6 +113,9 @@ time_axis = dcc.Slider(
 
 app.layout = html.Div([
 
+    # this stores the data (graph data) of the current session and resets if the page reloads
+    dcc.Store(id='session', storage_type='memory'),
+
     html.H1("Freiburg", id="header"),
 
     dcc.Graph(id='freiburg_map', figure=map),
@@ -121,8 +128,8 @@ app.layout = html.Div([
 
         html.Div(id="content", children=[
             html.H1("Daten"),
-            html.Div(id='filter_output'),
-            html.Div(id='slider_output')
+            html.Div(id='test_output_1'),
+            html.Div(id='test_output_2')
         ]),
 
     ])
@@ -133,61 +140,85 @@ app.layout = html.Div([
 # INTERACTIVITY
 ##
 
-@app.callback(
-    Output("filter_output", "children"),
-    Input('filter_dropdown', 'value'))
-def update_filter(value):
-    return 'You have selected the following filters: "{}"'.format(value)
-
 
 @app.callback(
-    [Output('slider_output', 'children'), Output('freiburg_map', 'figure')],
-    Input('time_axis', 'value'))
-def update_slider(value):
-    global filtered_data
-
-    filtered_data = filter_by_year(filtered_data, int(value))
-
-    lat = []
-    long = []
-    text = []
-    for place in filtered_data["places"]:
-        lat.append(str(place["location"]["lat"]))
-        long.append(str(place["location"]["long"]))
-        text.append(place["name"])
-
-    map.update_traces({"lat": lat, "lon": long, "text": text, "hovertext": text})
-    map.update_traces(uirevision="some-constant")
-
-    return 'You have selected the year "{}"'.format(value), map
-
-
-@app.callback(
-    Output('data_area', 'children'),
-    Input('freiburg_map', 'clickData'),
-    State('data_area', 'children')
+    [Output('test_output_1', 'children'),
+     Output('test_output_2', 'children'),
+     Output('freiburg_map', 'figure'),
+     Output('filter_dropdown', 'options'),
+     Output('session', 'data')],
+    [Input('freiburg_map', 'relayoutData'),
+     Input('freiburg_map', 'clickData'),
+     Input('header', 'n_clicks'),
+     Input('filter_dropdown', 'value'),
+     Input('time_axis', 'value')],
+    [State('test_output_1', 'children'),
+     State('test_output_2', 'children'),
+     State("freiburg_map", "figure"),
+     State('filter_dropdown', 'options'),
+     State('session', 'data')]
 )
-def get_click_from_map(clickData, state):
-    """
-    the main callback: this reacts to the clicks on the map
+def interact(_, map_click, header_click, category_filter, year_filter,
+             test_output_1_state, test_output_2_state, map_state, filter_dropdown_state, data_state):
+    startup = not bool(data_state)
+    data_changed = False
 
-    Parameters
-    ----------
-    clickData :
-        the location of the map
-    state :
-        the current state (the thing that is currently desplayed in the data area)
+    # case time slider
+    if startup or dash.callback_context.triggered[0]['prop_id'] == 'time_axis.value':
+        data_state = filter_by_year(unfiltered_data, year_filter)
+        filter_dropdown_state = [{"label": f'{cat}', "value": f'{cat}'} for cat in get_categories(data_state)]
+        data_changed = True
 
-    Returns
-    -------
-    state:
-        the new state
-    """
-    if clickData:
-        location = clickData['points'][0]['text']
-        print(f'{clickData=}')
-    else:
-        return state
+    # case filter dropdown
+    if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value':
+        data_state = filter_by_category(data_state, category_filter)
+        data_changed = True
+
+    # case map zoom
+    if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.relayoutData':
+        current_zoom = map_state["layout"]["mapbox"]["zoom"]
+        if current_zoom >= DEFAULT_MAP_ZOOM:
+            map.update_traces({"mode": 'text', "hoverinfo": "none"})
+        else:
+            map.update_traces({"mode": 'markers', "hoverinfo": "text"})
+
+    # case click on header
+    if dash.callback_context.triggered[0]['prop_id'] == 'header.n_clicks':
+        test_output_2_state = (None,)
+
+    # case map click
+    if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.clickData':
+        location = map_click['points'][0]['text']
+
+        select_location(location=location, data_state=data_state, map=map, output=test_output_2_state)
+
+    # only redraw map if data has changed
+    if data_changed:
+        lat = []
+        long = []
+        text = []
+        for place in data_state["places"]:
+            lat.append(str(place["location"]["lat"]))
+            long.append(str(place["location"]["long"]))
+            text.append(place["name"])
+        map.update_traces({"lat": lat, "lon": long, "text": text, "hovertext": text})
+
+    test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
+
+    return test_output_1_state, test_output_2_state, map, filter_dropdown_state, data_state
+
+
+H = TypeVar("H")
+
+
+def select_location(location, data_state: dict, map: go.Figure, output: H) -> tuple[H]:
+    selected_data = [place for place in data_state["places"] if place["name"] == location][0]
+    lat, long = selected_data["location"]["lat"], selected_data["location"]["long"]
+    pprint_dict(selected_data)
+
+    # map.update_layout(mapbox={'center': {"lat": lat, "lon": long}}) # center map ?? todo ??
+
+    return f'{json.dumps(selected_data, indent=4)}',
 
 
 ##

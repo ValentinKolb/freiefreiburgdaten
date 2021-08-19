@@ -70,7 +70,27 @@ def filter_by_year(data: dict, year: int) -> dict:
     return filtered_data
 
 
-def filter_by_category(data: dict, *category: str, match_category: Callable[[Iterable], bool] = any) -> dict:
+def get_categories(data: dict) -> set[str]:
+    """
+    this function return all categories that are in a given dataset
+
+    Parameters
+    ----------
+    data : dict
+        all unique categories in this dataset will be returned
+
+    Returns
+    -------
+    set :
+        a set of unique categories
+    """
+    categories = set()
+    for place in data["places"]:
+        categories.update(category for category in place["category"])
+    return categories
+
+
+def filter_by_category(data: dict, category: str, match_category: Callable[[Iterable], bool] = any) -> dict:
     """
     this function takes the meta data as input and only returns the locations that matches a a given category.
 
@@ -94,6 +114,7 @@ def filter_by_category(data: dict, *category: str, match_category: Callable[[Ite
     --------
     filter_by_year : filters the data by year
     """
+
     filtered_data = data | {"places": []}
 
     for place in data["places"]:
@@ -113,9 +134,3 @@ def pprint_dict(dct: dict) -> None:
         will be printed
     """
     print(json.dumps(dct, indent=4))
-
-
-if __name__ == '__main__':
-    d = load_data(file="data/test_meta.json")
-    filtered = filter_by_category(d, "test", "test1")
-    pprint_dict(filtered)
