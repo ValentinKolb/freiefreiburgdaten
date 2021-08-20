@@ -120,7 +120,6 @@
         }
       ]
     },
-
     {
       "name": "Kunstausstellung seit 1981",
       "description": {
@@ -151,7 +150,6 @@
         }
       ]
     },
-
     {
       "name": "Städtische Museen ab 1981",
       "description": {
@@ -182,7 +180,6 @@
         }
       ]
     },
-
     {
       "name": "Planetarium seit 1982",
       "description": {
@@ -273,6 +270,5 @@
         }
       ]
     }
-    
   ]
 }
