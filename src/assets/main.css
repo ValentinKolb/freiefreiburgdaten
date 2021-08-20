@@ -41,6 +41,22 @@ a {
     margin: 10px;
 }
 
+#freiburg_map > div.js-plotly-plot > div > div > svg:nth-child(5) > g {
+    opacity: 0;
+    cursor:pointer;
+    background: red;
+}
+
+/*
+.mapboxgl-canvas {
+    cursor: pointer;
+}
+ */
+
+svg.main-svg:nth-child(1) {
+    cursor: pointer;
+}
+
 #header {
     margin-left: 10px;
     margin-top: 10px;
@@ -49,6 +65,7 @@ a {
     font-size: 40px;
     font-weight: 500;
     text-shadow: 0 0 30px white;
+    cursor: pointer;
 
     /*
      BOX

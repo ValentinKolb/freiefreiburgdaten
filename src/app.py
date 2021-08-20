@@ -41,7 +41,7 @@ scatter = go.Scattermapbox(
     lat=[],
     lon=[],
     mode='markers+text',
-    textposition='middle center',
+    textposition='top center',
     textfont={"size": 15, "color": custom_color_text_color_blue},
     marker=go.scattermapbox.Marker(
         size=10,
@@ -172,15 +172,18 @@ def interact(_, map_click, header_click, category_filter, year_filter,
         data_changed = True
 
     # case filter dropdown
-    if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value' and category_filter:
-        data_state = filter_by_category(data_state, category_filter)
+    if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value':
         data_changed = True
+        if category_filter:
+            data_state = filter_by_category(data_state, category_filter)
+        else:
+            data_state = filter_by_year(unfiltered_data, year_filter)
 
     # case map zoom
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.relayoutData':
         current_zoom = map_state["layout"]["mapbox"]["zoom"]
         if current_zoom >= DEFAULT_MAP_ZOOM:
-            map.update_traces({"mode": 'text', "hoverinfo": "none"})
+            map.update_traces({"mode": 'markers+text', "hoverinfo": "none"})
         else:
             map.update_traces({"mode": 'markers', "hoverinfo": "text"})
 
@@ -220,7 +223,7 @@ def select_location(location, data_state: dict, map: go.Figure, output) -> list:
     output_children = []
 
     output_children.append(html.H1(selected_data["name"]))
-    output_children.append(html.Div(id='categories',children=[html.H4(cat) for cat in selected_data["category"]]))
+    output_children.append(html.Div(id='categories', children=[html.H4(cat) for cat in selected_data["category"]]))
     output_children.append(html.Div(id='location_description', children=[selected_data["description"]["description"]]))
     output_children.append(html.A('source', href=selected_data["description"]["source"]))
 
@@ -236,14 +239,7 @@ def render_data(data: dict) -> object:
     path = data["dataSheet"]
     separator = data["separator"]
 
-    print(path)
-
-    # with open('src/data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv',
-
-    #         encoding="ISO-8859-1") as file:
-    #  print(file.read())
     df = pd.read_csv(filepath_or_buffer=path, delimiter=separator, encoding="ISO-8859-1")
-    # print(df)
 
     res = []
     for col in df.columns:
@@ -262,8 +258,6 @@ def render_data(data: dict) -> object:
     fig = go.Figure(data=res, layout=layout)
 
     return dcc.Graph(figure=fig),
-
-    # return str(df)
 
 
 ##
