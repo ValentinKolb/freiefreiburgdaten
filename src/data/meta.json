@@ -1,4 +1,61 @@
 {
+  "name": "",
+  "description": {
+    "shortDescription": "",
+    "description": "",
+    "source": ""
+  },
+  "category": [
+    
+  ],
+  "location": {
+    "lat": 47.996308724917064,
+    "long": 7.848783522369943
+  },
+  "data": [
+    {
+      "identifier": "",
+      "startYear": 1996,
+      "endYear": 2019,
+      "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
+      "separator": ";",
+      "source": "",
+      "sourceLink": "",
+      "graph": {
+        "type": "line"
+      }
+    }
+  ]
+}
+{
+  "default":
+    {
+      "name": "Freiburg",
+      "description": {
+        "shortDescription": "Freiburg im Breisgau ist eine kreisfreie Großstadt in Baden-Württemberg",
+        "description": "Freiburg im Breisgau, eine Universitätsstadt im Schwarzwald im Südwesten Deutschlands, ist für sein mildes Klima und das wiederaufgebaute, von kleinen Bächen durchzogene mittelalterliche Stadtzentrum bekannt. Das Naherholungsgebiet Schlossberg wird von Freiburg mit der Schlossbergbahn erreicht. In der Altstadt ragt der 116 m hohe Turm des gotischen Freiburger Münsters über dem Münsterplatz auf.",
+        "source": "https://de.wikipedia.org/wiki/Freiburg_im_Breisgau"
+      },
+      "category": [
+      ],
+      "location": {
+      },
+      "data": [
+        {
+          "identifier": "Bevölkerungsdichte",
+          "startYear": 1996,
+          "endYear": 2019,
+          "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
+          "separator": ";",
+          "source": "Bevölkerungsdichte",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+
   "places": [
     {
       "name": "Wallgrabentheater",
@@ -267,6 +324,35 @@
           "separator": ";",
           "source": "Konzerthaus Freiburg - Besucher",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Konzerthaus_Besucher",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kinos",
+      "description": {
+        "shortDescription": "Freiburgs Kinos sind vielseitig und bieten unterschiedlichste Programme an",
+        "description": "Kommunales Kino - Die Forderung nach einem kommunalen Kino war keine originäre Idee der 1970er Jahre. Sie entwickelte sich bereits in den frühen zwanziger Jahren, wenn auch unter anderen Vorzeichen. Im Rahmen der Auseinandersetzung um die sogenannten Aufklärungsfilme kam auch in Freiburg die Überlegung auf, ein Kino in städtischer Regie einzurichten. Das Anliegen wurde in die Diskussion um Filmzensur, wenn auch mit unterschiedlichen Implikationen, von der Stadtverwaltung und der sozialdemokratischen Volkswacht eingebracht. Die Volkswacht forderte nicht nur die Kommunalisierung der Kinos, sondern die Sozialisierung der Filmindustrie.",
+        "source": "https://www.freiburg-postkolonial.de/Seiten/Burkhardt-Kinogeschichte.htm"
+      },
+      "category": [
+        "Kinos"
+      ],
+      "location": {
+        "lat": 47.996308724917064,
+        "long": 7.848783522369943
+      },
+      "data": [
+        {
+          "identifier": "",
+          "startYear": 1996,
+          "endYear": 2019,
+          "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
+          "separator": ";",
+          "source": "",
+          "sourceLink": "",
           "graph": {
             "type": "line"
           }
