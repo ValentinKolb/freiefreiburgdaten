@@ -1,32 +1,4 @@
-{
-  "name": "",
-  "description": {
-    "shortDescription": "",
-    "description": "",
-    "source": ""
-  },
-  "category": [
-    
-  ],
-  "location": {
-    "lat": 47.996308724917064,
-    "long": 7.848783522369943
-  },
-  "data": [
-    {
-      "identifier": "",
-      "startYear": 1996,
-      "endYear": 2019,
-      "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
-      "separator": ";",
-      "source": "",
-      "sourceLink": "",
-      "graph": {
-        "type": "line"
-      }
-    }
-  ]
-}
+
 {
   "default":
     {
@@ -317,7 +289,7 @@
       },
       "data": [
         {
-          "identifier": "Konzerthaus Freiburg - Besucher",
+          "identifier": "Konzerthaus Freiburg",
           "startYear": 1996,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv",
@@ -331,28 +303,118 @@
       ]
     },
     {
-      "name": "Kinos",
+      "name": "Kommunales Kino",
       "description": {
         "shortDescription": "Freiburgs Kinos sind vielseitig und bieten unterschiedlichste Programme an",
         "description": "Kommunales Kino - Die Forderung nach einem kommunalen Kino war keine originäre Idee der 1970er Jahre. Sie entwickelte sich bereits in den frühen zwanziger Jahren, wenn auch unter anderen Vorzeichen. Im Rahmen der Auseinandersetzung um die sogenannten Aufklärungsfilme kam auch in Freiburg die Überlegung auf, ein Kino in städtischer Regie einzurichten. Das Anliegen wurde in die Diskussion um Filmzensur, wenn auch mit unterschiedlichen Implikationen, von der Stadtverwaltung und der sozialdemokratischen Volkswacht eingebracht. Die Volkswacht forderte nicht nur die Kommunalisierung der Kinos, sondern die Sozialisierung der Filmindustrie.",
         "source": "https://www.freiburg-postkolonial.de/Seiten/Burkhardt-Kinogeschichte.htm"
       },
       "category": [
-        "Kinos"
+        "Freizeit und Sport"
       ],
       "location": {
-        "lat": 47.996308724917064,
-        "long": 7.848783522369943
+        "lat": 47.984884771327344,
+        "long": 7.853465195648543
       },
       "data": [
         {
-          "identifier": "",
-          "startYear": 1996,
-          "endYear": 2019,
-          "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
+          "identifier": "Kinos",
+          "startYear": 2008,
+          "endYear": 2014,
+          "dataSheet": "data/datasheets/Freizeit und Sport/Kinos.csv",
           "separator": ";",
-          "source": "",
-          "sourceLink": "",
+          "source": "Kinos",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Kinos_ALLE_ASW",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    }, 
+
+    {
+      "name": "SC Freiburg",
+      "description": {
+        "shortDescription": "Der SC Freiburg ist ein Fussballverein aus Freiburg im Breisgau",
+        "description": "Er wurde am 30. Mai 1904 gegründet. Die Herrenmannschaft des SC spielt seit der Saison 2016/17 wieder in der Bundesliga. In der Ewigen Bundesligatabelle belegt der Verein den 22. Platz. Die Frauenmannschaft spielt ebenfalls erstklassig in der Frauen-Bundesliga.",
+        "source": "https://de.wikipedia.org/wiki/SC_Freiburg"
+      },
+      "category": [
+        "Freizeit und Sport"
+      ],
+      "location": {
+        "lat": 47.98333639044978, 
+        "long": 7.880939432658372
+      },
+      "data": [
+        {
+          "identifier": "Sportvereine",
+          "startYear": 1970,
+          "endYear": 2019,
+          "dataSheet": "data/datasheets/Freizeit und Sport/Sportvereine.csv",
+          "separator": ";",
+          "source": "Sportvereine",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Sport/JB_Sportvereine",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Keidel Mineral-Thermalbad",
+      "description": {
+        "shortDescription": "Fteoburg bietet verschiede Bäder an, dabei ist das Keidel Mineral-Thermalbad das beliebteste",
+        "description": "In Freiburgs Keidel Therme verwöhnt das aus eigener Heilquelle sprudelnde Mineral-Thermalwasser seine Besucher bereits seit über 40 Jahren. Das Bad hat auf seiner über 6.000 Quadratmeter großen Wellness-Fläche neben den zahlreichen warmen und revitalisierenden Thermalwasser-Becken unglaublich viel zu bieten, um Körper und Seele in Einklang zu bringen.",
+        "source": ""
+      },
+      "category": [
+        "Freizeit und Sport"
+      ],
+      "location": {
+        "lat": 47.98567187884127,  
+        "long": 7.76541663303856
+      },
+      "data": [
+        {
+          "identifier": "Bäder",
+          "startYear": 2000,
+          "endYear": 2019,
+          "dataSheet": "data/datasheets/Freizeit und Sport/Bäder.csv",
+          "separator": ";",
+          "source": "Bäder",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Sport/JB_Baeder",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Straßen und Radwege",
+      "description": {
+        "shortDescription": "Freiburg hat für Autofahren sowie für Radfahrer angenehme Strecken mit einer schönen Landschaft",
+        "description": "Dreisam Radweg - Eine familienfreundliche Tour mit nur moderaten Steigungen. Starten Sie von Freiburg in das schöne Dreisamtal und genießen Sie ein rund 40 km langes Radvergnügen mit Panoramablick. Bei dem Rundweg lernen Sie alle 4 Gemeinden des Dreisamtals nahe Freiburg kennen: Kirchzarten-Oberried-Buchenbach-Stegen.",
+        "source": "https://www.schwarzwald-geniessen.de/de/fahrrad/Dreisamtal+Radweg"
+      },
+      "category": [
+        "Verkehr",
+        "Freizeit und Sport"
+      ],
+      "location": {
+        "lat": 48.037570168181674, 
+        "long": 7.783265913429389
+      },
+      "data": [
+        {
+          "identifier": "Verkehr",
+          "startYear": 1985,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Verkehr/Straßen und Radwege.csv",
+          "separator": ";",
+          "source": "Verkehr",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Verkehr/JB_VERKEHR_STRASSEN",
           "graph": {
             "type": "line"
           }
