@@ -20,7 +20,7 @@ def load_data(file: str = "data/meta.json", schema: str = "data/meta.schema.json
     dict :
         the parsed meta.json file as dict
     """
-    with open(file) as file:
+    with open(file, encoding='utf8') as file:
         data = json.load(file)
 
     with open(schema) as file:
@@ -133,4 +133,4 @@ def pprint_dict(dct: dict) -> None:
     dct: dict
         will be printed
     """
-    print(json.dumps(dct, indent=4))
+    print(json.dumps(dct, indent=4, ensure_ascii=False))

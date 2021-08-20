@@ -1,4 +1,5 @@
 import json
+import os
 from typing import TypeVar
 import dash
 import dash_core_components as dcc
@@ -7,6 +8,7 @@ import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
 from data_tools import load_data, filter_by_year, filter_by_category, pprint_dict, get_categories
 from styles import *
+import pandas as pd
 
 # Create main process
 app = dash.Dash(__name__)
@@ -127,7 +129,6 @@ app.layout = html.Div([
     html.Div(id="content_area", children=[
 
         html.Div(id="content", children=[
-            html.H1("Daten"),
             html.Div(id='test_output_1'),
             html.Div(id='test_output_2')
         ]),
@@ -170,7 +171,7 @@ def interact(_, map_click, header_click, category_filter, year_filter,
         data_changed = True
 
     # case filter dropdown
-    if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value':
+    if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value' and category_filter:
         data_state = filter_by_category(data_state, category_filter)
         data_changed = True
 
@@ -190,7 +191,8 @@ def interact(_, map_click, header_click, category_filter, year_filter,
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.clickData':
         location = map_click['points'][0]['text']
 
-        select_location(location=location, data_state=data_state, map=map, output=test_output_2_state)
+        test_output_2_state = select_location(location=location, data_state=data_state,
+                                              map=map, output=test_output_2_state)
 
     # only redraw map if data has changed
     if data_changed:
@@ -203,22 +205,52 @@ def interact(_, map_click, header_click, category_filter, year_filter,
             text.append(place["name"])
         map.update_traces({"lat": lat, "lon": long, "text": text, "hovertext": text})
 
-    test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
+    # test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
 
     return test_output_1_state, test_output_2_state, map, filter_dropdown_state, data_state
 
 
-H = TypeVar("H")
-
-
-def select_location(location, data_state: dict, map: go.Figure, output: H) -> tuple[H]:
+def select_location(location, data_state: dict, map: go.Figure, output) -> list:
     selected_data = [place for place in data_state["places"] if place["name"] == location][0]
-    lat, long = selected_data["location"]["lat"], selected_data["location"]["long"]
-    pprint_dict(selected_data)
+    # pprint_dict(selected_data)
+    # map.update_layout(mapbox={'center': {"lat": selected_data["location"]["lat"],
+    # "lon": selected_data["location"]["long"]}})  # center map ?? todo ??
 
-    # map.update_layout(mapbox={'center': {"lat": lat, "lon": long}}) # center map ?? todo ??
+    output_children = []
 
-    return f'{json.dumps(selected_data, indent=4)}',
+    output_children.append(html.H1(selected_data["name"]))
+    output_children.extend([html.H4(cat) for cat in selected_data["category"]])
+    output_children.append(html.Div(id='location_description', children=[selected_data["description"]["description"]]))
+    output_children.append(html.A('source', href=selected_data["description"]["source"]))
+
+    for datasheet in selected_data["data"]:
+        s = render_data(datasheet)
+
+        output_children.append(html.Div(children=[s]))
+
+
+
+
+    return output_children  # f'{json.dumps(selected_data, indent=4, ensure_ascii=False)}',
+
+
+def render_data(data: dict) -> object:
+    path = data["dataSheet"]
+    separator = data["separator"]
+
+    print(path)
+
+    # with open('src/data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv',
+
+    #         encoding="ISO-8859-1") as file:
+    #  print(file.read())
+    df = pd.read_csv(filepath_or_buffer=path, delimiter=separator, encoding="ISO-8859-1")
+    print(df)
+    return str(df)
+
+    # data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv
+    # data/Kultur/Konzerthaus Freiburg - Besucher.csv
+    # data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv
 
 
 ##

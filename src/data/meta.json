@@ -149,7 +149,6 @@
         }
       ]
     },
-
     {
       "name": "Kunstausstellung",
       "description": {
@@ -180,7 +179,6 @@
         }
       ]
     },
-
     {
       "name": "Städtische Museen",
       "description": {
@@ -211,7 +209,6 @@
         }
       ]
     },
-
     {
       "name": "Planetarium",
       "description": {
@@ -421,6 +418,5 @@
         }
       ]
     }
-    
   ]
 }
