@@ -1,33 +1,4 @@
 {
-  "name": "",
-  "description": {
-    "shortDescription": "",
-    "description": "",
-    "source": ""
-  },
-  "category": [
-    
-  ],
-  "location": {
-    "lat": 47.996308724917064,
-    "long": 7.848783522369943
-  },
-  "data": [
-    {
-      "identifier": "",
-      "startYear": 1996,
-      "endYear": 2019,
-      "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
-      "separator": ";",
-      "source": "",
-      "sourceLink": "",
-      "graph": {
-        "type": "line"
-      }
-    }
-  ]
-}
-{
   "default":
     {
       "name": "Freiburg",

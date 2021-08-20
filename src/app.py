@@ -9,6 +9,7 @@ from dash.dependencies import Input, Output, State
 from data_tools import load_data, filter_by_year, filter_by_category, pprint_dict, get_categories
 from styles import *
 import pandas as pd
+import plotly.express as px
 
 # Create main process
 app = dash.Dash(__name__)
@@ -219,17 +220,14 @@ def select_location(location, data_state: dict, map: go.Figure, output) -> list:
     output_children = []
 
     output_children.append(html.H1(selected_data["name"]))
-    output_children.extend([html.H4(cat) for cat in selected_data["category"]])
+    output_children.append(html.Div(id='categories',children=[html.H4(cat) for cat in selected_data["category"]]))
     output_children.append(html.Div(id='location_description', children=[selected_data["description"]["description"]]))
     output_children.append(html.A('source', href=selected_data["description"]["source"]))
 
     for datasheet in selected_data["data"]:
         s = render_data(datasheet)
 
-        output_children.append(html.Div(children=[s]))
-
-
-
+        output_children.extend(s)
 
     return output_children  # f'{json.dumps(selected_data, indent=4, ensure_ascii=False)}',
 
@@ -245,12 +243,27 @@ def render_data(data: dict) -> object:
     #         encoding="ISO-8859-1") as file:
     #  print(file.read())
     df = pd.read_csv(filepath_or_buffer=path, delimiter=separator, encoding="ISO-8859-1")
-    print(df)
-    return str(df)
+    # print(df)
 
-    # data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv
-    # data/Kultur/Konzerthaus Freiburg - Besucher.csv
-    # data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv
+    res = []
+    for col in df.columns:
+        res.append(
+            go.Bar(
+                x=df.index.values.tolist(),
+                y=df[col].values.tolist(),
+                name=col
+            )
+        )
+
+    layout = go.Layout(
+        barmode='group'
+    )
+
+    fig = go.Figure(data=res, layout=layout)
+
+    return dcc.Graph(figure=fig),
+
+    # return str(df)
 
 
 ##

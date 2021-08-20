@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Kultur/Kunstausstellung seit 1981.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/data/datasheets/Theather/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv">
           <value>
             <Attribute>
