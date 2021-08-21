@@ -6,11 +6,6 @@ html, body {
     overflow: hidden;
 }
 
-.modebar {
-    display: none !important;
-}
-
-
 h1 {
     z-index: 10;
     font-weight: 400;
@@ -43,7 +38,7 @@ a {
 
 #freiburg_map > div.js-plotly-plot > div > div > svg:nth-child(5) > g {
     opacity: 0;
-    cursor:pointer;
+    cursor: pointer;
     background: red;
 }
 
@@ -97,6 +92,7 @@ svg.main-svg:nth-child(1) {
 #content {
     position: relative;
     padding: 10px;
+    direction: ltr;
 }
 
 #content_area {
@@ -105,6 +101,8 @@ svg.main-svg:nth-child(1) {
     backdrop-filter: blur(5px);
     z-index: 10;
     width: 33%;
+    min-width: 33%;
+    max-width: calc(100% - 20px);
     right: 10px;
     top: 10px;
     bottom: 10px;
@@ -114,6 +112,9 @@ svg.main-svg:nth-child(1) {
     border-collapse: separate;
     overflow-x: hidden;
     overflow-y: auto;
+    direction: rtl;
+
+    resize: horizontal;
 }
 
 /*
@@ -180,3 +181,17 @@ svg.main-svg:nth-child(1) {
     background: var(--custom_color_text_color_blue);
 }
 
+/*
+ HIDE UNWANTED ELEMENTS
+ */
+.mapboxgl-ctrl-bottom-right {
+    opacity: 0;
+}
+
+.mapboxgl-ctrl-bottom-left {
+    opacity: 0;
+}
+
+.modebar {
+    opacity: 0;
+}
