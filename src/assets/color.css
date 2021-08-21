@@ -3,14 +3,6 @@
     --custom_color_green: #becd95;
     --custom_color_brown: #dfd0b1;
     --custom_color_yellow: #f4d366;
-
-    --custom_border: background-color rgba(240, 240, 240, 0.61),
-    backdrop-filter blur(5px),
-    border-radius 4px,
-    border none,
-    border-spacing 0,
-    border-collapse separate;
-
 }
 
 /*body { background-color: var(--custom_color_blue); }*/

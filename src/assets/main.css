@@ -4,11 +4,187 @@ html, body {
     color: var(--custom_color_text_color_blue);
     font-family: 'Noto Sans KR', sans-serif !important;
     overflow: hidden;
+    --left-width: 70%;
 }
 
-.modebar {
-    display: none !important;
+/*
+ ***************
+ * MAP STYLING *
+ ***************
+ */
+
+#freiburg_map {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
+
+/*
+ *****************
+ * DIV CONTAINER *
+ *****************
+ */
+
+
+#main-container {
+    position: relative;
+    z-index: 10;
+}
+
+#left_container {
+    float: left;
+    height: 100%;
+    width: var(--left-width);
+    position: absolute;
+    overflow: hidden;
+}
+
+#right_container {
+
+    /*
+     SIZE
+     */
+
+    width: calc(100% - var(--left-width) - 10px);
+    min-width: calc(100% - var(--left-width) - 10px);
+    max-width: 50%;
+
+    /*
+     POSITION
+     */
+
+    float: right;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+
+    /*
+     BOX
+     */
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    border: none;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: rtl;
+
+    resize: horizontal;
+}
+
+/*
+ ***************
+ * UI ELEMENTS *
+ ***************
+ */
+
+/* DROPDOWN STYLING */
+
+#dropdown_area {
+    float: right;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-right: 10px;
+}
+
+#filter_dropdown {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.Select-control {
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border: none;
+}
+
+.Select-menu-outer {
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border: none;
+}
+
+.Select--multi .Select-value {
+    color: var(--custom_color_text_color_blue);
+    border: none;
+}
+
+/* MAIN TIME SLIDER STYLING */
+
+#time_slider {
+    width: 50%;
+    float: right;
+    position: absolute;
+
+    bottom: 10px;
+    right: 10px;
+    margin-right: 10px;
+
+    align-items: center;
+
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    border: none;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+.rc-slider {
+    position: relative;
+}
+
+.rc-slider-handle {
+    background: white;
+    border: none !important;
+}
+
+.rc-slider-handle:active {
+    box-shadow: 0 0 5px var(--custom_color_text_color_blue);
+}
+
+/* CONTENT AREA */
+#content {
+    position: relative;
+    padding: 10px;
+    direction: ltr;
+}
+
+/* HEADER */
+#header {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: 0 0 30px white;
+    cursor: pointer;
+
+    float: left;
+
+    /*
+     BOX
+     */
+
+    background-color: rgba(240, 240, 240, 0.61);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    border: none;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+/*
+ *****************
+ * TEXT STYLINGS *
+ *****************
+ */
 
 
 h1 {
@@ -41,142 +217,21 @@ a {
     margin: 10px;
 }
 
-#freiburg_map > div.js-plotly-plot > div > div > svg:nth-child(5) > g {
+/*
+ **************************
+ * HIDE UNWANTED ELEMENTS *
+ **************************
+
+.mapboxgl-ctrl-bottom-right {
     opacity: 0;
-    cursor:pointer;
-    background: red;
 }
 
-/*
-.mapboxgl-canvas {
-    cursor: pointer;
+.mapboxgl-ctrl-bottom-left {
+    opacity: 0;
 }
+
+.modebar {
+    opacity: 0;
+}
+
  */
-
-svg.main-svg:nth-child(1) {
-    cursor: pointer;
-}
-
-#header {
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 10px;
-    position: absolute;
-    font-size: 40px;
-    font-weight: 500;
-    text-shadow: 0 0 30px white;
-    cursor: pointer;
-
-    /*
-     BOX
-     */
-
-    background-color: rgba(240, 240, 240, 0.61);
-    backdrop-filter: blur(5px);
-    border-radius: 4px;
-    border: none;
-    border-spacing: 0;
-    border-collapse: separate;
-}
-
-/*
- MAP STYLING
- */
-
-#freiburg_map {
-    position: absolute;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/*
- CONTENT AREA STYLING
- */
-
-#content {
-    position: relative;
-    padding: 10px;
-}
-
-#content_area {
-    position: absolute;
-    background-color: rgba(240, 240, 240, 0.61);
-    backdrop-filter: blur(5px);
-    z-index: 10;
-    width: 33%;
-    right: 10px;
-    top: 10px;
-    bottom: 10px;
-    border-radius: 4px;
-    border: none;
-    border-spacing: 0;
-    border-collapse: separate;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-/*
- DROPDOWN STYLING
- */
-
-#dropdown_area {
-    position: absolute;
-    z-index: 10;
-    width: 20%;
-    right: calc(33% + 20px);
-    top: 10px;
-}
-
-.Select-control {
-    background-color: rgba(240, 240, 240, 0.61);
-    backdrop-filter: blur(5px);
-    border: none;
-}
-
-.Select-menu-outer {
-    background-color: rgba(240, 240, 240, 0.61);
-    backdrop-filter: blur(5px);
-    border: none;
-}
-
-.Select--multi .Select-value {
-    color: var(--custom_color_text_color_blue);
-    border: none;
-}
-
-
-#filter_dropdown {
-
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-/*
- SLIDER STYLING
- */
-
-#time_slider {
-    position: absolute;
-    z-index: 10;
-    width: 50%;
-    right: calc(33% + 20px);
-    bottom: 10px;
-
-    align-items: center;
-
-    background-color: rgba(240, 240, 240, 0.61);
-    backdrop-filter: blur(5px);
-    border-radius: 4px;
-    border: none;
-    border-spacing: 0;
-    border-collapse: separate;
-}
-
-.rc-slider {
-    position: relative;
-}
-
-.rc-slider-handle {
-    background: var(--custom_color_text_color_blue);
-}
-

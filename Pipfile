@@ -7,6 +7,7 @@ name = "pypi"
 jsonschema = "*"
 dash = "*"
 pandas = "*"
+grasia-dash-components = "*"
 
 [dev-packages]
 

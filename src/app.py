@@ -20,17 +20,19 @@ mapbox = {
 }
 
 ##
+# LOAD DATA
+##
+
+unfiltered_data = load_data()
+
+##
 # DEFAULT VALUES
 ##
 
 DEFAULT_YEAR = 2010
 DEFAULT_MAP_ZOOM = 15.5
-
-##
-# LOAD DATA
-##
-
-unfiltered_data = load_data()
+DEFAULT_MAP_LAT = unfiltered_data["default"]["location"]["lat"]
+DEFAULT_MAP_LONG = unfiltered_data["default"]["location"]["long"]
 
 ##
 # MAP
@@ -72,8 +74,8 @@ map = go.Figure(
             accesstoken=mapbox["token"],
             bearing=-5,
             center=dict(
-                lat=47.99461758304593,
-                lon=7.8538004648156825
+                lat=DEFAULT_MAP_LAT,
+                lon=DEFAULT_MAP_LONG
             ),
             pitch=80,
             zoom=DEFAULT_MAP_ZOOM,
@@ -119,22 +121,30 @@ app.layout = html.Div([
     # this stores the data (graph data) of the current session and resets if the page reloads
     dcc.Store(id='session', storage_type='memory'),
 
-    html.H1("Freiburg", id="header"),
-
     dcc.Graph(id='freiburg_map', figure=map),
 
-    html.Div(id="dropdown_area", children=[filter_dropdown]),
+    html.Div(id="main_container", children=[
 
-    html.Div(id="time_slider", children=[time_axis]),
+        html.Div(id="left_container", children=[
 
-    html.Div(id="content_area", children=[
+            html.H1("Freiburg", id="header"),
 
-        html.Div(id="content", children=[
-            html.Div(id='test_output_1'),
-            html.Div(id='test_output_2')
+            html.Div(id="dropdown_area", children=[filter_dropdown]),
+
+            html.Div(id="time_slider", children=[time_axis]),
+
         ]),
 
+        html.Div(id="right_container", children=[
+            html.Div(id="content", children=[
+                html.Div(id='test_output_1'),
+                html.Div(id='test_output_2')
+            ]),
+
+        ])
+
     ])
+
 ])
 
 
@@ -192,6 +202,9 @@ def interact(_, map_click, header_click, category_filter, year_filter,
         test_output_2_state = (None,)
 
     # case map click
+
+    print(dash.callback_context.triggered)
+
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.clickData':
         location = map_click['points'][0]['text']
 
@@ -209,8 +222,9 @@ def interact(_, map_click, header_click, category_filter, year_filter,
             text.append(place["name"])
         map.update_traces({"lat": lat, "lon": long, "text": text, "hovertext": text})
 
-    # test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
-
+    test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
+    print(test_output_1_state)
+    print(test_output_2_state)
     return test_output_1_state, test_output_2_state, map, filter_dropdown_state, data_state
 
 
@@ -235,7 +249,7 @@ def select_location(location, data_state: dict, map: go.Figure, output) -> list:
     return output_children  # f'{json.dumps(selected_data, indent=4, ensure_ascii=False)}',
 
 
-def render_data(data: dict) -> object:
+def render_data(data: dict):
     path = data["dataSheet"]
     separator = data["separator"]
 

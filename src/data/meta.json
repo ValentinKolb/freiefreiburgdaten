@@ -1,32 +1,32 @@
 {
-  "default":
-    {
-      "name": "Freiburg",
-      "description": {
-        "shortDescription": "Freiburg im Breisgau ist eine kreisfreie Großstadt in Baden-Württemberg",
-        "description": "Freiburg im Breisgau, eine Universitätsstadt im Schwarzwald im Südwesten Deutschlands, ist für sein mildes Klima und das wiederaufgebaute, von kleinen Bächen durchzogene mittelalterliche Stadtzentrum bekannt. Das Naherholungsgebiet Schlossberg wird von Freiburg mit der Schlossbergbahn erreicht. In der Altstadt ragt der 116 m hohe Turm des gotischen Freiburger Münsters über dem Münsterplatz auf.",
-        "source": "https://de.wikipedia.org/wiki/Freiburg_im_Breisgau"
-      },
-      "category": [
-      ],
-      "location": {
-      },
-      "data": [
-        {
-          "identifier": "Bevölkerungsdichte",
-          "startYear": 1996,
-          "endYear": 2019,
-          "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
-          "separator": ";",
-          "source": "Bevölkerungsdichte",
-          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
-          "graph": {
-            "type": "line"
-          }
-        }
-      ]
+  "default": {
+    "name": "Freiburg",
+    "description": {
+      "shortDescription": "Freiburg im Breisgau ist eine kreisfreie Großstadt in Baden-Württemberg",
+      "description": "Freiburg im Breisgau, eine Universitätsstadt im Schwarzwald im Südwesten Deutschlands, ist für sein mildes Klima und das wiederaufgebaute, von kleinen Bächen durchzogene mittelalterliche Stadtzentrum bekannt. Das Naherholungsgebiet Schlossberg wird von Freiburg mit der Schlossbergbahn erreicht. In der Altstadt ragt der 116 m hohe Turm des gotischen Freiburger Münsters über dem Münsterplatz auf.",
+      "source": "https://de.wikipedia.org/wiki/Freiburg_im_Breisgau"
     },
-
+    "category": [
+    ],
+    "location": {
+      "lat": 47.99461758304593,
+      "long": 7.8538004648156825
+    },
+    "data": [
+      {
+        "identifier": "Bevölkerungsdichte",
+        "startYear": 1996,
+        "endYear": 2019,
+        "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
+        "separator": ";",
+        "source": "Bevölkerungsdichte",
+        "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
+        "graph": {
+          "type": "line"
+        }
+      }
+    ]
+  },
   "places": [
     {
       "name": "Wallgrabentheater",
@@ -326,8 +326,7 @@
           }
         }
       ]
-    }, 
-
+    },
     {
       "name": "SC Freiburg",
       "description": {
@@ -339,7 +338,7 @@
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 47.98333639044978, 
+        "lat": 47.98333639044978,
         "long": 7.880939432658372
       },
       "data": [
@@ -357,7 +356,6 @@
         }
       ]
     },
-
     {
       "name": "Keidel Mineral-Thermalbad",
       "description": {
@@ -369,7 +367,7 @@
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 47.98567187884127,  
+        "lat": 47.98567187884127,
         "long": 7.76541663303856
       },
       "data": [
@@ -399,7 +397,7 @@
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 48.037570168181674, 
+        "lat": 48.037570168181674,
         "long": 7.783265913429389
       },
       "data": [
