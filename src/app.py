@@ -166,9 +166,25 @@ app.layout = html.Div([
     [Output('about_section', 'children'),
      Output('about_button', 'children')],
     [Input('about_button', 'n_clicks')],
-    [State('about_button', 'children')]
+    [State('about_button', 'children')],
+    prevent_initial_call=True
 )
-def about_(_, button_text) -> tuple:
+def display_about(_, button_text) -> tuple:
+    """
+    this callback function displays the about/ help text if the user clicks on the corresponding button
+
+    Parameters
+    ----------
+    _ :
+        the number of times the button was clicked, is ignored
+    button_text :
+        the current text of the button
+
+    Returns
+    -------
+    tuple :
+        the first value is the about text and the second value the button text
+    """
     if button_text == "?":
         button_text = "X"
         about = dcc.Markdown(load_file_cached(file="data/HowTo.md"))
