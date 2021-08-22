@@ -1,38 +1,36 @@
 {
-  "default":
-    {
-      "name": "Freiburg",
-      "description": {
-        "shortDescription": "Freiburg im Breisgau ist eine kreisfreie Großstadt in Baden-Württemberg",
-        "description": "Freiburg im Breisgau, eine Universitätsstadt im Schwarzwald im Südwesten Deutschlands, ist für sein mildes Klima und das wiederaufgebaute, von kleinen Bächen durchzogene mittelalterliche Stadtzentrum bekannt. Das Naherholungsgebiet Schlossberg wird von Freiburg mit der Schlossbergbahn erreicht. In der Altstadt ragt der 116 m hohe Turm des gotischen Freiburger Münsters über dem Münsterplatz auf.",
-        "source": "https://de.wikipedia.org/wiki/Freiburg_im_Breisgau"
-      },
-      "category": [
-      ],
-      "location": {
-      },
-      "data": [
-        {
-          "identifier": "Bevölkerungsdichte",
-          "startYear": 1996,
-          "endYear": 2019,
-          "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
-          "separator": ";",
-          "source": "Bevölkerungsdichte",
-          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
-          "graph": {
-            "type": "line"
-          }
-        }
-      ]
+  "default": {
+    "name": "Freiburg",
+    "description": {
+      "shortDescription": "Freiburg im Breisgau ist eine kreisfreie Großstadt in Baden-Württemberg",
+      "description": "data/descriptions/default/Freiburg.md",
+      "source": "https://de.wikipedia.org/wiki/Freiburg_im_Breisgau"
     },
-
+    "category": [
+    ],
+    "location": {
+    },
+    "data": [
+      {
+        "identifier": "Bevölkerungsdichte",
+        "startYear": 1996,
+        "endYear": 2019,
+        "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
+        "separator": ";",
+        "source": "Bevölkerungsdichte",
+        "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
+        "graph": {
+          "type": "line"
+        }
+      }
+    ]
+  },
   "places": [
     {
       "name": "Wallgrabentheater",
       "description": {
-        "shortDescription": "Ein von Studenten gegründetes Theater im Zentrum von Freiburg",
-        "description": "Das Wallgraben Theater in der Rathausgasse im Zentrum von Freiburg im Breisgau wurde in einem ehemaligen Wein- und Luftschutzkeller im Hinterhof der Wallstraße als kleines Kellertheater (Kleines Theater am Wallgraben) von einer Gruppe theaterbegeisterter Studenten gegründet.\n\nBei der ersten Vorstellung am 16. Juni 1953 wurde Ein Schlaf Gefangner von Christopher Fry gespielt. 1973 zog es um in den Keller des Neuen Rathauses in der Rathausgasse. Es wurde weiterhin geleitet von Ingeborg Steiert († 1997) und dem Schauspieler Heinz Meier († 2013), der insbesondere durch seine Mitwirkung in Loriots Sketchen bekannt wurde. Das Theater hat rund 100 Sitzplätze und war 1975 das erste Theater, welches Loriot-Sketche auf die Bühne brachte. 2003 übernahm Meiers Nichte Regine Effinger die Leitung. Seit 2008 ist der Schauspieler Hans Poeschl Mitinhaber und leitet das Theater gemeinsam mit seiner Frau Regine Effinger. Im Jahr 2007 besuchten 32.577 Zuschauer die 311 Aufführungen; im Jahr 2010 waren es 27.661 Zuschauer bei 258 Vorstellungen, 2015 besuchten insgesamt 24.038 Besucher die 229 Vorstellungen.[1] Seit 2004 gibt es während der Sommermonate jeweils eine Inszenierung unter freiem Himmel im Innenhof des Neuen Rathauses (250 Plätze).\n\nSeit 21. Oktober 2020 bis Juli 2021 hat das Wallgrabentheater die Möglichkeitfür die Aufführungen das leerstehenden Autohaus Südwest auf der Haid zu nutzen, weil dort die Abstandsregeln aufgrund der Covid-19-Pandemie besser umzusetzen sind.",
+        "shortDescription": "Ein von Studenten gegründetes<br>Theater im Zentrum von Freiburg",
+        "description": "data/descriptions/Theater/Wallgrabentheater.md",
         "source": "https://de.wikipedia.org/wiki/Wallgraben-Theater"
       },
       "category": [
@@ -61,8 +59,8 @@
     {
       "name": "Theather im Marienbad",
       "description": {
-        "shortDescription": "Das Theater im Marienbad (kurz TiM) ist eine programmatisch vielseitig genutzte Theaterspielstätte im ehemaligen Freiburger Stadtbad Marienbad",
-        "description": "Der Freiburger Kinder- und Jugendtheater e.V. ist ein eigenständig arbeitendes Ensembletheater mit aktuell fünf fest angestellten Schauspielern und insgesamt 15 fest angestellten Personen. Ergänzung erfährt das Team durch Gastdarsteller, -regisseure und -ausstatte. Neben dem Spielplan, der sowohl zu morgendlichen Schul- als auch zu Abendvorstellungen gespielt wird, liegt der Schwerpunkt des Hauses auf der Theaterpädagogik. Zielgruppen der hauseigenen Inszenierungen, die vom intimen Erzähltheater bis zu großen Ensemblestücken reicht, sind neben Kindern und Jugendlichen auch Erwachsene. In der Theaterpädagogik werden sowohl die Stücke und Lesungen mit Schülern und Vorschülern vor- und nachbereitet als auch Weiterbildungen für (angehende) Lehrer im Bereich Theater und Schule angeboten. Das eigene Programm des Hauses wird regelmäßig durch Kooperationen mit regionalen und überregionalen Institutionen erweitert. Lesungen und Gastspiele nationaler und internationaler Gäste ergänzen den Spielplan thematisch und setzen inhaltliche Kommentare. Das Freiburger Kinder- und Jugendtheater ist Mitveranstalter des alle zwei Jahre stattfindenden Freiburger Festival.",
+        "shortDescription": "Das Theater im Marienbad (kurz TiM)<br>ist eine programmatisch vielseitig genutzte<br>Theaterspielstätte im ehemaligen<br>Freiburger Stadtbad Marienbad",
+        "description": "data/descriptions/Theater/Theather im Marienbad.md",
         "source": "https://de.wikipedia.org/wiki/Theater_im_Marienbad"
       },
       "category": [
@@ -91,8 +89,8 @@
     {
       "name": "Theater Freiburg",
       "description": {
-        "shortDescription": "Das Theater Freiburg (teilweise auch Stadttheater Freiburg, ehemals Städtische Bühnen Freiburg) ist das älteste und größte Theater in der Stadt Freiburg im Breisgau",
-        "description": "Das Theater Freiburg befindet sich am Rande der Freiburger Altstadt an der Ecke Bertoldstraße und Platz der Alten Synagoge. Das Gebäude vereint vier Spielstätten unter einem Dach: das Große Haus, das Kleine Haus, die Kammerbühne und den Werkraum. Im Winterer-Foyer finden zusätzlich Autorenlesungen wie die Litera-Tour, aktuelle Vortragsabende wie die Reihe Schule träumen sowie Kammerkonzerte statt. Das Theater wird seit September 2005 als Eigenbetrieb geführt. Der Jahresetat wird weit überwiegend von der Stadt und dem Land Baden-Württemberg finanziert und umfasst rund 32 Mio. Euro (Stand 2019). Die Besucherzahlen liegen bei etwa 190.000 je Spielzeit.",
+        "shortDescription": "Das Theater Freiburg (teilweise auch Stadttheater<br>Freiburg, ehemals Städtische Bühnen Freiburg)<br>ist das älteste und größte Theater<br>in der Stadt Freiburg im Breisgau",
+        "description": "data/descriptions/Theater/Theater Freiburg.md",
         "source": "https://de.wikipedia.org/wiki/Theater_Freiburg"
       },
       "category": [
@@ -121,8 +119,8 @@
     {
       "name": "Cala Theater",
       "description": {
-        "shortDescription": "Ein Theater, das ein abwechslungsreiches Programm für Jung und Alt anbietet ist zweifellos das Cala Theater in der Haslacherstraße",
-        "description": "Das Cala Theater ist eine Institution in Freiburg. Mit seinen Theaterstücken im Genre der Comedy und des Varieté für Erwachsene sowie den lebendig und interaktiv inszenierten Stücken für Kinder und Jugendliche begeistert es seit 30 Jahren sein Publikum. Wortreich, schräg und humorvoll: eine verzaubernde komödiantische Welt für Jung und Alt!",
+        "shortDescription": "Ein Theater, das ein abwechslungsreiches Programm<br>für Jung und Alt anbietet ist zweifellos das<br>Cala Theater in der Haslacherstraße",
+        "description": "data/descriptions/Theater/Cala Theater.md",
         "source": "https://visit.freiburg.de/attraktionen/cala-theater"
       },
       "category": [
@@ -149,14 +147,13 @@
       ]
     },
     {
-      "name": "Kunstausstellung",
+      "name": "Kunstverein",
       "description": {
-        "shortDescription": "Der Kunstverein Freiburg ist ein 1827 in Freiburg im Breisgau gegründeter Kunstverein",
-        "description": "Der Verein hat seine Ausstellungs- und Geschäftsräume im Marienbad, einem ehemaligen Schwimmbad in der Freiburger Altstadt.",
+        "shortDescription": "Der Kunstverein Freiburg ist ein 1827 in<br>Freiburg im Breisgau gegründeter Kunstverein",
+        "description": "data/descriptions/Kultur/Kunstverein.md",
         "source": "https://www.kunstvereinfreiburg.de/kunstverein_freiburg_2006-2016/htmldocs/programm_archiv2011.htm"
       },
       "category": [
-        "Theater",
         "Kultur"
       ],
       "location": {
@@ -181,12 +178,11 @@
     {
       "name": "Städtische Museen",
       "description": {
-        "shortDescription": "Die Städtischen Museen Freiburg sind ein Verbund aus fünf Häusern mit einer Leitenden Direktion",
-        "description": "Sie decken unterschiedliche Themen ab: Das Augustinermuseum präsentiert seine renommierte Sammlung der Kunst vom Mittelalter bis zum Barock und Malerei des 19. Jahrhunderts. Meisterwerke von der Klassischen Moderne bis zur Gegenwart sind im Museum für Neue Kunst zu sehen. Das Museum für Stadtgeschichte nimmt die vergangenen 900 Jahre in den Blick, während das Archäologische Museum Colombischlössle zu einer Reise durch die Jahrtausende einlädt. Das Museum Natur und Mensch widmet sich Vielfalt und Einzigartigkeit natürlicher und kultureller Lebenswelten.",
+        "shortDescription": "Die Städtischen Museen Freiburg sind ein Verbund<br>aus fünf Häusern mit einer Leitenden Direktion",
+        "description": "data/descriptions/Kultur/Städtische Museen.md",
         "source": "https://www.freiburg.de/pb/,Lde/548757.html"
       },
       "category": [
-        "Theater",
         "Kultur"
       ],
       "location": {
@@ -211,12 +207,11 @@
     {
       "name": "Planetarium",
       "description": {
-        "shortDescription": "Das Planetarium Freiburg ist der Nachfolgebau des am 14. März 1975 eröffneten und von Richard Fehrenbach initiierten Planetariums in der Richard-Fehrenbach-Gewerbeschule",
-        "description": "Das heutige Planetarium befindet sich seit Dezember 2002 am Nordende des Hauptbahnhofs Freiburg, im ehemaligen Ufa-Palast, und wurde 2013 für rund 770.000 Euro renoviert und um eine weitere Fulldome-Videoprojektion ergänzt. Es ist das größte Planetarium in Südbaden.Die Kuppel des Freiburger Planetariums weist einen Durchmesser von 13 Metern auf. In ihrem Mittelpunkt steht der Planetariumsprojektor Starmaster des Unternehmens Carl Zeiss. Eine Fulldome-Videoanlage der Firma Sky-Skan ermöglicht eine kuppelfüllende Videoprojektion über zwei JVC Laserprojektoren. Die Darbietungen erfolgen auf einer 265 Quadratmetern umfassenden Leinwand, die als 360-Grad-Kuppel realisiert wurde.[1] Auf 140 Sitzplätzen mit verstellbarer Rückenlehne können die Gäste Platz nehmen. ",
+        "shortDescription": "Das Planetarium Freiburg ist der Nachfolgebau<br>des am 14. März 1975 eröffneten<br>und von Richard Fehrenbach initiierten<br>Planetariums in der Richard-Fehrenbach-Gewerbeschule",
+        "description": "data/descriptions/Kultur/Planetarium.md",
         "source": "https://de.wikipedia.org/wiki/Planetarium_Freiburg"
       },
       "category": [
-        "Theater",
         "Kultur"
       ],
       "location": {
@@ -241,13 +236,12 @@
     {
       "name": "Alemannische Bühne",
       "description": {
-        "shortDescription": "Die Alemannische Bühne Freiburg wurde 1924 unter dem Namen Elsässische Theater im Breisgau von in Freiburg im Breisgau lebenden Elsaß-Lothringern gegründet",
-        "description": "Als Mundarttheater wurde mit Laienschauspielern bis in die Kriegsjahre gespielt. 1950 wurde dann die „Alemannische Heimatbühne Freiburg i. Br.“, die zunächst als reines Tourneetheater in ganz Südbaden gastierte, gegründet. Unter dem Namen „Alemannische Bühne Freiburg e. V.“ hat sich das Theater im Kulturleben der Stadt sowie in der Umgebung einen Namen gemacht. ",
+        "shortDescription": "Die Alemannische Bühne Freiburg wurde 1924<br>unter dem Namen Elsässische Theater<br>im Breisgau von in Freiburg im Breisgau<br>lebenden Elsaß-Lothringern gegründet",
+        "description": "data/descriptions/Theater/Alemannische Bühne.md",
         "source": "https://de.wikipedia.org/wiki/Alemannische_B%C3%BChne_Freiburg"
       },
       "category": [
-        "Theater",
-        "Kultur"
+        "Theater"
       ],
       "location": {
         "lat": 47.99330623860438,
@@ -258,7 +252,7 @@
           "identifier": "Alemannische Bühne seit 1981",
           "startYear": 1981,
           "endYear": 2020,
-          "dataSheet": "data/datasheets/Kultur/Alemannische Bühne seit 1981.csv",
+          "dataSheet": "data/datasheets/Theater/Alemannische Bühne seit 1981.csv",
           "separator": ";",
           "source": "Alemannische Bühne seit 1981",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Alemannische_Buehne",
@@ -271,12 +265,11 @@
     {
       "name": "Konzerthaus Freiburg",
       "description": {
-        "shortDescription": "Das Konzerthaus Freiburg ist ein 1996 eröffnetes Gebäude in Freiburg im Breisgau",
-        "description": "Gebaut nach einem Entwurf des Architekten Dietrich Bangert, wird es für Konzert- und Kulturveranstaltungen sowie für Kongresse und Tagungen genutzt. Unter dem Arbeitstitel „Kultur- und Tagungsstätte“ (KTS) war es bis zu seiner Eröffnung eines der am heftigsten umstrittenen Bauvorhaben in Freiburg seit Kriegsende. Bis 2016 war es Hauptsitz des SWR Sinfonieorchester Baden-Baden und Freiburg. Es ist mit seinem variabel einsetzbaren großen Saal Austragungsstätte für zahlreiche weitere Veranstaltungen.",
+        "shortDescription": "Das Konzerthaus Freiburg ist ein 1996<br>eröffnetes Gebäude in Freiburg im Breisgau",
+        "description": "data/descriptions/Kultur/Konzerthaus Freiburg.md",
         "source": "https://de.wikipedia.org/wiki/Konzerthaus_Freiburg"
       },
       "category": [
-        "Theater",
         "Kultur"
       ],
       "location": {
@@ -301,8 +294,8 @@
     {
       "name": "Kommunales Kino",
       "description": {
-        "shortDescription": "Freiburgs Kinos sind vielseitig und bieten unterschiedlichste Programme an",
-        "description": "Kommunales Kino - Die Forderung nach einem kommunalen Kino war keine originäre Idee der 1970er Jahre. Sie entwickelte sich bereits in den frühen zwanziger Jahren, wenn auch unter anderen Vorzeichen. Im Rahmen der Auseinandersetzung um die sogenannten Aufklärungsfilme kam auch in Freiburg die Überlegung auf, ein Kino in städtischer Regie einzurichten. Das Anliegen wurde in die Diskussion um Filmzensur, wenn auch mit unterschiedlichen Implikationen, von der Stadtverwaltung und der sozialdemokratischen Volkswacht eingebracht. Die Volkswacht forderte nicht nur die Kommunalisierung der Kinos, sondern die Sozialisierung der Filmindustrie.",
+        "shortDescription": "Freiburgs Kinos sind vielseitig und<br>bieten unterschiedlichste Programme an",
+        "description": "data/descriptions/Freizeit und Sport/Kommunales Kino.md",
         "source": "https://www.freiburg-postkolonial.de/Seiten/Burkhardt-Kinogeschichte.htm"
       },
       "category": [
@@ -326,20 +319,19 @@
           }
         }
       ]
-    }, 
-
+    },
     {
       "name": "SC Freiburg",
       "description": {
-        "shortDescription": "Der SC Freiburg ist ein Fussballverein aus Freiburg im Breisgau",
-        "description": "Er wurde am 30. Mai 1904 gegründet. Die Herrenmannschaft des SC spielt seit der Saison 2016/17 wieder in der Bundesliga. In der Ewigen Bundesligatabelle belegt der Verein den 22. Platz. Die Frauenmannschaft spielt ebenfalls erstklassig in der Frauen-Bundesliga.",
+        "shortDescription": "Der SC Freiburg ist ein Fussballverein<br>aus Freiburg im Breisgau",
+        "description": "data/descriptions/Freizeit und Sport/SC Freiburg.md",
         "source": "https://de.wikipedia.org/wiki/SC_Freiburg"
       },
       "category": [
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 47.98333639044978, 
+        "lat": 47.98333639044978,
         "long": 7.880939432658372
       },
       "data": [
@@ -357,19 +349,18 @@
         }
       ]
     },
-
     {
       "name": "Keidel Mineral-Thermalbad",
       "description": {
-        "shortDescription": "Fteoburg bietet verschiede Bäder an, dabei ist das Keidel Mineral-Thermalbad das beliebteste",
-        "description": "In Freiburgs Keidel Therme verwöhnt das aus eigener Heilquelle sprudelnde Mineral-Thermalwasser seine Besucher bereits seit über 40 Jahren. Das Bad hat auf seiner über 6.000 Quadratmeter großen Wellness-Fläche neben den zahlreichen warmen und revitalisierenden Thermalwasser-Becken unglaublich viel zu bieten, um Körper und Seele in Einklang zu bringen.",
+        "shortDescription": "Fteoburg bietet verschiede Bäder an, dabei<br>ist das Keidel Mineral-Thermalbad das beliebteste",
+        "description": "data/descriptions/Freizeit und Sport/Keidel Mineral-Thermalbad.md",
         "source": ""
       },
       "category": [
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 47.98567187884127,  
+        "lat": 47.98567187884127,
         "long": 7.76541663303856
       },
       "data": [
@@ -390,8 +381,8 @@
     {
       "name": "Straßen und Radwege",
       "description": {
-        "shortDescription": "Freiburg hat für Autofahren sowie für Radfahrer angenehme Strecken mit einer schönen Landschaft",
-        "description": "Dreisam Radweg - Eine familienfreundliche Tour mit nur moderaten Steigungen. Starten Sie von Freiburg in das schöne Dreisamtal und genießen Sie ein rund 40 km langes Radvergnügen mit Panoramablick. Bei dem Rundweg lernen Sie alle 4 Gemeinden des Dreisamtals nahe Freiburg kennen: Kirchzarten-Oberried-Buchenbach-Stegen.",
+        "shortDescription": "Freiburg hat für Autofahren sowie für Radfahrer<br>angenehme Strecken mit einer schönen Landschaft",
+        "description": "data/descriptions/Verkehr/Straßen und Radwege.md",
         "source": "https://www.schwarzwald-geniessen.de/de/fahrrad/Dreisamtal+Radweg"
       },
       "category": [
@@ -399,7 +390,7 @@
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 48.037570168181674, 
+        "lat": 48.037570168181674,
         "long": 7.783265913429389
       },
       "data": [

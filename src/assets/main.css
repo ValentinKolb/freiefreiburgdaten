@@ -36,20 +36,8 @@ a {
     margin: 10px;
 }
 
-#freiburg_map > div.js-plotly-plot > div > div > svg:nth-child(5) > g {
-    opacity: 0;
-    cursor: pointer;
-    background: red;
-}
+.hovertext {
 
-/*
-.mapboxgl-canvas {
-    cursor: pointer;
-}
- */
-
-svg.main-svg:nth-child(1) {
-    cursor: pointer;
 }
 
 #header {

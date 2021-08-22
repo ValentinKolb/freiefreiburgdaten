@@ -1,7 +1,27 @@
 import json
 from typing import Callable, Iterable
+from functools import cache
 
 from jsonschema import validate
+
+
+@cache
+def load_description(file: str) -> str:
+    """
+    this function loads the content of a file and caches it to reduce load times in the future
+
+    Parameters
+    ----------
+    file : str
+        the path of the file
+
+    Returns
+    -------
+    str :
+        the content of the file, this is only read once, the next time the result will be cached
+    """
+    with open(file, encoding='utf8') as file:
+        return file.read()
 
 
 def load_data(file: str = "data/meta.json", schema: str = "data/meta.schema.json"):

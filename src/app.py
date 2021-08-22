@@ -6,7 +6,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-from data_tools import load_data, filter_by_year, filter_by_category, pprint_dict, get_categories
+from data_tools import load_data, filter_by_year, filter_by_category, pprint_dict, get_categories, load_description
 from styles import *
 import pandas as pd
 import plotly.express as px
@@ -50,7 +50,7 @@ scatter = go.Scattermapbox(
         opacity=.9
     ),
     text=[],
-    hoverinfo="text",  # or "text" ?
+    hoverinfo="text",
     hovertext=[],
     hoverlabel=go.scattermapbox.Hoverlabel(
         bgcolor=custom_color_yellow,
@@ -180,10 +180,11 @@ def interact(_, map_click, header_click, category_filter, year_filter,
             data_state = filter_by_year(unfiltered_data, year_filter)
 
     # case map zoom
+    current_zoom = map_state["layout"]["mapbox"]["zoom"]
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.relayoutData':
-        current_zoom = map_state["layout"]["mapbox"]["zoom"]
+        data_changed = True
         if current_zoom >= DEFAULT_MAP_ZOOM:
-            map.update_traces({"mode": 'markers+text', "hoverinfo": "none"})
+            map.update_traces({"mode": 'markers+text', "hoverinfo": "text"})
         else:
             map.update_traces({"mode": 'markers', "hoverinfo": "text"})
 
@@ -203,11 +204,14 @@ def interact(_, map_click, header_click, category_filter, year_filter,
         lat = []
         long = []
         text = []
+        hover_text = []
         for place in data_state["places"]:
             lat.append(str(place["location"]["lat"]))
             long.append(str(place["location"]["long"]))
             text.append(place["name"])
-        map.update_traces({"lat": lat, "lon": long, "text": text, "hovertext": text})
+            hover_text.append(place["description"]["shortDescription"])
+        map.update_traces({"lat": lat, "lon": long, "text": text})
+        map.update_traces({"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
 
     # test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
 
@@ -224,18 +228,27 @@ def select_location(location, data_state: dict, map: go.Figure, output) -> list:
 
     output_children.append(html.H1(selected_data["name"]))
     output_children.append(html.Div(id='categories', children=[html.H4(cat) for cat in selected_data["category"]]))
-    output_children.append(html.Div(id='location_description', children=[selected_data["description"]["description"]]))
+
+    output_children.append(
+        render_description(selected_data["description"]["description"])
+    )
+
     output_children.append(html.A('source', href=selected_data["description"]["source"]))
 
     for datasheet in selected_data["data"]:
         s = render_data(datasheet)
+        output_children.append(s)
 
-        output_children.extend(s)
-
-    return output_children  # f'{json.dumps(selected_data, indent=4, ensure_ascii=False)}',
+    return output_children
 
 
-def render_data(data: dict) -> object:
+def render_description(description_path: str) -> dcc.Markdown:
+    description = load_description(description_path)
+    return dcc.Markdown(description, id="location_description")
+
+
+def render_data(data: dict) -> dcc.Graph:
+    identifier = data["identifier"]
     path = data["dataSheet"]
     separator = data["separator"]
 
@@ -257,7 +270,7 @@ def render_data(data: dict) -> object:
 
     fig = go.Figure(data=res, layout=layout)
 
-    return dcc.Graph(figure=fig),
+    return dcc.Graph(id=identifier, figure=fig)
 
 
 ##

@@ -3,7 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/src/data/Kultur/Konzerthaus Freiburg - Besucher.csv">
+        <entry key="/src/data/datasheets/Generell/Bevölkerungsdichte.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Kultur/Alemannische Bühne seit 1981.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />
@@ -18,13 +25,6 @@
           </value>
         </entry>
         <entry key="/src/data/datasheets/Kultur/Kunstausstellung seit 1981.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/src/data/datasheets/Theather/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />
