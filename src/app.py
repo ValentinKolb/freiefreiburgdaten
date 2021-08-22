@@ -111,7 +111,7 @@ filter_dropdown = dcc.Dropdown(
     options=[],
     value=[],
     multi=True,
-    placeholder="Select a Filter ..."
+    placeholder="Filtere die Orte ..."
 )
 
 ##
@@ -164,7 +164,8 @@ app.layout = html.Div([
 
 @app.callback(
     [Output('about_section', 'children'),
-     Output('about_button', 'children')],
+     Output('about_button', 'children'),
+     Output('about_section', 'style')],
     [Input('about_button', 'n_clicks')],
     [State('about_button', 'children')],
     prevent_initial_call=True
@@ -183,16 +184,19 @@ def display_about(_, button_text) -> tuple:
     Returns
     -------
     tuple :
-        the first value is the about text and the second value the button text
+        the first value is the about text, the second value the button text
+        and the third value the style of the about section (is used to hide it)
     """
     if button_text == "?":
         button_text = "X"
         about = dcc.Markdown(load_file_cached(file="data/HowTo.md"))
+        style = {'opacity': 1}
     else:
         button_text = "?"
         about = None
+        style = {'opacity': 0}
 
-    return about, button_text
+    return about, button_text, style
 
 
 @app.callback(

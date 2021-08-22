@@ -170,7 +170,7 @@ a {
 
 #about_button {
     position: absolute;
-    z-index: 10;
+    z-index: 30;
     width: 30px;
     height: 30px;
     left: 10px;
@@ -192,7 +192,8 @@ a {
 
 #about_section {
     position: absolute;
-    z-index: 30;
+    z-index: 20;
+    opacity: 0;
 
     max-width: 90%;
     max-height: 90%;
