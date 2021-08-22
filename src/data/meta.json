@@ -9,6 +9,8 @@
     "category": [
     ],
     "location": {
+      "lat": 47.99461758304593,
+      "long": 7.8538004648156825
     },
     "data": [
       {
@@ -29,7 +31,7 @@
     {
       "name": "Wallgrabentheater",
       "description": {
-        "shortDescription": "Ein von Studenten gegründetes<br>Theater im Zentrum von Freiburg",
+        "shortDescription": "Ein von Studenten gegründetes Theater im Zentrum von Freiburg",
         "description": "data/descriptions/Theater/Wallgrabentheater.md",
         "source": "https://de.wikipedia.org/wiki/Wallgraben-Theater"
       },
@@ -57,9 +59,9 @@
       ]
     },
     {
-      "name": "Theather im Marienbad",
+      "name": "Theather Marienbad",
       "description": {
-        "shortDescription": "Das Theater im Marienbad (kurz TiM)<br>ist eine programmatisch vielseitig genutzte<br>Theaterspielstätte im ehemaligen<br>Freiburger Stadtbad Marienbad",
+        "shortDescription": "Das Theater im Marienbad (kurz TiM) ist eine programmatisch vielseitig genutzte Theaterspielstätte im ehemaligen Freiburger Stadtbad Marienbad",
         "description": "data/descriptions/Theater/Theather im Marienbad.md",
         "source": "https://de.wikipedia.org/wiki/Theater_im_Marienbad"
       },
@@ -89,7 +91,7 @@
     {
       "name": "Theater Freiburg",
       "description": {
-        "shortDescription": "Das Theater Freiburg (teilweise auch Stadttheater<br>Freiburg, ehemals Städtische Bühnen Freiburg)<br>ist das älteste und größte Theater<br>in der Stadt Freiburg im Breisgau",
+        "shortDescription": "Das Theater Freiburg (teilweise auch Stadttheater Freiburg, ehemals Städtische Bühnen Freiburg) ist das älteste und größte Theater in der Stadt Freiburg im Breisgau",
         "description": "data/descriptions/Theater/Theater Freiburg.md",
         "source": "https://de.wikipedia.org/wiki/Theater_Freiburg"
       },
@@ -119,7 +121,7 @@
     {
       "name": "Cala Theater",
       "description": {
-        "shortDescription": "Ein Theater, das ein abwechslungsreiches Programm<br>für Jung und Alt anbietet ist zweifellos das<br>Cala Theater in der Haslacherstraße",
+        "shortDescription": "Ein Theater, das ein abwechslungsreiches Programm für Jung und Alt anbietet ist zweifellos das Cala Theater in der Haslacherstraße",
         "description": "data/descriptions/Theater/Cala Theater.md",
         "source": "https://visit.freiburg.de/attraktionen/cala-theater"
       },
@@ -149,7 +151,7 @@
     {
       "name": "Kunstverein",
       "description": {
-        "shortDescription": "Der Kunstverein Freiburg ist ein 1827 in<br>Freiburg im Breisgau gegründeter Kunstverein",
+        "shortDescription": "Der Kunstverein Freiburg ist ein 1827 in Freiburg im Breisgau gegründeter Kunstverein",
         "description": "data/descriptions/Kultur/Kunstverein.md",
         "source": "https://www.kunstvereinfreiburg.de/kunstverein_freiburg_2006-2016/htmldocs/programm_archiv2011.htm"
       },
@@ -178,7 +180,7 @@
     {
       "name": "Städtische Museen",
       "description": {
-        "shortDescription": "Die Städtischen Museen Freiburg sind ein Verbund<br>aus fünf Häusern mit einer Leitenden Direktion",
+        "shortDescription": "Die Städtischen Museen Freiburg sind ein Verbund aus fünf Häusern mit einer Leitenden Direktion",
         "description": "data/descriptions/Kultur/Städtische Museen.md",
         "source": "https://www.freiburg.de/pb/,Lde/548757.html"
       },
@@ -207,7 +209,7 @@
     {
       "name": "Planetarium",
       "description": {
-        "shortDescription": "Das Planetarium Freiburg ist der Nachfolgebau<br>des am 14. März 1975 eröffneten<br>und von Richard Fehrenbach initiierten<br>Planetariums in der Richard-Fehrenbach-Gewerbeschule",
+        "shortDescription": "Das Planetarium Freiburg ist der Nachfolgebau des am 14. März 1975 eröffneten und von Richard Fehrenbach initiierten Planetariums in der Richard-Fehrenbach-Gewerbeschule",
         "description": "data/descriptions/Kultur/Planetarium.md",
         "source": "https://de.wikipedia.org/wiki/Planetarium_Freiburg"
       },
@@ -236,7 +238,7 @@
     {
       "name": "Alemannische Bühne",
       "description": {
-        "shortDescription": "Die Alemannische Bühne Freiburg wurde 1924<br>unter dem Namen Elsässische Theater<br>im Breisgau von in Freiburg im Breisgau<br>lebenden Elsaß-Lothringern gegründet",
+        "shortDescription": "Die Alemannische Bühne Freiburg wurde 1924 unter dem Namen Elsässische Theater im Breisgau von in Freiburg im Breisgau lebenden Elsaß-Lothringern gegründet",
         "description": "data/descriptions/Theater/Alemannische Bühne.md",
         "source": "https://de.wikipedia.org/wiki/Alemannische_B%C3%BChne_Freiburg"
       },
@@ -265,7 +267,7 @@
     {
       "name": "Konzerthaus Freiburg",
       "description": {
-        "shortDescription": "Das Konzerthaus Freiburg ist ein 1996<br>eröffnetes Gebäude in Freiburg im Breisgau",
+        "shortDescription": "Das Konzerthaus Freiburg ist ein 1996 eröffnetes Gebäude in Freiburg im Breisgau",
         "description": "data/descriptions/Kultur/Konzerthaus Freiburg.md",
         "source": "https://de.wikipedia.org/wiki/Konzerthaus_Freiburg"
       },
@@ -294,7 +296,7 @@
     {
       "name": "Kommunales Kino",
       "description": {
-        "shortDescription": "Freiburgs Kinos sind vielseitig und<br>bieten unterschiedlichste Programme an",
+        "shortDescription": "Freiburgs Kinos sind vielseitig und bieten unterschiedlichste Programme an",
         "description": "data/descriptions/Freizeit und Sport/Kommunales Kino.md",
         "source": "https://www.freiburg-postkolonial.de/Seiten/Burkhardt-Kinogeschichte.htm"
       },
@@ -323,7 +325,7 @@
     {
       "name": "SC Freiburg",
       "description": {
-        "shortDescription": "Der SC Freiburg ist ein Fussballverein<br>aus Freiburg im Breisgau",
+        "shortDescription": "Der SC Freiburg ist ein Fussballverein aus Freiburg im Breisgau",
         "description": "data/descriptions/Freizeit und Sport/SC Freiburg.md",
         "source": "https://de.wikipedia.org/wiki/SC_Freiburg"
       },
@@ -350,9 +352,9 @@
       ]
     },
     {
-      "name": "Keidel Mineral-Thermalbad",
+      "name": "Mineral-Thermalbad",
       "description": {
-        "shortDescription": "Fteoburg bietet verschiede Bäder an, dabei<br>ist das Keidel Mineral-Thermalbad das beliebteste",
+        "shortDescription": "Freiburg bietet verschiedene Bäder an, dabei ist das Keidel Mineral-Thermalbad das beliebteste",
         "description": "data/descriptions/Freizeit und Sport/Keidel Mineral-Thermalbad.md",
         "source": ""
       },
@@ -381,7 +383,7 @@
     {
       "name": "Straßen und Radwege",
       "description": {
-        "shortDescription": "Freiburg hat für Autofahren sowie für Radfahrer<br>angenehme Strecken mit einer schönen Landschaft",
+        "shortDescription": "Freiburg hat für Autofahren sowie für Radfahrer angenehme Strecken mit einer schönen Landschaft",
         "description": "data/descriptions/Verkehr/Straßen und Radwege.md",
         "source": "https://www.schwarzwald-geniessen.de/de/fahrrad/Dreisamtal+Radweg"
       },

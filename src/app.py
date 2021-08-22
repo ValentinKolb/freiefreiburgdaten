@@ -1,15 +1,12 @@
-import json
-import os
-from typing import TypeVar
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-from data_tools import load_data, filter_by_year, filter_by_category, pprint_dict, get_categories, load_description
+from data_tools import load_data, filter_by_year, filter_by_category, get_categories, load_file_cached
 from styles import *
 import pandas as pd
-import plotly.express as px
+from textwrap import wrap
 
 # Create main process
 app = dash.Dash(__name__)
@@ -20,17 +17,20 @@ mapbox = {
 }
 
 ##
+# LOAD DATA
+##
+
+unfiltered_data = load_data()
+
+##
 # DEFAULT VALUES
 ##
 
 DEFAULT_YEAR = 2010
 DEFAULT_MAP_ZOOM = 15.5
-
-##
-# LOAD DATA
-##
-
-unfiltered_data = load_data()
+DEFAULT_MAP_LAT = unfiltered_data["default"]["location"]["lat"]
+DEFAULT_MAP_LONG = unfiltered_data["default"]["location"]["long"]
+TITLE = unfiltered_data["default"]["name"]
 
 ##
 # MAP
@@ -61,6 +61,25 @@ scatter = go.Scattermapbox(
     )
 )
 
+scatter_data = {
+    "mode": 'markers+text',
+    "textposition": 'top center',
+    "textfont": {"size": 15, "color": custom_color_text_color_blue},
+    "marker": go.scattermapbox.Marker(
+        size=10,
+        color=custom_color_text_color_blue,
+        symbol="circle",
+        opacity=.9
+    ),
+    "hoverlabel": go.scattermapbox.Hoverlabel(
+        bgcolor=custom_color_yellow,
+        bordercolor=custom_color_yellow,
+        font={"family": "Noto Sans KR",
+              "color": custom_color_text_color_blue,
+              "size": 15}
+    )
+}
+
 map = go.Figure(
     data=scatter,
     layout=go.Layout(
@@ -72,8 +91,8 @@ map = go.Figure(
             accesstoken=mapbox["token"],
             bearing=-5,
             center=dict(
-                lat=47.99461758304593,
-                lon=7.8538004648156825
+                lat=DEFAULT_MAP_LAT,
+                lon=DEFAULT_MAP_LONG
             ),
             pitch=80,
             zoom=DEFAULT_MAP_ZOOM,
@@ -99,14 +118,12 @@ filter_dropdown = dcc.Dropdown(
 # SLIDER
 ##
 
-sample_years = {year: {'label': str(year)} for year in range(1900, 2022, 10)}
-
 time_axis = dcc.Slider(
     id='time_axis',
     min=1900,
     max=2021,
     value=DEFAULT_YEAR,
-    marks=sample_years,
+    marks={year: {'label': str(year)} for year in range(1900, 2022, 10)},
     included=False
 )
 
@@ -119,7 +136,7 @@ app.layout = html.Div([
     # this stores the data (graph data) of the current session and resets if the page reloads
     dcc.Store(id='session', storage_type='memory'),
 
-    html.H1("Freiburg", id="header"),
+    html.H1(TITLE, id="header"),
 
     dcc.Graph(id='freiburg_map', figure=map),
 
@@ -127,11 +144,14 @@ app.layout = html.Div([
 
     html.Div(id="time_slider", children=[time_axis]),
 
+    html.Button("?", id="about_button"),
+    html.Div(id="about_section", children=[]),
+
     html.Div(id="content_area", children=[
 
         html.Div(id="content", children=[
-            html.Div(id='test_output_1'),
-            html.Div(id='test_output_2')
+            html.Div(id='debug_output'),
+            html.Div(id=' data_visualisation')
         ]),
 
     ])
@@ -142,10 +162,26 @@ app.layout = html.Div([
 # INTERACTIVITY
 ##
 
+@app.callback(
+    [Output('about_section', 'children'),
+     Output('about_button', 'children')],
+    [Input('about_button', 'n_clicks')],
+    [State('about_button', 'children')]
+)
+def about_(_, button_text) -> tuple:
+    if button_text == "?":
+        button_text = "X"
+        about = dcc.Markdown(load_file_cached(file="data/HowTo.md"))
+    else:
+        button_text = "?"
+        about = None
+
+    return about, button_text
+
 
 @app.callback(
-    [Output('test_output_1', 'children'),
-     Output('test_output_2', 'children'),
+    [Output('debug_output', 'children'),
+     Output(' data_visualisation', 'children'),
      Output('freiburg_map', 'figure'),
      Output('filter_dropdown', 'options'),
      Output('session', 'data')],
@@ -154,14 +190,57 @@ app.layout = html.Div([
      Input('header', 'n_clicks'),
      Input('filter_dropdown', 'value'),
      Input('time_axis', 'value')],
-    [State('test_output_1', 'children'),
-     State('test_output_2', 'children'),
+    [State('debug_output', 'children'),
+     State(' data_visualisation', 'children'),
      State("freiburg_map", "figure"),
      State('filter_dropdown', 'options'),
      State('session', 'data')]
 )
-def interact(_, map_click, header_click, category_filter, year_filter,
-             test_output_1_state, test_output_2_state, map_state, filter_dropdown_state, data_state):
+def interact(_, map_click, __, category_filter, year_filter,
+             debug_output, data_visualisation, map_state, filter_dropdown_state, data_state) -> tuple:
+    """
+    this single callback function provides all interactivity for the application.
+
+    it takes as input all elements on which events it responds. it also takes the state of all elements
+    it changes. this state will only be modified if the corresponding event was triggert.
+
+    which event the user triggert is stored in the dash.callback_context.triggered[0]['prop_id'] variable
+    which is queried.
+
+    Parameters
+    ----------
+    _ :
+        this input in ignored. the 'Input('freiburg_map', 'relayoutData')' is only listed so that this function
+        is notified if the user zooms on the map.
+    map_click :
+        this variable holds the last clicked location on the map.
+    __ :
+        this input is also ignored. the 'Input('header', 'n_clicks')' is only listed so that this function is
+        notified if the user clicks on the header.
+    category_filter :
+        this variable holds the currently selected categories.
+    year_filter :
+        this variable holds the currently selected year.
+    debug_output :
+        this is the state of the first text output. this is only used for debug purposes.
+    data_visualisation :
+        this is the state of the second text output. this holds the data for the selected location.
+    map_state :
+        this is the state of the map. this holds for example the current zoom value. this state is
+        modified to display the correct ticks an their hover info.
+    filter_dropdown_state :
+        this state is modified to adjust the selectable category filters
+    data_state :
+        this is the data the user selected in the current session. this will be cleared if the page is reloaded
+
+    Returns
+    -------
+    tuple :
+        the first value is the debug output, the second value is the content visualizing the data, the third
+        value is the (updated) map state, the fourth value is the (updated) category filter state and the fifth
+        value is the selected data by the user
+
+    """
     startup = not bool(data_state)
     data_changed = False
 
@@ -189,15 +268,15 @@ def interact(_, map_click, header_click, category_filter, year_filter,
             map.update_traces({"mode": 'markers', "hoverinfo": "text"})
 
     # case click on header
-    if dash.callback_context.triggered[0]['prop_id'] == 'header.n_clicks':
-        test_output_2_state = (None,)
+    if startup or dash.callback_context.triggered[0]['prop_id'] == 'header.n_clicks':
+        data_visualisation = render_location(location_data=unfiltered_data["default"], map=map)
 
     # case map click
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.clickData':
         location = map_click['points'][0]['text']
 
-        test_output_2_state = select_location(location=location, data_state=data_state,
-                                              map=map, output=test_output_2_state)
+        data_visualisation = render_location(
+            location_data=[place for place in data_state["places"] if place["name"] == location][0], map=map)
 
     # only redraw map if data has changed
     if data_changed:
@@ -209,33 +288,48 @@ def interact(_, map_click, header_click, category_filter, year_filter,
             lat.append(str(place["location"]["lat"]))
             long.append(str(place["location"]["long"]))
             text.append(place["name"])
-            hover_text.append(place["description"]["shortDescription"])
+            short_description = '<br>'.join(wrap(place["description"]["shortDescription"], width=30))
+            hover_text.append(short_description)
         map.update_traces({"lat": lat, "lon": long, "text": text})
         map.update_traces({"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
 
-    # test_output_1_state = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
+    # debug_output = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
 
-    return test_output_1_state, test_output_2_state, map, filter_dropdown_state, data_state
+    return debug_output, data_visualisation, map, filter_dropdown_state, data_state
 
 
-def select_location(location, data_state: dict, map: go.Figure, output) -> list:
-    selected_data = [place for place in data_state["places"] if place["name"] == location][0]
+def render_location(location_data: dict, map: go.Figure) -> list:
+    """
+    this functions renders the visualisation output for a selected location
+    Parameters
+    ----------
+    location_data : dict
+        the data for the selected location. this data will be visualised
+    map : dcc.Figure
+        the current state of the map
+
+    Returns
+    -------
+    list :
+        a list of html elements to the displayed
+    """
+
     # pprint_dict(selected_data)
     # map.update_layout(mapbox={'center': {"lat": selected_data["location"]["lat"],
     # "lon": selected_data["location"]["long"]}})  # center map ?? todo ??
 
     output_children = []
 
-    output_children.append(html.H1(selected_data["name"]))
-    output_children.append(html.Div(id='categories', children=[html.H4(cat) for cat in selected_data["category"]]))
+    output_children.append(html.H1(location_data["name"]))
+    output_children.append(html.Div(id='categories', children=[html.H4(cat) for cat in location_data["category"]]))
 
     output_children.append(
-        render_description(selected_data["description"]["description"])
+        render_description(location_data["description"]["description"])
     )
 
-    output_children.append(html.A('source', href=selected_data["description"]["source"]))
+    output_children.append(html.A('source', href=location_data["description"]["source"]))
 
-    for datasheet in selected_data["data"]:
+    for datasheet in location_data["data"]:
         s = render_data(datasheet)
         output_children.append(s)
 
@@ -243,11 +337,37 @@ def select_location(location, data_state: dict, map: go.Figure, output) -> list:
 
 
 def render_description(description_path: str) -> dcc.Markdown:
-    description = load_description(description_path)
+    """
+    this functions return the description of a location as Markdown element.
+
+    Parameters
+    ----------
+    description_path : str
+        the path of the file containing the markdown
+
+    Returns
+    -------
+    dcc.Markdown :
+        a markdown element
+    """
+    description = load_file_cached(description_path)
     return dcc.Markdown(description, id="location_description")
 
 
 def render_data(data: dict) -> dcc.Graph:
+    """
+    this functions renders a csv file as graph
+
+    Parameters
+    ----------
+    data : dict
+        the dict containing the meta data for the datasheet
+
+    Returns
+    -------
+    dcc.Graph :
+        the assembled graph
+    """
     identifier = data["identifier"]
     path = data["dataSheet"]
     separator = data["separator"]

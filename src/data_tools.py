@@ -6,7 +6,7 @@ from jsonschema import validate
 
 
 @cache
-def load_description(file: str) -> str:
+def load_file_cached(file: str) -> str:
     """
     this function loads the content of a file and caches it to reduce load times in the future
 
