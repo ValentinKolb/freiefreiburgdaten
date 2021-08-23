@@ -3,14 +3,28 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/src/data/datasheets/Generell/Bevölkerungsdichte.csv">
+        <entry key="/src/data/datasheets/Freizeit und Sport/Bäder.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
-        <entry key="/src/data/datasheets/Kultur/Alemannische Bühne seit 1981.csv">
+        <entry key="/src/data/datasheets/Freizeit und Sport/Kinos.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Freizeit und Sport/Sportvereine.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Generell/Bevölkerungsdichte.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />
@@ -25,6 +39,62 @@
           </value>
         </entry>
         <entry key="/src/data/datasheets/Kultur/Kunstausstellung seit 1981.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Kultur/Planetarium seit 1982.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Kultur/Städtische Museen ab 1981.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Theater/Alemannische Bühne seit 1981.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Theater/Aufführungen und Besucher im Cala Theater Freiburg.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Theater/Aufführungen und Besucher im Eigenbetrieb Theater Freiburg.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Theater/Aufführungen und Besucher im Theather im Marienbad.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Verkehr/Straßen und Radwege.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />

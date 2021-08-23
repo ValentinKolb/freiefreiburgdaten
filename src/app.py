@@ -1,11 +1,14 @@
+import csv
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-from data_tools import load_data, filter_by_year, filter_by_category, get_categories, load_file_cached
+from data_tools import filter_by_year, filter_by_category, get_categories, pprint_dict, \
+    DefaultOrderedDict
+from file_tools import load_file_cached, load_meta_data, load_csv_file_cached
 from styles import *
-import pandas as pd
 from textwrap import wrap
 
 # Create main process
@@ -20,7 +23,7 @@ mapbox = {
 # LOAD DATA
 ##
 
-unfiltered_data = load_data()
+unfiltered_data = load_meta_data()
 
 ##
 # DEFAULT VALUES
@@ -98,7 +101,7 @@ map = go.Figure(
             zoom=DEFAULT_MAP_ZOOM,
             style=mapbox["style"]
         ),
-        margin={"r": 0, "t": 0, "l": 0, "b": 0}  # this maxes the map full screen
+        margin={"r": 0, "t": 0, "l": 0, "b": 0}
     ))
 
 ##
@@ -138,7 +141,11 @@ app.layout = html.Div([
 
     html.H1(TITLE, id="header"),
 
-    dcc.Graph(id='freiburg_map', figure=map),
+    dcc.Graph(id='freiburg_map',
+              figure=map,
+              config={
+                  'displayModeBar': False
+              }),
 
     html.Div(id="dropdown_area", children=[filter_dropdown]),
 
@@ -289,14 +296,14 @@ def interact(_, map_click, __, category_filter, year_filter,
 
     # case click on header
     if startup or dash.callback_context.triggered[0]['prop_id'] == 'header.n_clicks':
-        data_visualisation = render_location(location_data=unfiltered_data["default"], map=map)
+        data_visualisation = render_location(location_data=unfiltered_data["default"])
 
     # case map click
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.clickData':
         location = map_click['points'][0]['text']
 
         data_visualisation = render_location(
-            location_data=[place for place in data_state["places"] if place["name"] == location][0], map=map)
+            location_data=[place for place in data_state["places"] if place["name"] == location][0])
 
     # only redraw map if data has changed
     if data_changed:
@@ -318,15 +325,13 @@ def interact(_, map_click, __, category_filter, year_filter,
     return debug_output, data_visualisation, map, filter_dropdown_state, data_state
 
 
-def render_location(location_data: dict, map: go.Figure) -> list:
+def render_location(location_data: dict) -> list:
     """
     this functions renders the visualisation output for a selected location
     Parameters
     ----------
     location_data : dict
         the data for the selected location. this data will be visualised
-    map : dcc.Figure
-        the current state of the map
 
     Returns
     -------
@@ -334,24 +339,20 @@ def render_location(location_data: dict, map: go.Figure) -> list:
         a list of html elements to the displayed
     """
 
-    # pprint_dict(selected_data)
-    # map.update_layout(mapbox={'center': {"lat": selected_data["location"]["lat"],
-    # "lon": selected_data["location"]["long"]}})  # center map ?? todo ??
-
     output_children = []
 
     output_children.append(html.H1(location_data["name"]))
     output_children.append(html.Div(id='categories', children=[html.H4(cat) for cat in location_data["category"]]))
 
     output_children.append(
+        html.A('Quelle Beschreibung ..', href=location_data["description"]["source"], target='_blank'))
+    output_children.append(
         render_description(location_data["description"]["description"])
     )
 
-    output_children.append(html.A('source', href=location_data["description"]["source"]))
-
     for datasheet in location_data["data"]:
         s = render_data(datasheet)
-        output_children.append(s)
+        output_children.extend(s)
 
     return output_children
 
@@ -374,7 +375,7 @@ def render_description(description_path: str) -> dcc.Markdown:
     return dcc.Markdown(description, id="location_description")
 
 
-def render_data(data: dict) -> dcc.Graph:
+def render_data(data: dict) -> tuple:
     """
     this functions renders a csv file as graph
 
@@ -389,28 +390,48 @@ def render_data(data: dict) -> dcc.Graph:
         the assembled graph
     """
     identifier = data["identifier"]
-    path = data["dataSheet"]
-    separator = data["separator"]
+    graph_type = data["graph"]["type"]
 
-    df = pd.read_csv(filepath_or_buffer=path, delimiter=separator, encoding="ISO-8859-1")
+    if graph_type == "line":
+        graph_class = go.Scatter
+    elif graph_type == "bar":
+        graph_class = go.Bar
+    else:
+        return html.Div(f'An error occurred, invalid graph type: {graph_type!r}', style={"color": "red"}),
 
-    res = []
-    for col in df.columns:
-        res.append(
-            go.Bar(
-                x=df.index.values.tolist(),
-                y=df[col].values.tolist(),
-                name=col
-            )
-        )
+    data_dict = load_csv_file_cached(data["dataSheet"], delimiter=data["delimiter"], encoding=data["encoding"])
 
-    layout = go.Layout(
-        barmode='group'
+    keys = list(data_dict.keys())
+    x = keys[0]
+    ys = keys[1:]
+
+    fig = go.Figure()
+    fig.update_layout(legend={
+        "orientation": "h",
+        "yanchor": "bottom",
+        "y": 1,
+        "xanchor": "right",
+        "x": 1
+
+    },
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        xaxis_title=x,
     )
 
-    fig = go.Figure(data=res, layout=layout)
+    for y in ys:
+        fig.add_trace(graph_class(
+            x=data_dict[x],
+            y=data_dict[y],
+            name=y
+        ))
 
-    return dcc.Graph(id=identifier, figure=fig)
+    return (html.H2(identifier),
+            html.A("Quelle Daten ..", href=data["sourceLink"], target='_blank'),
+            dcc.Graph(figure=fig, config={
+                'displayModeBar': False
+            }),
+            )
 
 
 ##

@@ -18,11 +18,12 @@
         "startYear": 1996,
         "endYear": 2019,
         "dataSheet": "data/datasheets/Generell/Bevölkerungsdichte.csv",
-        "separator": ";",
+        "delimiter": ";",
+        "encoding": "ISO-8859-1",
         "source": "Bevölkerungsdichte",
         "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
         "graph": {
-          "type": "line"
+          "type": "bar"
         }
       }
     ]
@@ -49,7 +50,8 @@
           "startYear": 1976,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Wallgrabentheater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Wallgrabentheater",
           "graph": {
@@ -79,7 +81,8 @@
           "startYear": 1976,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Theather im Marienbad.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Theather im Marienbad",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Theater_Marienbad",
           "graph": {
@@ -109,7 +112,8 @@
           "startYear": 1976,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Eigenbetrieb Theater Freiburg.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Eigenbetrieb Theater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Eigenbetrieb%20Theater",
           "graph": {
@@ -139,7 +143,8 @@
           "startYear": 1976,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Cala Theater Freiburg",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_CALA_THEATER",
           "graph": {
@@ -168,7 +173,8 @@
           "startYear": 1981,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Kultur/Kunstausstellung seit 1981.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Kunstausstellung seit 1981",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Kunstausstellungen",
           "graph": {
@@ -197,7 +203,8 @@
           "startYear": 1981,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Kultur/Städtische Museen ab 1981.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Städtische Museen ab 1981",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Museen",
           "graph": {
@@ -226,7 +233,8 @@
           "startYear": 1982,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Kultur/Planetarium seit 1982.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Planetarium seit 1982",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Planetarium",
           "graph": {
@@ -255,7 +263,8 @@
           "startYear": 1981,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Theater/Alemannische Bühne seit 1981.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Alemannische Bühne seit 1981",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Alemannische_Buehne",
           "graph": {
@@ -284,7 +293,8 @@
           "startYear": 1996,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Konzerthaus Freiburg - Besucher",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Konzerthaus_Besucher",
           "graph": {
@@ -313,7 +323,8 @@
           "startYear": 2008,
           "endYear": 2014,
           "dataSheet": "data/datasheets/Freizeit und Sport/Kinos.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Kinos",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Kinos_ALLE_ASW",
           "graph": {
@@ -342,7 +353,8 @@
           "startYear": 1970,
           "endYear": 2019,
           "dataSheet": "data/datasheets/Freizeit und Sport/Sportvereine.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Sportvereine",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Sport/JB_Sportvereine",
           "graph": {
@@ -371,7 +383,8 @@
           "startYear": 2000,
           "endYear": 2019,
           "dataSheet": "data/datasheets/Freizeit und Sport/Bäder.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Bäder",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Sport/JB_Baeder",
           "graph": {
@@ -401,7 +414,8 @@
           "startYear": 1985,
           "endYear": 2020,
           "dataSheet": "data/datasheets/Verkehr/Straßen und Radwege.csv",
-          "separator": ";",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
           "source": "Verkehr",
           "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Verkehr/JB_VERKEHR_STRASSEN",
           "graph": {

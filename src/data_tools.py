@@ -1,54 +1,52 @@
+from __future__ import annotations
+
 import json
+from collections import OrderedDict
 from typing import Callable, Iterable
-from functools import cache
-
-from jsonschema import validate
 
 
-@cache
-def load_file_cached(file: str) -> str:
-    """
-    this function loads the content of a file and caches it to reduce load times in the future
+class DefaultOrderedDict(OrderedDict):
+    # Source: http://stackoverflow.com/a/6190500/562769
+    def __init__(self, default_factory: Callable = None, *args, **kwargs):
+        if (default_factory is not None and
+                not isinstance(default_factory, Callable)):
+            raise TypeError('first argument must be callable')
+        OrderedDict.__init__(self, *args, **kwargs)
+        self.default_factory = default_factory
 
-    Parameters
-    ----------
-    file : str
-        the path of the file
+    def __getitem__(self, key):
+        try:
+            return OrderedDict.__getitem__(self, key)
+        except KeyError:
+            return self.__missing__(key)
 
-    Returns
-    -------
-    str :
-        the content of the file, this is only read once, the next time the result will be cached
-    """
-    with open(file, encoding='utf8') as file:
-        return file.read()
+    def __missing__(self, key):
+        if self.default_factory is None:
+            raise KeyError(key)
+        self[key] = value = self.default_factory()
+        return value
 
+    def __reduce__(self):
+        if self.default_factory is None:
+            args = tuple()
+        else:
+            args = self.default_factory,
+        return type(self), args, None, None, self.items()
 
-def load_data(file: str = "data/meta.json", schema: str = "data/meta.schema.json"):
-    """
-    this function loads the meta.json file and validates it against the scheme
+    def copy(self):
+        return self.__copy__()
 
-    Parameters
-    ----------
-    file : str
-        the path of the file
-    schema : str
-        the path of the json scheme
+    def __copy__(self):
+        return type(self)(self.default_factory, self)
 
-    Returns
-    -------
-    dict :
-        the parsed meta.json file as dict
-    """
-    with open(file, encoding='utf8') as file:
-        data = json.load(file)
+    def __deepcopy__(self, memo):
+        import copy
+        return type(self)(self.default_factory,
+                          copy.deepcopy(self.items()))
 
-    with open(schema) as file:
-        schema = json.load(file)
-
-    validate(instance=data, schema=schema)
-
-    return data
+    def __repr__(self):
+        return 'OrderedDefaultDict(%s, %s)' % (self.default_factory,
+                                               OrderedDict.__repr__(self))
 
 
 def filter_by_year(data: dict, year: int) -> dict:

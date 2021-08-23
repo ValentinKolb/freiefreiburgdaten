@@ -74,7 +74,10 @@
                     "dataSheet": {
                       "type": "string"
                     },
-                    "separator": {
+                    "delimiter": {
+                      "type": "string"
+                    },
+                    "encoding": {
                       "type": "string"
                     },
                     "source": {
@@ -100,7 +103,8 @@
                     "startYear",
                     "endYear",
                     "dataSheet",
-                    "separator",
+                    "delimiter",
+                    "encoding",
                     "source",
                     "sourceLink",
                     "graph"

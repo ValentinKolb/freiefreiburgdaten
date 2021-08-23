@@ -3,8 +3,19 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/data/datasheets/Aufführungen und Besucher im Theather im Marienbad.csv" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/data/datasheets/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Freizeit und Sport/Bäder.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Freizeit und Sport/Kinos.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Freizeit und Sport/Sportvereine.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Generell/Bevölkerungsdichte.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Kultur/Planetarium seit 1982.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Kultur/Städtische Museen ab 1981.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Theater/Alemannische Bühne seit 1981.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Theater/Aufführungen und Besucher im Cala Theater Freiburg.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Theater/Aufführungen und Besucher im Eigenbetrieb Theater Freiburg.csv" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/data/datasheets/Theater/Aufführungen und Besucher im Theather im Marienbad.csv" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/data/datasheets/Theater/Aufführungen und Besucher im Wallgrabentheater Freiburg.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/data/datasheets/Verkehr/Straßen und Radwege.csv" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/data/meta.json" charset="UTF-8" />
   </component>
 </project>
