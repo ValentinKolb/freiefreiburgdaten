@@ -1,4 +1,4 @@
-import csv
+import logging
 import os
 
 import dash
@@ -6,14 +6,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-from data_tools import filter_by_year, filter_by_category, get_categories, \
-    DefaultOrderedDict
+from data_tools import filter_by_year, filter_by_category, get_categories
 from file_tools import load_file_cached, load_meta_data, load_csv_file_cached
 from styles import *
 from textwrap import wrap
 
 # Create main process
-app = dash.Dash(__name__)
+app = dash.Dash(name='freiefreiburgdaten')
 
 mapbox = {
     "style": "mapbox://styles/valentinkolb/cksjew54g1s4t18s063qaku5k",
@@ -21,15 +20,32 @@ mapbox = {
 }
 
 ##
+# LOGGING
+##
+
+LOGGER = app.logger
+[LOGGER.removeHandler(hdlr) for hdlr in LOGGER.handlers]
+
+_LOGGING_STDOUT_FORMAT = logging.Formatter('%(asctime)s %(levelname)-8s: %(message)s',
+                                           datefmt='%H:%M:%S')
+_LOGGING_STDOUT_HANDLER = logging.StreamHandler()
+_LOGGING_STDOUT_HANDLER.setFormatter(_LOGGING_STDOUT_FORMAT)
+
+LOGGER.addHandler(_LOGGING_STDOUT_HANDLER)
+
+##
 # LOAD DATA
 ##
 
 unfiltered_data = load_meta_data()
+LOGGER.info("meta.json loaded")
 
 ##
 # DEFAULT VALUES
 ##
+
 DEBUG = os.environ.get('DASH_DEBUG', True)
+LOGGER.setLevel(logging.DEBUG if DEBUG else logging.INFO)
 
 DEFAULT_YEAR = 2010
 DEFAULT_MAP_ZOOM = 15.5
@@ -40,7 +56,6 @@ TITLE = unfiltered_data["default"]["name"]
 ##
 # MAP
 ##
-
 
 scatter = go.Scattermapbox(
     lat=[],
@@ -138,11 +153,6 @@ time_axis = dcc.Slider(
 
 app.layout = html.Div([
 
-    # html.Script('''
-    # $(".summary").on("click", function() {
-    #  $(this).next().toggleClass("show");
-    # })'''),
-
     # this stores the data (graph data) of the current session and resets if the page reloads
     dcc.Store(id='session', storage_type='memory'),
 
@@ -201,8 +211,11 @@ def debug_action(_) -> tuple:
         and the third value the style of the about section (is used to hide it)
     """
     global unfiltered_data
+    load_csv_file_cached.cache_clear()
+    load_file_cached.cache_clear()
+    app.logger.debug("all file caches cleared!")
     unfiltered_data = load_meta_data()
-    print("Debug: meta.json was reloaded!")
+    app.logger.debug("meta.json was reloaded!")
     return "🐛",
 
 
@@ -479,10 +492,13 @@ def render_data(data: dict) -> tuple:
             }),
             )
 
-
 ##
 # START PROGRAM
 ##
 
 if __name__ == '__main__':
-    app.run_server(debug=DEBUG)
+    try:
+        app.run_server(debug=DEBUG)
+    except Exception as e:
+        LOGGER.exception(f"a critcal exception uccured: {e}")
+        LOGGER.info("the server is stopped due to an exception")
