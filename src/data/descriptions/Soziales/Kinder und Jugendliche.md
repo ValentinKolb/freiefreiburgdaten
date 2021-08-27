@@ -1,2 +1,3 @@
 Hervorgegangen ist unsere Einrichtung aus dem 1860 durch den Fabrikanten Carl Mez gegründeten Waisenhaus des Evangelischen Stifts Freiburg im Breisgau. Die in der Stiftungsurkunde verankerten christlichen Werte und Grundhaltungen sind auch heute die Grundlage unseres Handelns.
+
 Unser Umgang mit den uns anvertrauten Kindern, Jugendlichen und deren Eltern ist geprägt durch das im Evangelium gekennzeichnete Bild des Menschen, nach welchem die Würde des Menschen nicht abhängig ist von seinen Qualitäten, seinen Leistungen oder seiner gesellschaftlichen Bedeutung, sondern vom Respekt vor seiner Individualität.
