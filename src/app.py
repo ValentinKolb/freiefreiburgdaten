@@ -1,11 +1,12 @@
 import csv
+import os
 
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-from data_tools import filter_by_year, filter_by_category, get_categories, pprint_dict, \
+from data_tools import filter_by_year, filter_by_category, get_categories, \
     DefaultOrderedDict
 from file_tools import load_file_cached, load_meta_data, load_csv_file_cached
 from styles import *
@@ -28,6 +29,7 @@ unfiltered_data = load_meta_data()
 ##
 # DEFAULT VALUES
 ##
+DEBUG = os.environ.get('DASH_DEBUG', True)
 
 DEFAULT_YEAR = 2010
 DEFAULT_MAP_ZOOM = 15.5
@@ -157,7 +159,11 @@ app.layout = html.Div([
     html.Div(id="time_slider", children=[time_axis]),
 
     html.Button("?", id="about_button"),
-    html.Div(id="about_section", children=[]),
+
+    html.Button("🐛", id="debug_button", style={"opacity": 1 if DEBUG else 0}),
+
+    html.Div(className="message_box", id="about_section", children=[]),
+    html.Div(className="message_box", id="debug_message", children=[]),
 
     html.Div(id="content_area", children=[
 
@@ -173,6 +179,32 @@ app.layout = html.Div([
 ##
 # INTERACTIVITY
 ##
+
+@app.callback(
+    [Output('debug_button', 'children')],
+    [Input('debug_button', 'n_clicks')],
+    prevent_initial_call=True
+)
+def debug_action(_) -> tuple:
+    """
+    this callback function displays the about/ help text if the user clicks on the corresponding button
+
+    Parameters
+    ----------
+    _ :
+        the number of times the button was clicked, is ignored
+
+    Returns
+    -------
+    tuple :
+        the first value is the about text, the second value the button text
+        and the third value the style of the about section (is used to hide it)
+    """
+    global unfiltered_data
+    unfiltered_data = load_meta_data()
+    print("Debug: meta.json was reloaded!")
+    return "🐛",
+
 
 @app.callback(
     [Output('about_section', 'children'),
@@ -219,7 +251,6 @@ def display_about(_, button_text) -> tuple:
      Output('session', 'data')],
     [Input('freiburg_map', 'relayoutData'),
      Input('freiburg_map', 'clickData'),
-     Input("freiburg_map", "hoverData"),
      Input('header', 'n_clicks'),
      Input('filter_dropdown', 'value'),
      Input('time_axis', 'value')],
@@ -229,7 +260,7 @@ def display_about(_, button_text) -> tuple:
      State('filter_dropdown', 'options'),
      State('session', 'data')]
 )
-def interact(_, map_click, map_hover, __, category_filter, year_filter,
+def interact(_, map_click, __, category_filter, year_filter,
              debug_output, data_visualisation, map_state, filter_dropdown_state, data_state) -> tuple:
     """
     this single callback function provides all interactivity for the application.
@@ -274,8 +305,6 @@ def interact(_, map_click, map_hover, __, category_filter, year_filter,
         value is the selected data by the user
 
     """
-
-    print(map_hover)
 
     startup = not bool(data_state)
     data_changed = False
@@ -410,7 +439,7 @@ def render_data(data: dict) -> tuple:
     elif graph_type == "scatter":
         graph_class = go.Scatter
         add_args = add_args | {"mode": 'markers'}
-    elif graph_type == "":
+    elif graph_type == "histogram":
         graph_class = go.Histogram
     else:
         return html.Div(f'An error occurred, invalid graph type: {graph_type!r}', style={"color": "red"}),
@@ -456,4 +485,4 @@ def render_data(data: dict) -> tuple:
 ##
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=DEBUG)
