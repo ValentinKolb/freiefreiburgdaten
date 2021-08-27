@@ -423,6 +423,256 @@
           }
         }
       ]
+    },
+    {
+      "name": "Zeltmusikfestival",
+      "description": {
+        "shortDescription": "Das Zelt-Musik-Festival (ZMF) findet seit 1983 jedes Jahr im Juni/Juli/August drei Wochen lang in Freiburg im Breisgau statt und zählt regelmäßig bis zu 120.000 Besucher",
+        "description": "data/descriptions/Kultur/Zeltmusikfestival.md",
+        "source": "https://de.wikipedia.org/wiki/Zelt-Musik-Festival"
+      },
+      "category": [
+        "Kultur",
+        "Freizeit und Sport"
+      ],
+      "location": {
+        "lat": 47.98519662766351, 
+        "long": 7.83594484240521
+      },
+      "data": [
+        {
+          "identifier": "Zeltmusikfestival",
+          "startYear": 1983,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Kultur/Zeltmusikfestival.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Zeltmusikfestival",
+          "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Kultur/JB_Zeltmusikfestival",
+          "graph": {
+            "type": "line"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Albert-Ludwigs-Universität",
+      "description": {
+        "shortDescription": "Die Albert-Ludwigs-Universität Freiburg wurde am 21. September 1457 von Albrecht VI. gegründet und ist eine der ältesten Universitäten Deutschlands",
+        "description": "data/descriptions/Bildung/Albert-Ludwigs-Universität.md",
+        "source": "https://de.wikipedia.org/wiki/Albert-Ludwigs-Universit%C3%A4t_Freiburg"
+      },
+      "category": [
+        "Kultur",
+        "Bildung"
+      ],
+      "location": {
+        "lat": 47.98519662766351, 
+        "long": 7.83594484240521
+      },
+      "data": [
+        {
+          "identifier": "Albert-Ludwigs-Universität",
+          "startYear": 1990,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Bildung/Albert-Ludwigs-Universität.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Albert-Ludwigs-Universität",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Bildung%20und%20Wissenschaft",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Universitätsbibliothek",
+      "description": {
+        "shortDescription": "Die Universitätsbibliothek Freiburg ist die Bibliothek der Albert-Ludwigs-Universität Freiburg",
+        "description": "data/descriptions/Bildung/Universitätsbibliothek.md",
+        "source": "https://de.wikipedia.org/wiki/Universit%C3%A4tsbibliothek_Freiburg"
+      },
+      "category": [
+        "Kultur",
+        "Bildung"
+      ],
+      "location": {
+        "lat": 47.994378395114076,
+        "long": 7.845131015416376  
+      },
+      "data": [
+        {
+          "identifier": "Universitätsbibliothek",
+          "startYear": 1976,
+          "endYear": 2000,
+          "dataSheet": "data/datasheets/Bildung/Universitätsbibliothek.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Universitätsbibliothek",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Bildung%20und%20Wissenschaft",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pädagogische Hochschule",
+      "description": {
+        "shortDescription": "Die Pädagogische Hochschule Freiburg, kurz PH Freiburg, ist eine der sechs Pädagogischen Hochschulen in Baden-Württemberg",
+        "description": "data/descriptions/Bildung/Pädagogische Hochschule.md",
+        "source": "https://de.wikipedia.org/wiki/P%C3%A4dagogische_Hochschule_Freiburg"
+      },
+      "category": [
+        "Kultur",
+        "Bildung"
+      ],
+      "location": {
+        "lat": 48.00418121445194,
+        "long": 7.856699786581503  
+      },
+      "data": [
+        {
+          "identifier": "Pädagogische Hochschule",
+          "startYear": 1990,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Bildung/Pädagogische Hochschule.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Pädagogische Hochschule",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Bildung%20und%20Wissenschaft",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Einrichtung für Senioren",
+      "description": {
+        "shortDescription": "Die AWO-Freiburg betreut in insgesamt 8 Seniorenwohnanlagen über 600 ältere Menschen. Sechs der Wohnanlagen befinden sich in Freiburg, zwei in Denzlingen",
+        "description": "data/descriptions/Soziales/Senioren.md",
+        "source": "https://awo-freiburg.de/senioren/seniorenwohnanlagen"
+      },
+      "category": [
+        "Soziales",
+        "Gesundheit"
+      ],
+      "location": {
+        "lat": 47.99608769383804, 
+        "long": 7.855159001417626 
+      },
+      "data": [
+        {
+          "identifier": "Senioren",
+          "startYear": 1995,
+          "endYear": 2019,
+          "dataSheet": "data/datasheets/Soziales/Senioren.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Einrichtung für Senioren",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Soziales",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Einrichtung für Kinder und Jugendliche",
+      "description": {
+        "shortDescription": "Die Evangelische Jugendhilfe Freiburg-Zähringen wurde 1972 als kirchliche Stiftung des öffentlichen Rechts gegründet",
+        "description": "data/descriptions/Soziales/Kinder und Jugendliche.md",
+        "source": "https://www.jugendhilfe-freiburg.de/unser-leitbild"
+      },
+      "category": [
+        "Soziales",
+        "Gesundheit"
+      ],
+      "location": {
+        "lat": 48.02486955262866,  
+        "long": 7.868478798230518 
+      },
+      "data": [
+        {
+          "identifier": "Kinder und Jugendliche",
+          "startYear": 2005,
+          "endYear": 2019,
+          "dataSheet": "data/datasheets/Soziales/Kinder und Jugendliche.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Einrichtung für Kinder und Jugendliche",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Soziales",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DRK und MHD",
+      "description": {
+        "shortDescription": "Das Deutsche Rote Kreuz (DRK) und der Malteser Hilfsdienst sind Holfsorganistionen und Rettungsdienste",
+        "description": "data/descriptions/Gesundheit/DRK und MHD.md",
+        "source": "https://de.wikipedia.org/wiki/Deutsches_Rotes_Kreuz"
+      },
+      "category": [
+        "Kultur",
+        "Soziales",
+        "Gesundheit"
+      ],
+      "location": {
+        "lat": 48.00578128421536,   
+        "long": 7.828367500502039 
+      },
+      "data": [
+        {
+          "identifier": "DRK und MHD",
+          "startYear": 2011,
+          "endYear": 2018,
+          "dataSheet": "data/datasheets/Gesundheit/DRK und MHD.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "DRK und MHD",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Gesundheit",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feuerwehr",
+      "description": {
+        "shortDescription": "Die Feuerwehr Freiburg i. Br. ist die Gemeindefeuerwehr der Stadt Freiburg im Breisgau",
+        "description": "data/descriptions/Gesundheit/Feuerwehr.md",
+        "source": "https://de.wikipedia.org/wiki/Deutsches_Rotes_Kreuz"
+      },
+      "category": [
+        "Kultur",
+        "Soziales",
+        "Gesundheit"
+      ],
+      "location": {
+        "lat": 47.99109684526431,    
+        "long": 7.830084750031175 
+      },
+      "data": [
+        {
+          "identifier": "Feuerwehr",
+          "startYear": 1975,
+          "endYear": 2020,
+          "dataSheet": "data/datasheets/Gesundheit/Feuerwehr.csv",
+          "delimiter": ";",
+          "encoding": "ISO-8859-1",
+          "source": "Feuerwehr",
+          "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Infrastruktur,%20Bauen%20und%20Wohnen",
+          "graph": {
+            "type": "bar"
+          }
+        }
+      ]
     }
   ]
 }

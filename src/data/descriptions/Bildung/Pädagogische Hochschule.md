@@ -1,0 +1,8 @@
+Die Pädagogische Hochschule Freiburg wurde 1962 aus den konfessionellen Akademien I und II für Lehrerbildung gegründet.
+Zu dieser Zeit erstreckte sich die Hochschule über die ehemalige katholische Pfarrkirche von Littenweiler (zuerst Großer Hörsaal, später Mensa), den Musentrakt sowie eine Turnhalle. Die Anzahl der Studenten betrug ca. 700.
+
+Im Jahr 1971 wurde sie zur wissenschaftlichen Hochschule erklärt. 1998 wurde das fünfte Kollegiengebäude fertiggestellt. Zum Symbol der Pädagogischen Hochschule wurde die im Hof des Traktes stehende Skulptur Gekippter Würfel (1975) von Alf Lechner.
+
+Im Wintersemester 2016/17 waren knapp 5000 Studentinnen und Studenten immatrikuliert.
+
+2018 wurde bekannt, dass die Gebäude mit PCB belastet sind, vor allem die Decken und Trennwände der Kollegiengebäude. Im Herbst 2018 soll damit begonnen werden, der Belastung entgegenzuwirken. Ein Neubau soll zudem als Ausweichquartier entstehen.Im Sommer 2021 meldete die Badische Zeitung, dass eine Wiese am Kunzenweg, zwischen Kollegiengebäude 2 und dem Studierendenhaus dafür mit einem Neubau in Holzbauweise bebaut werden soll. Im Frühjahr 2022 soll damit begonnen werden und Ende 2024 soll der 23,1 Millionen teure Bau fertig sein. Gegen die Zerstörung dieses Biotops angesichts der Flutkatastrophe und des Klimawandels wurde eine Bürgerinitiative gegründet, die dafür plädiert, schon versiegelte Flächen für den Neubau zu nutzen.

@@ -1,0 +1,3 @@
+Als wissenschaftliche Universalbibliothek erfüllt sie einerseits die Aufgaben einer Hochschulbibliothek, die die Angehörigen der Universität sowie die der Katholischen Hochschule Freiburg, der Evangelischen Hochschule Freiburg, der Pädagogischen Hochschule und der Musikhochschule Freiburg mit Literatur und Informationen versorgt, steht andererseits aber auch allen anderen interessierten Bürgern offen.
+
+Im Jahr 2015 zählte die Bibliothek ca. 25.000 aktive Entleiher.
