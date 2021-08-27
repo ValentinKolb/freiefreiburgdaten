@@ -8,7 +8,7 @@ Diese Anwendung visualisiert Daten zu verschiedenen Orten im Raum Freiburg.
 
 Die Karte kann durch die Maus bedient werden.
 
-Per durch gleichzeitiges drücken und bewegen der Mouse kann der Kartenausschnitt verschoben werden.
+Per gleichzeitiges drücken und bewegen der Mouse kann der Kartenausschnitt verschoben werden.
 Wird während des verschiebens die `CTL` / `STRG` - Taste gedrückt, wird die Ausrichtung und Neigung der Karte angepasst. 
 Der Zoom kann durch Scrollen auf der Karte verändert werden.
 
@@ -25,6 +25,10 @@ Diese Kategorie kann über das Dropdown Menu am oberen Bildschirmrand ausgewähl
 
 Darüber hinaus werden nur die Orte angezeigt, die Datensätze enthalten, die für das ausgewählte Jahr relevant sind.
 Diese Jahr kann über den Slider am unteren Bildschirmrand verändert werden.
+
+### Graphen
+
+Durch das anklicken der Legende kann man den Graphen spezifizieren und filtern.
 
 ## Über die Entwickler
 
