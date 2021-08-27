@@ -33,12 +33,7 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
     * [Straßen und Radewege in km seit 1985](https://fritz.freiburg.de/asw/asw.exe?aw=Verkehr/JB_VERKEHR_STRASSEN)
 * Nachhaltigkeitsindex
   * [Kultur und Sport](https://fritz.freiburg.de/asw/asw.exe?aw=Nachhaltigkeit/Freiburger_Nachhaltigkeitsindikatoren&@Feld=12)
-
-## Visualisierungsideen
-
-* Fahrradwege einzeichnen
-  * [OpenBycicleMap](https://www.openstreetmap.org/search?query=freiburg#map=12/47.9874/7.7965&layers=C)
-
+  
 ## Mindmap
 
 ![mindmap](assets/mindmap.png)

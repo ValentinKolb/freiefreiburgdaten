@@ -100,7 +100,7 @@ scatter_data = {
     )
 }
 
-map = go.Figure(
+map_fig = go.Figure(
     data=scatter,
     layout=go.Layout(
         clickmode='event',
@@ -156,30 +156,29 @@ app.layout = html.Div([
     # this stores the data (graph data) of the current session and resets if the page reloads
     dcc.Store(id='session', storage_type='memory'),
 
-    html.H1(TITLE, id="header"),
+    html.H1(TITLE, className="message_box blurred_box", id="header"),
 
     dcc.Graph(id='freiburg_map',
-              figure=map,
+              figure=map_fig,
               config={
                   'displayModeBar': False
               }),
 
     html.Div(id="dropdown_area", children=[filter_dropdown]),
 
-    html.Div(id="time_slider", children=[time_axis]),
+    html.Div(id="time_slider", className="message_box blurred_box", children=[time_axis]),
 
-    html.Button("?", id="about_button"),
+    html.Button("?", className="message_box blurred_box", id="about_button"),
+    html.Button("🐛", className="message_box blurred_box", id="debug_button", style={"opacity": 1 if DEBUG else 0}),
 
-    html.Button("🐛", id="debug_button", style={"opacity": 1 if DEBUG else 0}),
+    html.Div(className="message_box blurred_box", id="about_section", children=[]),
+    html.Div(className="message_box blurred_box", id="debug_message", children=[]),
 
-    html.Div(className="message_box", id="about_section", children=[]),
-    html.Div(className="message_box", id="debug_message", children=[]),
-
-    html.Div(id="content_area", children=[
+    html.Div(id="content_area", className="message_box blurred_box", children=[
 
         html.Div(id="content", children=[
             html.Div(id='debug_output'),
-            html.Div(id=' data_visualisation')
+            html.Div(id='data_visualisation')
         ]),
 
     ])
@@ -258,7 +257,7 @@ def display_about(_, button_text) -> tuple:
 
 @app.callback(
     [Output('debug_output', 'children'),
-     Output(' data_visualisation', 'children'),
+     Output('data_visualisation', 'children'),
      Output('freiburg_map', 'figure'),
      Output('filter_dropdown', 'options'),
      Output('session', 'data')],
@@ -268,7 +267,7 @@ def display_about(_, button_text) -> tuple:
      Input('filter_dropdown', 'value'),
      Input('time_axis', 'value')],
     [State('debug_output', 'children'),
-     State(' data_visualisation', 'children'),
+     State('data_visualisation', 'children'),
      State("freiburg_map", "figure"),
      State('filter_dropdown', 'options'),
      State('session', 'data')]
@@ -341,9 +340,9 @@ def interact(_, map_click, __, category_filter, year_filter,
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.relayoutData':
         data_changed = True
         if current_zoom >= DEFAULT_MAP_ZOOM:
-            map.update_traces({"mode": 'markers+text', "hoverinfo": "text"})
+            map_fig.update_traces({"mode": 'markers+text', "hoverinfo": "text"})
         else:
-            map.update_traces({"mode": 'markers', "hoverinfo": "text"})
+            map_fig.update_traces({"mode": 'markers', "hoverinfo": "text"})
 
     # case click on header
     if startup or dash.callback_context.triggered[0]['prop_id'] == 'header.n_clicks':
@@ -368,12 +367,12 @@ def interact(_, map_click, __, category_filter, year_filter,
             text.append(place["name"])
             short_description = '<br>'.join(wrap(place["description"]["shortDescription"], width=30))
             hover_text.append(short_description)
-        map.update_traces({"lat": lat, "lon": long, "text": text})
-        map.update_traces({"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
+        map_fig.update_traces({"lat": lat, "lon": long, "text": text})
+        map_fig.update_traces({"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
 
     # debug_output = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
 
-    return debug_output, data_visualisation, map, filter_dropdown_state, data_state
+    return debug_output, data_visualisation, map_fig, filter_dropdown_state, data_state
 
 
 def render_location(location_data: dict) -> list:
@@ -390,16 +389,10 @@ def render_location(location_data: dict) -> list:
         a list of html elements to the displayed
     """
 
-    output_children = []
-
-    output_children.append(html.H1(location_data["name"]))
-    output_children.append(html.Div(id='categories', children=[html.H4(cat) for cat in location_data["category"]]))
-
-    output_children.append(
-        html.A('Quelle Beschreibung ..', href=location_data["description"]["source"], target='_blank'))
-    output_children.append(
-        render_description(location_data["description"]["description"])
-    )
+    output_children = [html.H1(location_data["name"]),
+                       html.Div(id='categories', children=[html.H4(cat) for cat in location_data["category"]]),
+                       html.A('Quelle Beschreibung ..', href=location_data["description"]["source"], target='_blank'),
+                       render_description(location_data["description"]["description"])]
 
     for datasheet in location_data["data"]:
         s = render_data(datasheet)
@@ -491,6 +484,7 @@ def render_data(data: dict) -> tuple:
                 'displayModeBar': False
             }),
             )
+
 
 ##
 # START PROGRAM
