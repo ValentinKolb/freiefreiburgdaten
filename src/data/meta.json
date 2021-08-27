@@ -23,7 +23,7 @@
         "source": "Bevölkerungsdichte",
         "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
         "graph": {
-          "type": "bar"
+          "type": "line"
         }
       }
     ]
@@ -436,7 +436,7 @@
         "Freizeit und Sport"
       ],
       "location": {
-        "lat": 47.98519662766351, 
+        "lat": 47.98519662766351,
         "long": 7.83594484240521
       },
       "data": [
@@ -467,7 +467,7 @@
         "Bildung"
       ],
       "location": {
-        "lat": 47.98519662766351, 
+        "lat": 47.98519662766351,
         "long": 7.83594484240521
       },
       "data": [
@@ -499,7 +499,7 @@
       ],
       "location": {
         "lat": 47.994378395114076,
-        "long": 7.845131015416376  
+        "long": 7.845131015416376
       },
       "data": [
         {
@@ -530,7 +530,7 @@
       ],
       "location": {
         "lat": 48.00418121445194,
-        "long": 7.856699786581503  
+        "long": 7.856699786581503
       },
       "data": [
         {
@@ -560,8 +560,8 @@
         "Gesundheit"
       ],
       "location": {
-        "lat": 47.99608769383804, 
-        "long": 7.855159001417626 
+        "lat": 47.99608769383804,
+        "long": 7.855159001417626
       },
       "data": [
         {
@@ -591,8 +591,8 @@
         "Gesundheit"
       ],
       "location": {
-        "lat": 48.02486955262866,  
-        "long": 7.868478798230518 
+        "lat": 48.02486955262866,
+        "long": 7.868478798230518
       },
       "data": [
         {
@@ -623,8 +623,8 @@
         "Gesundheit"
       ],
       "location": {
-        "lat": 48.00578128421536,   
-        "long": 7.828367500502039 
+        "lat": 48.00578128421536,
+        "long": 7.828367500502039
       },
       "data": [
         {
@@ -655,8 +655,8 @@
         "Gesundheit"
       ],
       "location": {
-        "lat": 47.99109684526431,    
-        "long": 7.830084750031175 
+        "lat": 47.99109684526431,
+        "long": 7.830084750031175
       },
       "data": [
         {
@@ -665,7 +665,7 @@
           "endYear": 2020,
           "dataSheet": "data/datasheets/Gesundheit/Feuerwehr.csv",
           "delimiter": ";",
-          "encoding": "ISO-8859-1",
+          "encoding": "UTF-8",
           "source": "Feuerwehr",
           "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Infrastruktur,%20Bauen%20und%20Wohnen",
           "graph": {
