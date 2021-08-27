@@ -136,6 +136,11 @@ time_axis = dcc.Slider(
 
 app.layout = html.Div([
 
+    # html.Script('''
+    # $(".summary").on("click", function() {
+    #  $(this).next().toggleClass("show");
+    # })'''),
+
     # this stores the data (graph data) of the current session and resets if the page reloads
     dcc.Store(id='session', storage_type='memory'),
 
@@ -214,6 +219,7 @@ def display_about(_, button_text) -> tuple:
      Output('session', 'data')],
     [Input('freiburg_map', 'relayoutData'),
      Input('freiburg_map', 'clickData'),
+     Input("freiburg_map", "hoverData"),
      Input('header', 'n_clicks'),
      Input('filter_dropdown', 'value'),
      Input('time_axis', 'value')],
@@ -223,7 +229,7 @@ def display_about(_, button_text) -> tuple:
      State('filter_dropdown', 'options'),
      State('session', 'data')]
 )
-def interact(_, map_click, __, category_filter, year_filter,
+def interact(_, map_click, map_hover, __, category_filter, year_filter,
              debug_output, data_visualisation, map_state, filter_dropdown_state, data_state) -> tuple:
     """
     this single callback function provides all interactivity for the application.
@@ -268,6 +274,9 @@ def interact(_, map_click, __, category_filter, year_filter,
         value is the selected data by the user
 
     """
+
+    print(map_hover)
+
     startup = not bool(data_state)
     data_changed = False
 
@@ -391,11 +400,18 @@ def render_data(data: dict) -> tuple:
     """
     identifier = data["identifier"]
     graph_type = data["graph"]["type"]
-
+    add_args = {}
     if graph_type == "line":
         graph_class = go.Scatter
     elif graph_type == "bar":
         graph_class = go.Bar
+    elif graph_type == "funnel":
+        graph_class = go.Funnel
+    elif graph_type == "scatter":
+        graph_class = go.Scatter
+        add_args = add_args | {"mode": 'markers'}
+    elif graph_type == "":
+        graph_class = go.Histogram
     else:
         return html.Div(f'An error occurred, invalid graph type: {graph_type!r}', style={"color": "red"}),
 
@@ -423,7 +439,8 @@ def render_data(data: dict) -> tuple:
         fig.add_trace(graph_class(
             x=data_dict[x],
             y=data_dict[y],
-            name=y
+            name=y,
+            **add_args
         ))
 
     return (html.H2(identifier),

@@ -23,7 +23,7 @@
         "source": "Bevölkerungsdichte",
         "sourceLink": "https://fritz.freiburg.de/asw/asw.exe?aw=Flaechennutzung/Region_Bevoelkerungsdichte",
         "graph": {
-          "type": "bar"
+          "type": "scatter"
         }
       }
     ]
