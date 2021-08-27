@@ -2,7 +2,7 @@
 
 Diese Anwendung visualisiert Daten zu verschiedenen Orten im Raum Freiburg.
 
-Diese Pop-up-Fenster kannst du durch erneutes klickes des Buttons links unten wieder schließen.
+Diese Pop-up-Fenster kannst du durch erneutes klicken des Buttons links unten wieder schließen.
 
 ## Nutzung
 

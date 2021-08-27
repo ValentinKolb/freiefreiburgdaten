@@ -51,7 +51,6 @@ a {
 
 }
 
-
 .blurred_box {
     background-color: rgba(240, 240, 240, 0.65);
     backdrop-filter: blur(15px);
@@ -157,7 +156,6 @@ a {
     color: var(--custom_color_text_color_blue);
     border: none;
 }
-
 
 #filter_dropdown {
     font-family: 'Noto Sans KR', sans-serif;
