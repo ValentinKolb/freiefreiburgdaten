@@ -24,6 +24,8 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
 
 ## Instalation und Ausführung
 
+The only requirements are Python 3.9 and pip.
+
 ```bash
 curl https://raw.githubusercontent.com/ValentinKolb/freiefreiburgdaten/main/install.bash | bash
 sudo systemctl start fff
