@@ -9,7 +9,7 @@ set -e
 set -o pipefail
 
 sudo mkdir -p /var/lib/fff
-git clone git@github.com:ValentinKolb/freiefreiburgdaten.git /var/lib/fff
+sudo git clone https://github.com/ValentinKolb/freiefreiburgdaten.git /var/lib/fff
 sudo mv /var/lib/fff/src/fff.service /lib/systemd/system/fff.service
 sudo pip install -r /var/lib/fff/requirements.txt
 
