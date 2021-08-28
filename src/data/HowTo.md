@@ -1,6 +1,6 @@
 # freiefreiburgdaten
 
-Diese Anwendung visualisiert Daten zu verschiedenen Orten im Raum Freiburg.
+Diese Anwendung visualisiert Daten zu verschiedenen Location.
 
 Diese Pop-up-Fenster kannst du durch erneutes klicken des Buttons links unten wieder schließen.
 

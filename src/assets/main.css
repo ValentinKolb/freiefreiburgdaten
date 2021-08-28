@@ -1,80 +1,80 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    color: var(--custom_color_text_color_blue);
-    font-family: 'Noto Sans KR', sans-serif !important;
-    overflow: hidden;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: var(--custom_color_text_color_blue);
+  font-family: "Noto Sans KR", sans-serif !important;
+  overflow: hidden;
 }
 
 h1 {
-    z-index: 10;
-    font-weight: 400;
-    font-size: 30px;
-    margin: 0;
+  z-index: 10;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0;
 }
 
 h2 {
-    z-index: 10;
-    font-weight: 400;
-    font-size: 25px;
-    margin: 0;
+  z-index: 10;
+  font-weight: 400;
+  font-size: 25px;
+  margin: 0;
 }
 
 h3 {
-    z-index: 10;
-    font-weight: 400;
-    font-size: 20px;
-    margin: 0;
+  z-index: 10;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
 }
 
 h4 {
-    float: left;
-    padding: 10px;
-    background: #eee;
-    margin: 10px;
-    box-sizing: border-box;
+  float: left;
+  padding: 10px;
+  background: #eee;
+  margin: 10px;
+  box-sizing: border-box;
 }
 
 #categories {
-    width: 100%;
-    display: table-cell;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  display: table-cell;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    color: var(--custom_color_text_color_blue);
-    font-style: italic;
+  color: var(--custom_color_text_color_blue);
+  font-style: italic;
 }
 
 .hovertext {
-
 }
 
 .blurred_box {
-    background-color: rgba(240, 240, 240, 0.65);
-    backdrop-filter: blur(15px);
+  background-color: rgba(240, 240, 240, 0.65);
+  backdrop-filter: blur(15px);
 }
 
 .message_box {
-    z-index: 10;
-    position: absolute;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border-radius: 4px;
-    border: none;
-    border-spacing: 0;
-    border-collapse: separate;
+  z-index: 10;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 4px;
+  border: none;
+  border-spacing: 0;
+  border-collapse: separate;
 }
 
 #header {
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 40px;
-    font-weight: 500;
-    text-shadow: 0 0 30px white;
-    cursor: pointer;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: 0 0 30px white;
+  cursor: pointer;
 }
 
 /*
@@ -82,11 +82,11 @@ a {
  */
 
 #freiburg_map {
-    position: absolute;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    cursor: all-scroll;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  cursor: all-scroll;
 }
 
 /*
@@ -94,21 +94,21 @@ a {
  */
 
 #content {
-    position: relative;
-    padding: 20px;
-    direction: ltr;
+  position: relative;
+  padding: 20px;
+  direction: ltr;
 }
 
 #content_area {
-    z-index: 10;
-    width: 33%;
-    min-width: 33%;
-    max-width: calc(100% - 20px);
-    right: 10px;
-    top: 10px;
-    bottom: 10px;
-    direction: rtl;
-    resize: horizontal;
+  z-index: 10;
+  width: 33%;
+  min-width: 33%;
+  max-width: calc(100% - 20px);
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  direction: rtl;
+  resize: horizontal;
 }
 
 /*
@@ -116,16 +116,15 @@ a {
  */
 
 .legendtext {
-    opacity: 1;
-    background: none;
-    font-family: 'Noto Sans KR', sans-serif !important;
-    color: red !important;
-    font-size: 12px !important;
-
+  opacity: 1;
+  background: none;
+  font-family: "Noto Sans KR", sans-serif !important;
+  color: red !important;
+  font-size: 12px !important;
 }
 
 .dash-graph {
-    background: transparent;
+  background: transparent;
 }
 
 /*
@@ -133,32 +132,32 @@ a {
  */
 
 #dropdown_area {
-    position: absolute;
-    z-index: 10;
-    width: 20%;
-    right: calc(33% + 20px);
-    top: 10px;
+  position: absolute;
+  z-index: 10;
+  width: 20%;
+  right: calc(33% + 20px);
+  top: 10px;
 }
 
 .Select-control {
-    background-color: rgba(240, 240, 240, 0.75);
-    backdrop-filter: blur(15px);
-    border: none;
+  background-color: rgba(240, 240, 240, 0.75);
+  backdrop-filter: blur(15px);
+  border: none;
 }
 
 .Select-menu-outer {
-    background-color: rgba(240, 240, 240, 0.75);
-    backdrop-filter: blur(15px);
-    border: none;
+  background-color: rgba(240, 240, 240, 0.75);
+  backdrop-filter: blur(15px);
+  border: none;
 }
 
 .Select--multi .Select-value {
-    color: var(--custom_color_text_color_blue);
-    border: none;
+  color: var(--custom_color_text_color_blue);
+  border: none;
 }
 
 #filter_dropdown {
-    font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 /*
@@ -166,19 +165,19 @@ a {
  */
 
 #time_slider {
-    width: 50%;
-    right: calc(33% + 20px);
-    bottom: 10px;
+  width: 50%;
+  right: calc(33% + 20px);
+  bottom: 10px;
 
-    align-items: center;
+  align-items: center;
 }
 
 .rc-slider {
-    position: relative;
+  position: relative;
 }
 
 .rc-slider-handle {
-    background: var(--custom_color_text_color_blue);
+  background: var(--custom_color_text_color_blue);
 }
 
 /*
@@ -186,16 +185,16 @@ a {
  */
 
 #debug_button {
-    width: 30px;
-    height: 30px;
-    left: 50px;
-    bottom: 10px;
+  width: 30px;
+  height: 30px;
+  left: 50px;
+  bottom: 10px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    align-items: center;
-    font-weight: 700;
-    color: var(--custom_color_text_color_blue);
+  align-items: center;
+  font-weight: 700;
+  color: var(--custom_color_text_color_blue);
 }
 
 /*
@@ -203,31 +202,31 @@ a {
  */
 
 #about_button {
-    position: absolute;
-    z-index: 5;
-    width: 30px;
-    height: 30px;
-    left: 10px;
-    bottom: 10px;
+  position: absolute;
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  bottom: 10px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    align-items: center;
-    font-weight: 700;
-    color: var(--custom_color_text_color_blue);
+  align-items: center;
+  font-weight: 700;
+  color: var(--custom_color_text_color_blue);
 }
 
 #about_section {
-    z-index: 20;
-    opacity: 0;
-    max-width: 90%;
-    max-height: 90%;
+  z-index: 20;
+  opacity: 0;
+  max-width: 90%;
+  max-height: 90%;
 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-     padding: 10px;
+  padding: 10px;
 }
 
 /*
@@ -235,10 +234,9 @@ a {
  */
 
 .mapboxgl-ctrl-bottom-right {
-    opacity: 0;
+  opacity: 0;
 }
 
 .mapboxgl-ctrl-bottom-left {
-    opacity: 0;
+  opacity: 0;
 }
-

@@ -166,13 +166,17 @@ app.layout = html.Div([
 
     html.Div(id="dropdown_area", children=[filter_dropdown]),
 
-    html.Div(id="time_slider", className="message_box blurred_box", children=[time_axis]),
+    html.Div(id="time_slider", className="message_box blurred_box",
+             children=[time_axis]),
 
     html.Button("?", className="message_box blurred_box", id="about_button"),
-    html.Button("🐛", className="message_box blurred_box", id="debug_button", style={"opacity": 1 if DEBUG else 0}),
+    html.Button("🐛", className="message_box blurred_box",
+                id="debug_button", style={"opacity": 1 if DEBUG else 0}),
 
-    html.Div(className="message_box blurred_box", id="about_section", children=[]),
-    html.Div(className="message_box blurred_box", id="debug_message", children=[]),
+    html.Div(className="message_box blurred_box",
+             id="about_section", children=[]),
+    html.Div(className="message_box blurred_box",
+             id="debug_message", children=[]),
 
     html.Div(id="content_area", className="message_box blurred_box", children=[
 
@@ -324,7 +328,8 @@ def interact(_, map_click, __, category_filter, year_filter,
     # case time slider
     if startup or dash.callback_context.triggered[0]['prop_id'] == 'time_axis.value':
         data_state = filter_by_year(unfiltered_data, year_filter)
-        filter_dropdown_state = [{"label": f'{cat}', "value": f'{cat}'} for cat in get_categories(data_state)]
+        filter_dropdown_state = [
+            {"label": f'{cat}', "value": f'{cat}'} for cat in get_categories(data_state)]
         data_changed = True
 
     # case filter dropdown
@@ -340,13 +345,15 @@ def interact(_, map_click, __, category_filter, year_filter,
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.relayoutData':
         data_changed = True
         if current_zoom >= DEFAULT_MAP_ZOOM:
-            map_fig.update_traces({"mode": 'markers+text', "hoverinfo": "text"})
+            map_fig.update_traces(
+                {"mode": 'markers+text', "hoverinfo": "text"})
         else:
             map_fig.update_traces({"mode": 'markers', "hoverinfo": "text"})
 
     # case click on header
     if startup or dash.callback_context.triggered[0]['prop_id'] == 'header.n_clicks':
-        data_visualisation = render_location(location_data=unfiltered_data["default"])
+        data_visualisation = render_location(
+            location_data=unfiltered_data["default"])
 
     # case map click
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.clickData':
@@ -365,10 +372,12 @@ def interact(_, map_click, __, category_filter, year_filter,
             lat.append(str(place["location"]["lat"]))
             long.append(str(place["location"]["long"]))
             text.append(place["name"])
-            short_description = '<br>'.join(wrap(place["description"]["shortDescription"], width=30))
+            short_description = '<br>'.join(
+                wrap(place["description"]["shortDescription"], width=30))
             hover_text.append(short_description)
         map_fig.update_traces({"lat": lat, "lon": long, "text": text})
-        map_fig.update_traces({"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
+        map_fig.update_traces(
+            {"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
 
     # debug_output = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
 
@@ -390,8 +399,10 @@ def render_location(location_data: dict) -> list:
     """
 
     output_children = [html.H1(location_data["name"]),
-                       html.Div(id='categories', children=[html.H4(cat) for cat in location_data["category"]]),
-                       html.A('Quelle Beschreibung ..', href=location_data["description"]["source"], target='_blank'),
+                       html.Div(id='categories', children=[html.H4(
+                           cat) for cat in location_data["category"]]),
+                       html.A('Quelle Beschreibung ..',
+                              href=location_data["description"]["source"], target='_blank'),
                        render_description(location_data["description"]["description"])]
 
     for datasheet in location_data["data"]:
@@ -450,7 +461,8 @@ def render_data(data: dict) -> tuple:
     else:
         return html.Div(f'An error occurred, invalid graph type: {graph_type!r}', style={"color": "red"}),
 
-    data_dict = load_csv_file_cached(data["dataSheet"], delimiter=data["delimiter"], encoding=data["encoding"])
+    data_dict = load_csv_file_cached(
+        data["dataSheet"], delimiter=data["delimiter"], encoding=data["encoding"])
 
     keys = list(data_dict.keys())
     x = keys[0]
@@ -479,7 +491,8 @@ def render_data(data: dict) -> tuple:
         ))
 
     return (html.H2(identifier),
-            html.A("Quelle Daten ..", href=data["sourceLink"], target='_blank'),
+            html.A("Quelle Daten ..",
+                   href=data["sourceLink"], target='_blank'),
             dcc.Graph(figure=fig, config={
                 'displayModeBar': False
             }),
