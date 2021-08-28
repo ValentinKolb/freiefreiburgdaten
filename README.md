@@ -6,6 +6,7 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
 
 - [freiefeiburgdaten](#freiefeiburgdaten)
   - [Übersicht](#übersicht)
+  - [Instalation und Ausführung](#instalation-und-ausführung)
   - [Visualisierung](#visualisierung)
     - [Konzept](#konzept)
     - [Moodboard](#moodboard)
@@ -20,6 +21,13 @@ Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in 
         - [Anpassen der Logik](#anpassen-der-logik)
       - [Stiele](#stiele)
   - [Datensätze](#datensätze)
+
+## Instalation und Ausführung
+
+```bash
+curl https://raw.githubusercontent.com/ValentinKolb/freiefreiburgdaten/main/install.bash | bash
+sudo systemctl start fff
+```
 
 ## Visualisierung
 
