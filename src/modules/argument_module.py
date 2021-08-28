@@ -27,13 +27,14 @@ parser.add_argument(
 
 cmd_args = parser.parse_args()
 
-DEBUG = cmd_args.debug or bool(os.environ.get('DASH_DEBUG', True))
-META_JSON = cmd_args.file or os.environ.get('DASH_META_JSON', False) or "data/meta.json"
+DEBUG = cmd_args.debug or bool(os.environ.get('DASH_DEBUG', False))
+META_JSON = cmd_args.file or os.environ.get(
+    'DASH_META_JSON', False) or "data/meta.json"
 MAPBOX_API = {
     "style": cmd_args.mapbox_style or
-             os.environ.get('DASH_MAPBOX_STYLE', False) or
-             "mapbox://styles/valentinkolb/cksjew54g1s4t18s063qaku5k",
+    os.environ.get('DASH_MAPBOX_STYLE', False) or
+    "mapbox://styles/valentinkolb/cksjew54g1s4t18s063qaku5k",
     "token": cmd_args.mapbox_api or
-             os.environ.get('DASH_MAPBOX_API', False) or
-             "pk.eyJ1IjoidmFsZW50aW5rb2xiIiwiYSI6ImNrczdtb3ZvNzFlbHQycHBobDFzN2RjMXAifQ.yp1dgX8hJcZM1r9Tq7eW2A"
+    os.environ.get('DASH_MAPBOX_API', False) or
+    "pk.eyJ1IjoidmFsZW50aW5rb2xiIiwiYSI6ImNrczdtb3ZvNzFlbHQycHBobDFzN2RjMXAifQ.yp1dgX8hJcZM1r9Tq7eW2A"
 }
