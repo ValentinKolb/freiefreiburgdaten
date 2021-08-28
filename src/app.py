@@ -17,6 +17,7 @@ from modules import argument_module
 
 # Create main process
 app = dash.Dash(name='freiefreiburgdaten')
+app.title = "freiefreiburgdaten"
 
 ##
 # LOGGING

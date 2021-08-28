@@ -7,6 +7,7 @@ Conflicts=getty@tty1.service
 
 [Service]
 Type=simple
+WorkingDirectory=/var/lib/fff/src
 ExecStart=/usr/local/bin/python3.9 /var/lib/fff/src/app.py
 StandardInput=tty-force
 

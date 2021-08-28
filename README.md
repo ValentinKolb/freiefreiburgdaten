@@ -4,6 +4,8 @@
 
 Das Thema dieser Datenvisualisierung ist *Freizeitgestaltung junger Menschen in Freiburg*.
 
+Die Anwendung ist online erreichbar unter [freiefreiburgdaten.de](https://freiefreiburgdaten.de/).
+
 - [freiefeiburgdaten](#freiefeiburgdaten)
   - [Übersicht](#übersicht)
   - [Instalation und Ausführung](#instalation-und-ausführung)
