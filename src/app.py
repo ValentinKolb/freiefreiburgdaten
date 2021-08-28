@@ -1,51 +1,49 @@
-import logging
-import os
+"""
+this is the main entrypoint for the application
+"""
 
+import logging
 import dash
+from textwrap import wrap
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
-from data_tools import filter_by_year, filter_by_category, get_categories
-from file_tools import load_file_cached, load_meta_data, load_csv_file_cached
-from styles import *
-from textwrap import wrap
+from modules.data_module import filter_by_year, filter_by_category, get_categories
+from modules.file_module import load_file_cached, load_meta_data, load_csv_file_cached
+from modules.style_module import *
+from modules import logging_module
+from modules import argument_module
 
 # Create main process
 app = dash.Dash(name='freiefreiburgdaten')
-
-mapbox = {
-    "style": "mapbox://styles/valentinkolb/cksjew54g1s4t18s063qaku5k",
-    "token": "pk.eyJ1IjoidmFsZW50aW5rb2xiIiwiYSI6ImNrczdtb3ZvNzFlbHQycHBobDFzN2RjMXAifQ.yp1dgX8hJcZM1r9Tq7eW2A"
-}
 
 ##
 # LOGGING
 ##
 
-LOGGER = app.logger
-[LOGGER.removeHandler(hdlr) for hdlr in LOGGER.handlers]
+logging_module.init(app)
+LOGGER = logging_module.get_logger()
 
-_LOGGING_STDOUT_FORMAT = logging.Formatter('%(asctime)s %(levelname)-8s: %(message)s',
-                                           datefmt='%H:%M:%S')
-_LOGGING_STDOUT_HANDLER = logging.StreamHandler()
-_LOGGING_STDOUT_HANDLER.setFormatter(_LOGGING_STDOUT_FORMAT)
-
-LOGGER.addHandler(_LOGGING_STDOUT_HANDLER)
+##
+# MAPBOX API TOKEN AND MAP STYLES
+##
+MAPBOX_API = argument_module.MAPBOX_API
 
 ##
 # LOAD DATA
 ##
 
-unfiltered_data = load_meta_data()
+unfiltered_data = load_meta_data(file=argument_module.META_JSON)
 LOGGER.info("meta.json loaded")
 
 ##
 # DEFAULT VALUES
 ##
 
-DEBUG = os.environ.get('DASH_DEBUG', True)
+DEBUG = argument_module.DEBUG
 LOGGER.setLevel(logging.DEBUG if DEBUG else logging.INFO)
+LOGGER.debug(f'log level set to {"logging.DEBUG" if DEBUG else "logging.INFO"}')
 
 DEFAULT_YEAR = 2010
 DEFAULT_MAP_ZOOM = 15.5
@@ -108,7 +106,7 @@ map_fig = go.Figure(
         autosize=True,
         hovermode='closest',
         mapbox=dict(
-            accesstoken=mapbox["token"],
+            accesstoken=MAPBOX_API["token"],
             bearing=-5,
             center=dict(
                 lat=DEFAULT_MAP_LAT,
@@ -116,7 +114,7 @@ map_fig = go.Figure(
             ),
             pitch=80,
             zoom=DEFAULT_MAP_ZOOM,
-            style=mapbox["style"]
+            style=MAPBOX_API["style"]
         ),
         margin={"r": 0, "t": 0, "l": 0, "b": 0}
     ))
@@ -217,7 +215,7 @@ def debug_action(_) -> tuple:
     load_csv_file_cached.cache_clear()
     load_file_cached.cache_clear()
     app.logger.debug("all file caches cleared!")
-    unfiltered_data = load_meta_data()
+    unfiltered_data = load_meta_data(file=argument_module.META_JSON)
     app.logger.debug("meta.json was reloaded!")
     return "🐛",
 
@@ -336,7 +334,7 @@ def interact(_, map_click, __, category_filter, year_filter,
     if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value':
         data_changed = True
         if category_filter:
-            data_state = filter_by_category(data_state, category_filter)
+            data_state = filter_by_category(filter_by_year(unfiltered_data, year_filter), category_filter)
         else:
             data_state = filter_by_year(unfiltered_data, year_filter)
 

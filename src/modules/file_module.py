@@ -1,10 +1,14 @@
+"""
+this module provides interfaces for working with files
+"""
+
 import csv
 import io
 import json
 from functools import lru_cache
 from jsonschema import validate
 
-from data_tools import DefaultOrderedDict
+from modules.data_module import DefaultOrderedDict
 
 
 @lru_cache(maxsize=10)

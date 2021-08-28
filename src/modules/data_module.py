@@ -1,3 +1,6 @@
+"""
+this module provides interfaces for working with data
+"""
 from __future__ import annotations
 
 import json
