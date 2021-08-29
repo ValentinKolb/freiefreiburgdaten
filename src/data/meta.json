@@ -161,7 +161,8 @@
         "source": "https://www.kunstvereinfreiburg.de/kunstverein_freiburg_2006-2016/htmldocs/programm_archiv2011.htm"
       },
       "category": [
-        "Kultur"
+        "Kultur",
+        "Vereine"
       ],
       "location": {
         "lat": 47.99061739282373,
@@ -191,7 +192,8 @@
         "source": "https://www.freiburg.de/pb/,Lde/548757.html"
       },
       "category": [
-        "Kultur"
+        "Kultur",
+        "Museen"
       ],
       "location": {
         "lat": 47.99405834555012,
@@ -251,7 +253,8 @@
         "source": "https://de.wikipedia.org/wiki/Alemannische_B%C3%BChne_Freiburg"
       },
       "category": [
-        "Theater"
+        "Theater",
+        "Kultur"
       ],
       "location": {
         "lat": 47.99330623860438,
@@ -281,7 +284,8 @@
         "source": "https://de.wikipedia.org/wiki/Konzerthaus_Freiburg"
       },
       "category": [
-        "Kultur"
+        "Kultur",
+        "Musik"
       ],
       "location": {
         "lat": 47.995936331741625,
@@ -311,7 +315,8 @@
         "source": "https://www.freiburg-postkolonial.de/Seiten/Burkhardt-Kinogeschichte.htm"
       },
       "category": [
-        "Freizeit und Sport"
+        "Freizeit und Sport",
+        "Kultur"
       ],
       "location": {
         "lat": 47.984884771327344,
@@ -341,7 +346,8 @@
         "source": "https://de.wikipedia.org/wiki/SC_Freiburg"
       },
       "category": [
-        "Freizeit und Sport"
+        "Freizeit und Sport",
+        "Vereine"
       ],
       "location": {
         "lat": 47.98333639044978,
@@ -371,7 +377,8 @@
         "source": ""
       },
       "category": [
-        "Freizeit und Sport"
+        "Freizeit und Sport",
+        "Bäder"
       ],
       "location": {
         "lat": 47.98567187884127,
@@ -433,7 +440,8 @@
       },
       "category": [
         "Kultur",
-        "Freizeit und Sport"
+        "Freizeit und Sport",
+        "Musik"
       ],
       "location": {
         "lat": 47.98519662766351,
@@ -463,8 +471,8 @@
         "source": "https://de.wikipedia.org/wiki/Albert-Ludwigs-Universit%C3%A4t_Freiburg"
       },
       "category": [
-        "Kultur",
-        "Bildung"
+        "Bildung",
+        "Schulen"
       ],
       "location": {
         "lat": 47.98519662766351,
@@ -494,7 +502,7 @@
         "source": "https://de.wikipedia.org/wiki/Universit%C3%A4tsbibliothek_Freiburg"
       },
       "category": [
-        "Kultur",
+        "Bibliotheken",
         "Bildung"
       ],
       "location": {
@@ -525,7 +533,7 @@
         "source": "https://de.wikipedia.org/wiki/P%C3%A4dagogische_Hochschule_Freiburg"
       },
       "category": [
-        "Kultur",
+        "Schulen",
         "Bildung"
       ],
       "location": {
@@ -618,7 +626,7 @@
         "source": "https://de.wikipedia.org/wiki/Deutsches_Rotes_Kreuz"
       },
       "category": [
-        "Kultur",
+        "Kommunales",
         "Soziales",
         "Gesundheit"
       ],
@@ -650,7 +658,7 @@
         "source": "https://de.wikipedia.org/wiki/Deutsches_Rotes_Kreuz"
       },
       "category": [
-        "Kultur",
+        "Kommunales",
         "Soziales",
         "Gesundheit"
       ],
