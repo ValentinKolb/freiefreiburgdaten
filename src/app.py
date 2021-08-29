@@ -324,20 +324,16 @@ def interact(_, map_click, __, category_filter, year_filter,
     startup = not bool(data_state)
     data_changed = False
 
-    # case time slider
-    if startup or dash.callback_context.triggered[0]['prop_id'] == 'time_axis.value':
+    # case time slider or case filter dropdown
+    if startup or \
+            dash.callback_context.triggered[0]['prop_id'] == 'time_axis.value' or \
+            dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value':
         data_state = filter_by_year(unfiltered_data, year_filter)
         filter_dropdown_state = [
             {"label": f'{cat}', "value": f'{cat}'} for cat in get_categories(data_state)]
-        data_changed = True
-
-    # case filter dropdown
-    if dash.callback_context.triggered[0]['prop_id'] == 'filter_dropdown.value':
-        data_changed = True
         if category_filter:
-            data_state = filter_by_category(filter_by_year(unfiltered_data, year_filter), category_filter)
-        else:
-            data_state = filter_by_year(unfiltered_data, year_filter)
+            data_state = filter_by_category(data_state, category_filter)
+        data_changed = True
 
     # case map zoom
     current_zoom = map_state["layout"]["mapbox"]["zoom"]
