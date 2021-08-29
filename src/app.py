@@ -374,7 +374,8 @@ def interact(_, map_click, __, category_filter, year_filter,
         map_fig.update_traces(
             {"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
 
-    # debug_output = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
+    if DEBUG:
+        debug_output = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
 
     return debug_output, data_visualisation, map_fig, filter_dropdown_state, data_state
 

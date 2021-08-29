@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script first installs all dependencies of pyginx and then pyginx
+# This script installs freiefreiburgdaten and sets up the systemd unit file
 # Author:  Valentin Kolb
 # Version: 1.5
 # License: MIT
@@ -13,4 +13,4 @@ sudo git clone https://github.com/ValentinKolb/freiefreiburgdaten.git /var/lib/f
 sudo ln -s /var/lib/fff/src/fff.service /lib/systemd/system/fff.service
 sudo pip3.9 install -r /var/lib/fff/requirements.txt
 
-echo "Run sudo systemctl start fff to start the server on port 8050"
+echo "Run 'sudo systemctl start fff' to start the server on port 8050"
