@@ -500,7 +500,7 @@ def render_data(data: dict) -> tuple:
 
 if __name__ == '__main__':
     try:
-        app.run_server(debug=DEBUG)
+        app.run_server(debug=True)
     except Exception as e:
         LOGGER.exception(f"a critcal exception uccured: {e}")
         LOGGER.info("the server is stopped due to an exception")
