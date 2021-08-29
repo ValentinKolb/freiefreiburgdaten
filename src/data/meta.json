@@ -673,7 +673,7 @@
           "endYear": 2020,
           "dataSheet": "data/datasheets/Gesundheit/Feuerwehr.csv",
           "delimiter": ";",
-          "encoding": "UTF-8",
+          "encoding": "ISO-8859-1",
           "source": "Feuerwehr",
           "sourceLink": "https://fritz.freiburg.de/Informationsportal/configurator?scenario=OpenData#app/mainpage/Infrastruktur,%20Bauen%20und%20Wohnen",
           "graph": {

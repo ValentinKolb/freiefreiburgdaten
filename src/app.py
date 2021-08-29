@@ -341,7 +341,7 @@ def interact(_, map_click, __, category_filter, year_filter,
     current_zoom = map_state["layout"]["mapbox"]["zoom"]
     if dash.callback_context.triggered[0]['prop_id'] == 'freiburg_map.relayoutData':
         data_changed = True
-        if current_zoom >= DEFAULT_MAP_ZOOM:
+        if current_zoom >= DEFAULT_MAP_ZOOM - .5:
             map_fig.update_traces(
                 {"mode": 'markers+text', "hoverinfo": "text"})
         else:
@@ -480,7 +480,7 @@ def render_data(data: dict) -> tuple:
     for y in ys:
         fig.add_trace(graph_class(
             x=data_dict[x],
-            y=[float(y_) for y_ in data_dict[y]],
+            y=[float(y_) if y_ != '' else 0 for y_ in data_dict[y]],
             name=y,
             **add_args
         ))
