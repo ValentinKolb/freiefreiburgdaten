@@ -3,6 +3,27 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/src/data/datasheets/Bildung/Albert-Ludwigs-Universität.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Bildung/Pädagogische Hochschule.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Bildung/Universitätsbibliothek.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/data/datasheets/Freizeit und Sport/Bäder.csv">
           <value>
             <Attribute>
@@ -31,6 +52,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/data/datasheets/Gesundheit/DRK und MHD.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Gesundheit/Feuerwehr.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/data/datasheets/Kultur/Konzerthaus Freiburg - Besucher.csv">
           <value>
             <Attribute>
@@ -53,6 +88,27 @@
           </value>
         </entry>
         <entry key="/src/data/datasheets/Kultur/Städtische Museen ab 1981.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Kultur/Zeltmusikfestival.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Soziales/Kinder und Jugendliche.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/data/datasheets/Soziales/Senioren.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />

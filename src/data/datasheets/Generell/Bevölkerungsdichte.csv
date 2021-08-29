@@ -1,76 +1,75 @@
-"Gemeinde";"Bevölkerung (insgesamt) am 31.12.2019";"Bevölkerung je qkm Bodenfläche";"Bevölkerung je qkm Siedlungs- und Verkehrsfläche"
-"Freiburg im Breisgau";231.195;1.511;4.681
-"Au";1.480;370;2.960
-"Auggen";2.796;198;1.294
-"Bad Krozingen";20.377;571;2.699
-"Badenweiler";4.432;340;1.886
-"Ballrechten-Dottingen";2.440;369;1.952
-"Bötzingen";5.331;410;1.918
-"Bollschweil";2.338;142;1.916
-"Breisach";15.488;284;1.862
-"Breitnau";1.751;44;822
-"Buchenbach";3.129;80;1.656
-"Buggingen";4.387;287;1.497
-"Ebringen";2.867;350;2.896
-"Eichstetten";3.632;295;1.381
-"Eisenbach";2.131;74;1.177
-"Eschbach";2.491;248;868
-"Feldberg";1.862;75;786
-"Friedenweiler";2.007;74;1.128
-"Glottertal";3.167;103;2.056
-"Gottenheim";2.912;333;1.879
-"Gundelfingen";11.683;818;4.071
-"Hartheim";4.768;183;1.229
-"Heitersheim";6.354;543;1.992
-"Heuweiler";1.141;283;3.003
-"Hinterzarten";2.631;79;1.290
-"Horben";1.166;133;1.851
-"Ihringen";6.152;267;1.709
-"Kirchzarten";9.743;461;2.230
-"Lenzkirch";5.064;87;1.292
-"Löffingen";7.617;87;1.115
-"Merdingen";2.582;179;1.153
-"Merzhausen";5.288;1.916;5.134
-"Müllheim";19.077;329;2.008
-"Neuenburg am Rhein, Stadt";12.273;278;1.534
-"Oberried";2.892;44;1.358
-"Pfaffenweiler";2.589;717;3.196
-"St. Märgen";1.863;56;1.116
-"St. Peter";2.626;73;1.484
-"Schallstadt";6.351;325;1.936
-"Schluchsee";2.508;36;751
-"Sölden";1.275;336;2.898
-"Staufen im Breisgau, Stadt";8.187;351;2.558
-"Stegen";4.511;171;2.452
-"Sulzburg";2.817;124;2.056
-"Titisee-Neustadt";12.197;136;1.511
-"Umkirch";5.763;661;3.115
-"Wittnau";1.516;301;2.569
-"Münstertal/Schwarzwald";5.072;75;1.792
-"Ehrenkirchen";7.501;199;2.055
-"March";9.279;522;3.013
-"Vogtsburg";6.097;163;998
-"Bahlingen am Kaiserstuhl";4.236;335;1.925
-"Biederbach";1.768;56;1.300
-"Denzlingen";13.624;804;3.118
-"Elzach";7.274;97;1.971
-"Emmendingen";27.977;828;3.158
-"Endingen";10.068;377;1.914
-"Forchheim";1.416;131;1.133
-"Gutach im Breisgau";4.580;185;2.160
-"Herbolzheim";11.126;314;1.552
-"Kenzingen";10.340;280;1.973
-"Malterdingen";3.236;291;1.694
-"Reute";2.876;600;3.060
-"Riegel";4.006;219;1.358
-"Sasbach am Kaiserstuhl";3.397;163;1.307
-"Sexau";3.397;209;2.311
-"Simonswald";3.030;41;1.507
-"Teningen";12.111;301;1.929
-"Vörstetten";3.104;394;2.848
-"Weisweil";2.144;112;1.624
-"Wyhl";3.853;227;1.976
-"Rheinhausen";3.915;178;1.873
-"Freiamt";4.194;79;1.294
-"Winden im Elztal";2.886;131;1.963
-"Waldkirch";21.850;451;3.362
+"Gemeinde"                  ;"Bevölkerung (insgesamt) am 31.12.2019";"Bevölkerung je qkm Bodenfläche";"Bevölkerung je qkm Siedlungs- und Verkehrsfläche"
+"Au"                        ;1480                                   ;3700                            ;2960
+"Auggen"                    ;2796                                   ;1980                            ;1294
+"Bad Krozingen"             ;20377                                  ;5710                            ;2699
+"Badenweiler"               ;4432                                   ;3400                            ;1886
+"Ballrechten-Dottingen"     ;2440                                   ;369                             ;1952
+"Bötzingen"                 ;5331                                   ;4100                            ;1918
+"Bollschweil"               ;2338                                   ;1420                            ;1916
+"Breisach"                  ;15488                                  ;2840                            ;1862
+"Breitnau"                  ;1751                                   ;440                             ;822
+"Buchenbach"                ;3129                                   ;800                             ;1656
+"Buggingen"                 ;4387                                   ;2870                            ;1497
+"Ebringen"                  ;2867                                   ;3500                            ;2896
+"Eichstetten"               ;3632                                   ;2950                            ;1381
+"Eisenbach"                 ;2131                                   ;740                             ;1177
+"Eschbach"                  ;2491                                   ;2480                            ;868
+"Feldberg"                  ;1862                                   ;750                             ;786
+"Friedenweiler"             ;2007                                   ;740                             ;1128
+"Glottertal"                ;3167                                   ;1030                            ;2056
+"Gottenheim"                ;2912                                   ;3330                            ;1879
+"Gundelfingen"              ;11683                                  ;8180                            ;4071
+"Hartheim"                  ;4768                                   ;1830                            ;1229
+"Heitersheim"               ;6354                                   ;5430                            ;1992
+"Heuweiler"                 ;1141                                   ;2830                            ;3003
+"Hinterzarten"              ;2631                                   ;790                             ;1290
+"Horben"                    ;1166                                   ;1330                            ;1851
+"Ihringen"                  ;6152                                   ;2670                            ;1709
+"Kirchzarten"               ;9743                                   ;461                             ;2230
+"Lenzkirch"                 ;5064                                   ;87                              ;1292
+"Löffingen"                 ;7617                                   ;87                              ;1115
+"Merdingen"                 ;2582                                   ;179                             ;1153
+"Merzhausen"                ;5288                                   ;1916                            ;5134
+"Müllheim"                  ;19077                                  ;329                             ;2008
+"Neuenburg am Rhein, Stadt" ;12273                                  ;278                             ;1534
+"Oberried"                  ;2892                                   ;44                              ;1358
+"Pfaffenweiler"             ;2589                                   ;717                             ;3196
+"St Märgen"                 ;1863                                   ;56                              ;1116
+"St Peter"                  ;2626                                   ;73                              ;1484
+"Schallstadt"               ;6351                                   ;325                             ;1936
+"Schluchsee"                ;2508                                   ;36                              ;751
+"Sölden"                    ;1275                                   ;336                             ;2898
+"Staufen im Breisgau, Stadt";8187                                   ;351                             ;2558
+"Stegen"                    ;4511                                   ;171                             ;2452
+"Sulzburg"                  ;2817                                   ;124                             ;2056
+"Titisee-Neustadt"          ;12197                                  ;136                             ;1511
+"Umkirch"                   ;5763                                   ;661                             ;3115
+"Wittnau"                   ;1516                                   ;301                             ;2569
+"Münstertal/Schwarzwald"    ;5072                                   ;75                              ;1792
+"Ehrenkirchen"              ;7501                                   ;199                             ;2055
+"March"                     ;9279                                   ;522                             ;3013
+"Vogtsburg"                 ;6097                                   ;163                             ;998
+"Bahlingen am Kaiserstuhl"  ;4236                                   ;335                             ;1925
+"Biederbach"                ;1768                                   ;56                              ;1300
+"Denzlingen"                ;13624                                  ;804                             ;3118
+"Elzach"                    ;7274                                   ;97                              ;1971
+"Emmendingen"               ;27977                                  ;828                             ;3158
+"Endingen"                  ;10068                                  ;377                             ;1914
+"Forchheim"                 ;1416                                   ;131                             ;1133
+"Gutach im Breisgau"        ;4580                                   ;185                             ;2160
+"Herbolzheim"               ;11126                                  ;314                             ;1552
+"Kenzingen"                 ;10340                                  ;280                             ;1973
+"Malterdingen"              ;3236                                   ;291                             ;1694
+"Reute"                     ;2876                                   ;600                             ;3060
+"Riegel"                    ;4006                                   ;219                             ;1358
+"Sasbach am Kaiserstuhl"    ;3397                                   ;163                             ;1307
+"Sexau"                     ;3397                                   ;209                             ;2311
+"Simonswald"                ;3030                                   ;41                              ;1507
+"Teningen"                  ;12111                                  ;301                             ;1929
+"Vörstetten"                ;3104                                   ;394                             ;2848
+"Weisweil"                  ;2144                                   ;112                             ;1624
+"Wyhl"                      ;3853                                   ;227                             ;1976
+"Rheinhausen"               ;3915                                   ;178                             ;1873
+"Freiamt"                   ;4194                                   ;79                              ;1294
+"Winden im Elztal"          ;2886                                   ;131                             ;1963
+"Waldkirch"                 ;21850                                  ;451                             ;3362

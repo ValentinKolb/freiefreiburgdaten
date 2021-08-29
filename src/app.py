@@ -9,6 +9,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
+from plotly.graph_objs import Data
+
 from modules.data_module import filter_by_year, filter_by_category, get_categories
 from modules.file_module import load_file_cached, load_meta_data, load_csv_file_cached
 from modules.style_module import *
@@ -374,9 +376,6 @@ def interact(_, map_click, __, category_filter, year_filter,
         map_fig.update_traces(
             {"hovertext": text if current_zoom < DEFAULT_MAP_ZOOM else hover_text})
 
-    if DEBUG:
-        debug_output = f'year-slider: {year_filter}, category-dropdown: {category_filter}'
-
     return debug_output, data_visualisation, map_fig, filter_dropdown_state, data_state
 
 
@@ -481,7 +480,7 @@ def render_data(data: dict) -> tuple:
     for y in ys:
         fig.add_trace(graph_class(
             x=data_dict[x],
-            y=data_dict[y],
+            y=[float(y_) for y_ in data_dict[y]],
             name=y,
             **add_args
         ))

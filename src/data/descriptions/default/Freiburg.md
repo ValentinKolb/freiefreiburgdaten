@@ -5,3 +5,5 @@ von kleinen Bächen durchzogene mittelalterliche Stadtzentrum bekannt.
 Das Naherholungsgebiet Schlossberg wird von Freiburg mit der Schlossbergbahn
 erreicht. In der Altstadt ragt der 116 m hohe Turm des gotischen
 Freiburger Münsters über dem Münsterplatz auf.
+
+Freiburg im Breisgau hat im Jahr 2019 eine ins gesamte Bevölkerung von 231195 Einwohnern.
